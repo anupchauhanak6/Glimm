@@ -1,351 +1,693 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-
-<section id="holo-product-tabs">
-    <div class="holo-container">
-        
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section id="holo-product-tabs">
+      <div class="holo-container">
         <div class="pt-nav-wrapper">
-            <button class="pt-tab-btn" onclick="openTab(event, 'tab-overview')">Overview</button>
-            <button class="pt-tab-btn" onclick="openTab(event, 'tab-features')">Features</button>
-            <button class="pt-tab-btn" onclick="openTab(event, 'tab-specs')">Specs</button>
-            <button class="pt-tab-btn active" onclick="openTab(event, 'tab-technology')">Technology</button>
-            <button class="pt-tab-btn" onclick="openTab(event, 'tab-casestudies')">Case Studies</button>
+          <button
+            class="pt-tab-btn active"
+            onclick="openTab(event, 'tab-overview')"
+          >
+            Overview
+          </button>
+          <button class="pt-tab-btn" onclick="openTab(event, 'tab-features')">
+            Features
+          </button>
+          <button class="pt-tab-btn" onclick="openTab(event, 'tab-specs')">
+            Specs
+          </button>
+          <button class="pt-tab-btn" onclick="openTab(event, 'tab-technology')">
+            Technology
+          </button>
+          <button
+            class="pt-tab-btn"
+            onclick="openTab(event, 'tab-casestudies')"
+          >
+            Case Studies
+          </button>
         </div>
         <div class="pt-divider"></div>
 
-        <div id="tab-overview" class="pt-content">
-            <div class="overview-grid">
-                <div class="ov-left">
-                    <h2 class="pt-heading">Product Overview</h2>
-                    <p class="pt-desc">
-                        Revolutionary interactive holographic display system that responds to gestures and touch, creating immersive 3D experiences.
-                    </p>
-                    <h3 class="pt-subheading">Applications</h3>
-                    <div class="ov-apps-row">
-                        <div class="ov-app-chip"><i class="fas fa-check-circle"></i> Retail</div>
-                        <div class="ov-app-chip"><i class="fas fa-check-circle"></i> Events</div>
-                        <div class="ov-app-chip"><i class="fas fa-check-circle"></i> Education</div>
-                    </div>
-                    <h3 class="pt-subheading">Dimensions</h3>
-                    <div class="ov-dim-box">
-                        <i class="fas fa-ruler-combined"></i> 180cm x 90cm x 40cm
-                    </div>
+        <div id="tab-overview" class="pt-content active">
+          <div class="overview-grid">
+            <div class="ov-left">
+              <h2 class="pt-heading">Product Overview</h2>
+              <p class="pt-desc">
+                Revolutionary interactive holographic display system that
+                responds to gestures and touch, creating immersive 3D
+                experiences.
+              </p>
+              <h3 class="pt-subheading">Applications</h3>
+              <div class="ov-apps-row">
+                <div class="ov-app-chip">
+                  <i class="fas fa-check-circle"></i> Retail
                 </div>
-                <div class="ov-right">
-                    <div class="ov-blue-card">
-                        <h3>Why Choose Holoflex™?</h3>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Real-time gesture recognition</li>
-                            <li><i class="fas fa-check"></i> Multi-user interaction support</li>
-                            <li><i class="fas fa-check"></i> 4K resolution holographic projection</li>
-                            <li><i class="fas fa-check"></i> AI-powered content adaptation</li>
-                        </ul>
-                    </div>
+                <div class="ov-app-chip">
+                  <i class="fas fa-check-circle"></i> Events
                 </div>
+                <div class="ov-app-chip">
+                  <i class="fas fa-check-circle"></i> Education
+                </div>
+              </div>
+              <h3 class="pt-subheading">Dimensions</h3>
+              <div class="ov-dim-box">
+                <i class="fas fa-ruler-combined"></i> 180cm x 90cm x 40cm
+              </div>
             </div>
+            <div class="ov-right">
+              <div class="ov-blue-card">
+                <h3>Why Choose Holoflex™?</h3>
+                <ul>
+                  <li>
+                    <i class="fas fa-check"></i> Real-time gesture recognition
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Multi-user interaction support
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> 4K resolution holographic
+                    projection
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> AI-powered content adaptation
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div id="tab-features" class="pt-content">
-            <h2 class="pt-heading">Key Features</h2>
-            <div class="features-grid">
-                <div class="feat-card">
-                    <div class="feat-icon"><i class="fas fa-bolt"></i></div>
-                    <div><h4>Feature 1</h4><p>Real-time gesture recognition</p></div>
-                </div>
-                <div class="feat-card">
-                    <div class="feat-icon"><i class="fas fa-users"></i></div>
-                    <div><h4>Feature 2</h4><p>Multi-user interaction support</p></div>
-                </div>
-                <div class="feat-card">
-                    <div class="feat-icon"><i class="fas fa-video"></i></div>
-                    <div><h4>Feature 3</h4><p>4K resolution holographic projection</p></div>
-                </div>
+          <h2 class="pt-heading">Key Features</h2>
+          <div class="features-grid">
+            <div class="feat-card">
+              <div class="feat-icon"><i class="fas fa-bolt"></i></div>
+              <div>
+                <h4>Feature 1</h4>
+                <p>Real-time gesture recognition</p>
+              </div>
             </div>
+            <div class="feat-card">
+              <div class="feat-icon"><i class="fas fa-users"></i></div>
+              <div>
+                <h4>Feature 2</h4>
+                <p>Multi-user interaction support</p>
+              </div>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon"><i class="fas fa-video"></i></div>
+              <div>
+                <h4>Feature 3</h4>
+                <p>4K resolution holographic projection</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div id="tab-specs" class="pt-content">
-            <h2 class="pt-heading">Technical Specifications</h2>
-            <div class="specs-table-wrapper">
-                <table class="specs-table">
-                    <tr><td>Product Name</td><td>Holoflex™</td></tr>
-                    <tr><td>Category</td><td>Interactive Display</td></tr>
-                    <tr><td>Dimensions</td><td>180cm x 90cm x 40cm</td></tr>
-                    <tr><td>Technology</td><td>Holoflex</td></tr>
-                    <tr><td>Price</td><td class="text-blue">Request Quote</td></tr>
-                    <tr><td>Applications</td><td>Retail, Events, Education</td></tr>
-                </table>
-            </div>
+          <h2 class="pt-heading">Technical Specifications</h2>
+          <div class="specs-table-wrapper">
+            <table class="specs-table">
+              <tr>
+                <td>Product Name</td>
+                <td>Holoflex™</td>
+              </tr>
+              <tr>
+                <td>Category</td>
+                <td>Interactive Display</td>
+              </tr>
+              <tr>
+                <td>Dimensions</td>
+                <td>180cm x 90cm x 40cm</td>
+              </tr>
+              <tr>
+                <td>Technology</td>
+                <td>Holoflex</td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td class="text-blue">Request Quote</td>
+              </tr>
+              <tr>
+                <td>Applications</td>
+                <td>Retail, Events, Education</td>
+              </tr>
+            </table>
+          </div>
         </div>
 
-        <div id="tab-technology" class="pt-content active">
-            <h2 class="pt-heading">Technology Behind Holoflex™</h2>
-            
-            <div class="tech-design-card">
-                <div class="tech-header-img" style="background-image: url('https://images.unsplash.com/photo-1614726365723-49cfae96a6f6?q=80&w=2070&auto=format&fit=crop');">
-                    <div class="tech-overlay-gradient">
-                        <span class="tech-badge-glass">Interaction Technology</span>
-                        <h3 class="tech-title-large">Interactive Hologram System</h3>
-                    </div>
-                </div>
+        <div id="tab-technology" class="pt-content">
+          <h2 class="pt-heading">Technology Behind Holoflex™</h2>
 
-                <div class="tech-body-content">
-                    <p class="tech-main-desc">
-                        Combines holographic display with gesture recognition and touch sensors for interactive experiences.
-                    </p>
-
-                    <h4 class="tech-sub-title">Key Benefits:</h4>
-                    <ul class="tech-benefits-list">
-                        <li><i class="fas fa-check"></i> Real-time interaction</li>
-                        <li><i class="fas fa-check"></i> Multi-user support</li>
-                        <li><i class="fas fa-check"></i> Gesture recognition</li>
-                        <li><i class="fas fa-check"></i> AI-powered responses</li>
-                    </ul>
-
-                    <div class="tech-specs-yellow-box">
-                        <h4 class="box-title"><i class="fas fa-bolt"></i> Technical Specifications</h4>
-                        <div class="tech-specs-columns">
-                            <div class="ts-col">
-                                <span class="ts-label">Response Time</span>
-                                <span class="ts-value">&lt;50ms</span>
-                            </div>
-                            <div class="ts-col">
-                                <span class="ts-label">Gestures</span>
-                                <span class="ts-value">20+ recognized</span>
-                            </div>
-                            <div class="ts-col">
-                                <span class="ts-label">Accuracy</span>
-                                <span class="ts-value">99.5%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="#" class="btn-tech-blue">Learn More About This Technology <i class="fas fa-arrow-right"></i></a>
-                </div>
+          <div class="tech-design-card">
+            <div
+              class="tech-header-img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1614726365723-49cfae96a6f6?q=80&w=2070&auto=format&fit=crop&quot;);
+              "
+            >
+              <div class="tech-overlay-gradient">
+                <span class="tech-badge-glass">Interaction Technology</span>
+                <h3 class="tech-title-large">Interactive Hologram System</h3>
+              </div>
             </div>
+
+            <div class="tech-body-content">
+              <p class="tech-main-desc">
+                Combines holographic display with gesture recognition and touch
+                sensors for interactive experiences.
+              </p>
+
+              <h4 class="tech-sub-title">Key Benefits:</h4>
+              <ul class="tech-benefits-list">
+                <li><i class="fas fa-check"></i> Real-time interaction</li>
+                <li><i class="fas fa-check"></i> Multi-user support</li>
+                <li><i class="fas fa-check"></i> Gesture recognition</li>
+                <li><i class="fas fa-check"></i> AI-powered responses</li>
+              </ul>
+
+              <div class="tech-specs-yellow-box">
+                <h4 class="box-title">
+                  <i class="fas fa-bolt"></i> Technical Specifications
+                </h4>
+                <div class="tech-specs-columns">
+                  <div class="ts-col">
+                    <span class="ts-label">Response Time</span>
+                    <span class="ts-value">&lt;50ms</span>
+                  </div>
+                  <div class="ts-col">
+                    <span class="ts-label">Gestures</span>
+                    <span class="ts-value">20+ recognized</span>
+                  </div>
+                  <div class="ts-col">
+                    <span class="ts-label">Accuracy</span>
+                    <span class="ts-value">99.5%</span>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#" class="btn-tech-blue"
+                >Learn More About This Technology
+                <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
         </div>
 
         <div id="tab-casestudies" class="pt-content">
-            <h2 class="pt-heading">Success Stories with Holoflex™</h2>
-            <div class="cs-tab-grid">
-                <div class="cs-tab-card">
-                    <div class="cs-tab-img">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop">
-                        <span class="cs-badge">Retail</span>
-                        <div class="cs-overlay-text">+145%<br><small>Sales Increase</small></div>
-                    </div>
-                    <div class="cs-tab-body">
-                        <h4>Luxury Retail Revolution</h4>
-                        <p class="cs-excerpt">Transformed storefront with stunning 3D holographic displays...</p>
-                        <a href="#" class="btn-cs-full">Read Full Case Study</a>
-                    </div>
+          <h2 class="pt-heading">Success Stories with Holoflex™</h2>
+          <div class="cs-tab-grid">
+            <div class="cs-tab-card">
+              <div class="cs-tab-img">
+                <img
+                  src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop"
+                />
+                <span class="cs-badge">Retail</span>
+                <div class="cs-overlay-text">
+                  +145%<br /><small>Sales Increase</small>
                 </div>
-                <div class="cs-tab-card">
-                    <div class="cs-tab-img">
-                        <img src="https://images.unsplash.com/photo-1555679427-1f6dfcce943b?q=80&w=2070&auto=format&fit=crop">
-                        <span class="cs-badge">Education</span>
-                        <div class="cs-overlay-text">+385%<br><small>Engagement</small></div>
-                    </div>
-                    <div class="cs-tab-body">
-                        <h4>Museum Interactive Exhibits</h4>
-                        <p class="cs-excerpt">Brought ancient artifacts to life with interactive 3D holograms...</p>
-                        <a href="#" class="btn-cs-full">Read Full Case Study</a>
-                    </div>
-                </div>
-                <div class="cs-tab-card">
-                    <div class="cs-tab-img">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop">
-                        <span class="cs-badge">Events</span>
-                        <div class="cs-overlay-text">+670%<br><small>Traffic</small></div>
-                    </div>
-                    <div class="cs-tab-body">
-                        <h4>Trade Show Domination</h4>
-                        <p class="cs-excerpt">Created the most talked-about booth at CES with massive holograms...</p>
-                        <a href="#" class="btn-cs-full">Read Full Case Study</a>
-                    </div>
-                </div>
+              </div>
+              <div class="cs-tab-body">
+                <h4>Luxury Retail Revolution</h4>
+                <p class="cs-excerpt">
+                  Transformed storefront with stunning 3D holographic
+                  displays...
+                </p>
+                <a href="#" class="btn-cs-full">Read Full Case Study</a>
+              </div>
             </div>
+            <div class="cs-tab-card">
+              <div class="cs-tab-img">
+                <img
+                  src="https://images.unsplash.com/photo-1555679427-1f6dfcce943b?q=80&w=2070&auto=format&fit=crop"
+                />
+                <span class="cs-badge">Education</span>
+                <div class="cs-overlay-text">
+                  +385%<br /><small>Engagement</small>
+                </div>
+              </div>
+              <div class="cs-tab-body">
+                <h4>Museum Interactive Exhibits</h4>
+                <p class="cs-excerpt">
+                  Brought ancient artifacts to life with interactive 3D
+                  holograms...
+                </p>
+                <a href="#" class="btn-cs-full">Read Full Case Study</a>
+              </div>
+            </div>
+            <div class="cs-tab-card">
+              <div class="cs-tab-img">
+                <img
+                  src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop"
+                />
+                <span class="cs-badge">Events</span>
+                <div class="cs-overlay-text">
+                  +670%<br /><small>Traffic</small>
+                </div>
+              </div>
+              <div class="cs-tab-body">
+                <h4>Trade Show Domination</h4>
+                <p class="cs-excerpt">
+                  Created the most talked-about booth at CES with massive
+                  holograms...
+                </p>
+                <a href="#" class="btn-cs-full">Read Full Case Study</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-</section>
-
-<script>
-    function openTab(evt, tabName) {
+    <script>
+      function openTab(evt, tabName) {
         var i, tabcontent, tablinks;
-        
+
         tabcontent = document.getElementsByClassName("pt-content");
         for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-            tabcontent[i].classList.remove("active");
+          tabcontent[i].style.display = "none";
+          tabcontent[i].classList.remove("active");
         }
-        
+
         tablinks = document.getElementsByClassName("pt-tab-btn");
         for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
-        
-        document.getElementById(tabName).style.display = "block";
-        setTimeout(function(){
-            document.getElementById(tabName).classList.add("active");
-        }, 10);
-        
-        if(evt) evt.currentTarget.className += " active";
-    }
-    
-    // Default open Technology tab as requested by flow (change 'tab-technology' to 'tab-overview' if you want Overview first)
-    // document.addEventListener('DOMContentLoaded', () => openTab(null, 'tab-technology'));
-</script>
 
-<style>
-    :root {
-        --pt-blue: #2b4dff;
+        document.getElementById(tabName).style.display = "block";
+        setTimeout(function () {
+          document.getElementById(tabName).classList.add("active");
+        }, 10);
+
+        if (evt) evt.currentTarget.className += " active";
+      }
+
+      // Default open Overview tab on first load
+      document.addEventListener("DOMContentLoaded", () =>
+        openTab(null, "tab-overview"),
+      );
+    </script>
+
+    <style>
+      :root {
+        --pt-blue: #1a237e;
         --pt-dark: #111827;
         --pt-grey: #6b7280;
         --pt-bg: #ffffff;
         --pt-border: #e5e7eb;
-    }
+      }
 
-    #holo-product-tabs {
-        font-family: 'Inter', sans-serif;
+      #holo-product-tabs {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
         background: white;
         padding: 40px 20px 80px;
         color: var(--pt-dark);
-    }
-    .holo-container { max-width: 1150px; margin: 0 auto; }
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .holo-container {
+        max-width: 1150px;
+        margin: 0 auto;
+      }
 
-    /* TABS NAV */
-    .pt-nav-wrapper { display: flex; gap: 30px; overflow-x: auto; padding-bottom: 2px; }
-    .pt-tab-btn {
-        background: none; border: none;
-        font-size: 15px; font-weight: 600; color: #6b7280;
-        padding: 10px 0 15px; cursor: pointer;
+      /* TABS NAV */
+      .pt-nav-wrapper {
+        display: flex;
+        gap: 30px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+      .pt-tab-btn {
+        background: none;
+        border: none;
+        font-size: 15px;
+        font-weight: 600;
+        color: #6b7280;
+        padding: 10px 0 15px;
+        cursor: pointer;
         border-bottom: 2px solid transparent;
-        white-space: nowrap; transition: all 0.3s;
-    }
-    .pt-tab-btn:hover { color: var(--pt-blue); }
-    .pt-tab-btn.active { color: var(--pt-blue); border-bottom: 2px solid var(--pt-blue); }
-    .pt-divider { height: 1px; background: #e5e7eb; margin-bottom: 40px; margin-top: -1px; }
+        white-space: nowrap;
+        transition: all 0.3s;
+      }
+      .pt-tab-btn:hover {
+        color: var(--pt-blue);
+      }
+      .pt-tab-btn.active {
+        color: var(--pt-blue);
+        border-bottom: 2px solid var(--pt-blue);
+      }
+      .pt-divider {
+        height: 1px;
+        background: #e5e7eb;
+        margin-bottom: 40px;
+        margin-top: -1px;
+      }
 
-    /* CONTENT GENERAL */
-    .pt-content { display: none; opacity: 0; transition: opacity 0.4s ease-in; }
-    .pt-content.active { display: block; opacity: 1; }
-    .pt-heading { font-size: 28px; font-weight: 800; margin-bottom: 20px; color: #1a1a1a; }
-    .pt-desc { font-size: 16px; color: #666; margin-bottom: 30px; max-width: 700px; line-height: 1.6; }
-    .pt-subheading { font-size: 18px; font-weight: 700; margin: 25px 0 15px; }
+      /* CONTENT GENERAL */
+      .pt-content {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.4s ease-in;
+      }
+      .pt-content.active {
+        display: block;
+        opacity: 1;
+      }
+      .pt-heading {
+        font-size: 28px;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: #1a1a1a;
+      }
+      .pt-desc {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 30px;
+        max-width: 700px;
+        line-height: 1.6;
+      }
+      .pt-subheading {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 25px 0 15px;
+      }
 
-    /* --- TECHNOLOGY TAB REDESIGN (Exact Match) --- */
-    .tech-design-card {
+      /* --- TECHNOLOGY TAB REDESIGN (Exact Match) --- */
+      .tech-design-card {
         border: 1px solid #e5e7eb;
         border-radius: 16px;
         overflow: hidden;
         max-width: 800px; /* Constrain width like screenshot */
-    }
+      }
 
-    /* 1. Image Header */
-    .tech-header-img {
+      /* 1. Image Header */
+      .tech-header-img {
         height: 280px;
         background-size: cover;
         background-position: center;
         position: relative;
-    }
-    .tech-overlay-gradient {
-        position: absolute; bottom: 0; left: 0; width: 100%;
-        background: linear-gradient(to top, rgba(30, 0, 80, 0.9) 0%, transparent 100%);
+      }
+      .tech-overlay-gradient {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(
+          to top,
+          rgba(30, 0, 80, 0.9) 0%,
+          transparent 100%
+        );
         padding: 30px;
         color: white;
-    }
-    .tech-badge-glass {
-        background: rgba(255,255,255,0.2);
+      }
+      .tech-badge-glass {
+        background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(5px);
         padding: 5px 12px;
         border-radius: 20px;
-        font-size: 11px; font-weight: 600;
-        display: inline-block; margin-bottom: 10px;
-        border: 1px solid rgba(255,255,255,0.3);
-    }
-    .tech-title-large {
-        font-size: 32px; font-weight: 800; margin: 0;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
+        font-size: 11px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .tech-title-large {
+        font-size: 32px;
+        font-weight: 800;
+        margin: 0;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
 
-    /* 2. Content Body */
-    .tech-body-content { padding: 40px; }
-    
-    .tech-main-desc { font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 30px; }
-    
-    .tech-sub-title { font-size: 16px; margin: 0 0 15px; font-weight: 700; }
-    
-    .tech-benefits-list { list-style: none; padding: 0; margin-bottom: 30px; }
-    .tech-benefits-list li {
-        display: flex; gap: 12px; margin-bottom: 12px;
-        font-size: 14px; color: #444; font-weight: 500;
-    }
-    .tech-benefits-list i { color: var(--pt-blue); font-size: 14px; margin-top: 2px; }
+      /* 2. Content Body */
+      .tech-body-content {
+        padding: 40px;
+      }
 
-    /* 3. Yellow Specs Box */
-    .tech-specs-yellow-box {
+      .tech-main-desc {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+
+      .tech-sub-title {
+        font-size: 16px;
+        margin: 0 0 15px;
+        font-weight: 700;
+      }
+
+      .tech-benefits-list {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 30px;
+      }
+      .tech-benefits-list li {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 12px;
+        font-size: 14px;
+        color: #444;
+        font-weight: 500;
+      }
+      .tech-benefits-list i {
+        color: var(--pt-blue);
+        font-size: 14px;
+        margin-top: 2px;
+      }
+
+      /* 3. Yellow Specs Box */
+      .tech-specs-yellow-box {
         background: #fffdf5; /* Light yellow bg */
         border: 1px solid #fcefc5; /* Darker yellow border */
         border-radius: 12px;
         padding: 25px;
         margin-bottom: 30px;
-    }
-    .box-title { font-size: 14px; color: #b45309; margin: 0 0 15px; display: flex; align-items: center; gap: 8px; }
-    
-    .tech-specs-columns { display: flex; justify-content: space-between; gap: 20px; }
-    .ts-col { display: flex; flex-direction: column; }
-    .ts-label { font-size: 11px; color: #78716c; text-transform: uppercase; margin-bottom: 5px; font-weight: 600; }
-    .ts-value { font-size: 18px; color: #1f2937; font-weight: 700; }
+      }
+      .box-title {
+        font-size: 14px;
+        color: #b45309;
+        margin: 0 0 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
 
-    /* 4. Button */
-    .btn-tech-blue {
-        display: block; width: 100%;
-        background: var(--pt-blue); color: white;
-        text-align: center; padding: 14px;
-        border-radius: 8px; text-decoration: none;
-        font-weight: 600; transition: background 0.3s;
-    }
-    .btn-tech-blue:hover { background: #1a3ae0; }
+      .tech-specs-columns {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .ts-col {
+        display: flex;
+        flex-direction: column;
+      }
+      .ts-label {
+        font-size: 11px;
+        color: #78716c;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+      .ts-value {
+        font-size: 18px;
+        color: #1f2937;
+        font-weight: 700;
+      }
 
-    /* --- OTHER TABS STYLES (Kept simpler for brevity) --- */
-    .overview-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; }
-    .ov-apps-row { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
-    .ov-app-chip { background: #eff6ff; color: #1e3a8a; padding: 10px 20px; border-radius: 8px; font-weight: 600; display: flex; gap: 8px; }
-    .ov-dim-box { background: #fafafa; border: 1px solid #e5e7eb; padding: 15px 20px; border-radius: 8px; font-weight: 600; }
-    .ov-blue-card { background: var(--pt-blue); color: white; padding: 30px; border-radius: 12px; }
-    .ov-blue-card ul { list-style: none; padding: 0; } .ov-blue-card li { display: flex; gap: 10px; margin-bottom: 10px; }
-    
-    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .feat-card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 25px; display: flex; gap: 20px; }
-    .feat-icon { width: 40px; height: 40px; background: var(--pt-blue); color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+      /* 4. Button */
+      .btn-tech-blue {
+        display: block;
+        width: 100%;
+        background: var(--pt-blue);
+        color: white;
+        text-align: center;
+        padding: 14px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
+      .btn-tech-blue:hover {
+        background: #1a3ae0;
+      }
 
-    .specs-table-wrapper { border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
-    .specs-table { width: 100%; border-collapse: collapse; }
-    .specs-table td { padding: 18px 25px; border-bottom: 1px solid #e5e7eb; }
-    .specs-table td:first-child { background: #f9fafb; font-weight: 600; width: 30%; }
-    .text-blue { color: var(--pt-blue); font-weight: 600; }
+      /* --- OTHER TABS STYLES (Kept simpler for brevity) --- */
+      .overview-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 60px;
+      }
+      .ov-apps-row {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
+      .ov-app-chip {
+        background: #eff6ff;
+        color: #1e3a8a;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        display: flex;
+        gap: 8px;
+      }
+      .ov-dim-box {
+        background: #fafafa;
+        border: 1px solid #e5e7eb;
+        padding: 15px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+      }
+      .ov-blue-card {
+        background: var(--pt-blue);
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+      }
+      .ov-blue-card ul {
+        list-style: none;
+        padding: 0;
+      }
+      .ov-blue-card li {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
 
-    .cs-tab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .cs-tab-card { border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
-    .cs-tab-img { height: 180px; position: relative; }
-    .cs-tab-img img { width: 100%; height: 100%; object-fit: cover; }
-    .cs-badge { position: absolute; top: 10px; left: 10px; background: var(--pt-blue); color: white; padding: 4px 10px; border-radius: 4px; font-weight: 700; font-size: 10px; }
-    .cs-overlay-text { position: absolute; bottom: 10px; left: 10px; color: white; font-weight: 800; font-size: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.6); }
-    .cs-tab-body { padding: 20px; }
-    .btn-cs-full { display: block; text-align: center; background: var(--pt-blue); color: white; padding: 10px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 15px; }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .feat-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 25px;
+        display: flex;
+        gap: 20px;
+      }
+      .feat-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--pt-blue);
+        color: white;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-        .overview-grid, .features-grid, .cs-tab-grid { grid-template-columns: 1fr; }
-        .tech-specs-columns { flex-direction: column; gap: 15px; }
-    }
-</style>
-</body>
+      .specs-table-wrapper {
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .specs-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .specs-table td {
+        padding: 18px 25px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .specs-table td:first-child {
+        background: #f9fafb;
+        font-weight: 600;
+        width: 30%;
+      }
+      .text-blue {
+        color: var(--pt-blue);
+        font-weight: 600;
+      }
+
+      .cs-tab-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .cs-tab-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .cs-tab-img {
+        height: 180px;
+        position: relative;
+      }
+      .cs-tab-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .cs-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: var(--pt-blue);
+        color: white;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 10px;
+      }
+      .cs-overlay-text {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: white;
+        font-weight: 800;
+        font-size: 20px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      }
+      .cs-tab-body {
+        padding: 20px;
+      }
+      .btn-cs-full {
+        display: block;
+        text-align: center;
+        background: var(--pt-blue);
+        color: white;
+        padding: 10px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        margin-top: 15px;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .overview-grid,
+        .features-grid,
+        .cs-tab-grid {
+          grid-template-columns: 1fr;
+        }
+        .tech-specs-columns {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+    </style>
+  </body>
 </html>
