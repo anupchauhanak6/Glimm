@@ -1,0 +1,237 @@
+<div id="hologram-header-wrapper">
+    <header class="holo-main-header">
+        <div class="holo-header-container">
+            
+            <div class="holo-logo">
+                <span class="logo-blue">HOLO</span><span class="logo-gold">GRAM</span>
+            </div>
+
+            <nav class="holo-nav-menu">
+                <ul>
+                    <li class="holo-dropdown">
+                        <a href="#" class="drop-trigger">Solutions <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-wrapper">
+                            <ul class="holo-dropdown-content">
+                                <li><a href="#">Retail Transformation</a></li>
+                                <li><a href="#">Event Experiences</a></li>
+                                <li><a href="#">Educational Innovation</a></li>
+                                <li><a href="#">Corporate Presentation</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="holo-dropdown">
+                        <a href="#" class="drop-trigger">Products <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-wrapper">
+                            <ul class="holo-dropdown-content">
+                                <li><a href="#">Holoflex™</a></li>
+                                <li><a href="#">Holographic Films™</a></li>
+                                <li><a href="#">Window Holograms</a></li>
+                                <li><a href="#">Virtual Mannequin</a></li>
+                                <li><a href="#">XXL Pepper's Ghost</a></li>
+                                <li><a href="#">3D Pyramids</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="holo-dropdown">
+                        <a href="#" class="drop-trigger">Industries <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-wrapper">
+                            <ul class="holo-dropdown-content">
+                                <li><a href="#">Retail & Fashion</a></li>
+                                <li><a href="#">Medical & Healthcare</a></li>
+                                <li><a href="#">Entertainment & Events</a></li>
+                                <li><a href="#">Automotive</a></li>
+                                <li><a href="#">Education & Museums</a></li>
+                                <li><a href="#">Real Estate</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li><a href="#">Case Studies</a></li>
+
+                    <li class="holo-dropdown">
+                        <a href="#" class="drop-trigger">Technology <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-wrapper">
+                            <ul class="holo-dropdown-content tech-list">
+                                <li><a href="#">Pepper's Ghost <i class="fas fa-chevron-right"></i></a></li>
+                                <li><a href="#">Projection Film <i class="fas fa-chevron-right"></i></a></li>
+                                <li><a href="#">Interactive Systems <i class="fas fa-chevron-right"></i></a></li>
+                                <li><a href="#">3D Pyramid <i class="fas fa-chevron-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="holo-header-cta">
+                <a href="#" class="holo-btn-get-started">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        #hologram-header-wrapper {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --main-blue: #1a237e;
+            --main-gold: #d4af37;
+            --text-dark: #334155;
+            --bg-white: #ffffff;
+        }
+
+        .holo-main-header {
+            width: 100%;
+            background-color: var(--bg-white);
+            border-bottom: 1px solid #f1f5f9;
+            position: fixed;
+            top: 0;
+            z-index: 10000;
+            padding: 12px 0;
+        }
+
+        .holo-header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        /* Logo Area */
+        .holo-logo {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+        .logo-blue { color: var(--main-blue); }
+        .logo-gold { color: var(--main-gold); }
+
+        /* Nav Links */
+        .holo-nav-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .holo-nav-menu > ul > li > a {
+            text-decoration: none !important;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 0;
+            transition: color 0.2s ease;
+        }
+
+        .holo-nav-menu > ul > li:hover > a {
+            color: var(--main-blue);
+        }
+
+        .holo-nav-menu ul li a i {
+            font-size: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Rotate Arrow on Hover */
+        .holo-dropdown:hover .drop-trigger i.fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        /* --- HOVER DROPDOWN LOGIC --- */
+        .holo-dropdown {
+            position: relative;
+        }
+
+        /* Wrapper to create a bridge so menu doesn't close when moving mouse down */
+        .dropdown-wrapper {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding-top: 15px; /* Gap bridge */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+        }
+
+        .holo-dropdown:hover .dropdown-wrapper {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .holo-dropdown-content {
+            background-color: var(--bg-white);
+            min-width: 250px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            padding: 12px 0 !important;
+            border: 1px solid #f1f5f9;
+            display: flex !important; /* Overriding default flex gap */
+            flex-direction: column !important;
+            gap: 0 !important;
+        }
+
+        .holo-dropdown-content li {
+            width: 100%;
+        }
+
+        .holo-dropdown-content li a {
+            padding: 12px 20px !important;
+            color: #1e293b !important;
+            font-weight: 500;
+            font-size: 14.5px;
+            text-decoration: none !important;
+            display: flex !important;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .holo-dropdown-content li a:hover {
+            background-color: #f8fafc;
+            color: var(--main-blue) !important;
+            padding-left: 25px !important; /* Subtle slide effect */
+        }
+
+        /* Tech list specific arrow color */
+        .tech-list a i {
+            color: #cbd5e1;
+            font-size: 11px;
+        }
+
+        /* Get Started Button */
+        .holo-btn-get-started {
+            background-color: var(--main-blue);
+            color: #ffffff !important;
+            padding: 11px 24px;
+            border-radius: 8px;
+            text-decoration: none !important;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2);
+            display: inline-block;
+        }
+
+        .holo-btn-get-started:hover {
+            background-color: #3046c8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(67, 97, 238, 0.3);
+        }
+
+        /* Responsive Mobile Hide */
+        @media (max-width: 1024px) {
+            .holo-nav-menu { display: none; }
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</div>

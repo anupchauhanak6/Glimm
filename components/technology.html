@@ -1,0 +1,1222 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Main Container -->
+<section
+  id="holo-tech-interactive"
+  role="region"
+  aria-label="Holographic Technology Showcase"
+>
+  <div class="holo-container">
+    <div class="holo-tech-header">
+      <span class="glimm-badge-navy">Our Technology</span>
+      <h2 class="holo-tech-title">
+        Innovation at <span class="text-navy">Every Level</span>
+      </h2>
+      <p class="holo-tech-subtitle">
+        Explore the cutting-edge technologies powering our holographic solutions
+        and see where they're being applied globally.
+      </p>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div
+      class="tech-tabs-container"
+      role="tablist"
+      aria-label="Technology Categories"
+    >
+      <button
+        class="tech-tab-btn active"
+        data-tech-index="0"
+        role="tab"
+        aria-selected="true"
+        aria-controls="tech-display-area"
+        tabindex="0"
+      >
+        Pepper's Ghost Technology
+      </button>
+      <button
+        class="tech-tab-btn"
+        data-tech-index="1"
+        role="tab"
+        aria-selected="false"
+        aria-controls="tech-display-area"
+        tabindex="-1"
+      >
+        Holographic Projection Film
+      </button>
+      <button
+        class="tech-tab-btn"
+        data-tech-index="2"
+        role="tab"
+        aria-selected="false"
+        aria-controls="tech-display-area"
+        tabindex="-1"
+      >
+        Interactive Hologram System
+      </button>
+      <button
+        class="tech-tab-btn"
+        data-tech-index="3"
+        role="tab"
+        aria-selected="false"
+        aria-controls="tech-display-area"
+        tabindex="-1"
+      >
+        3D Pyramid Projection
+      </button>
+    </div>
+
+    <!-- Dynamic Content Area -->
+    <div
+      id="tech-display-area"
+      class="tech-display-wrapper"
+      role="tabpanel"
+      aria-live="polite"
+    >
+      <div class="tech-loading" aria-label="Loading technology details">
+        <div class="loading-spinner"></div>
+        <p>Loading technology details...</p>
+      </div>
+    </div>
+
+    <!-- Technology Cards Grid -->
+    <div class="tech-nav-grid" role="list" aria-label="Technology Categories">
+      <div
+        class="tech-nav-card active-card"
+        data-tech-index="0"
+        id="card-0"
+        role="listitem"
+        tabindex="0"
+        aria-label="View Pepper's Ghost Technology details"
+      >
+        <span class="nav-badge-navy">Core Technology</span>
+        <h4>Pepper's Ghost Technology</h4>
+        <p>
+          A classic illusion technique using angled glass and precise lighting.
+        </p>
+      </div>
+
+      <div
+        class="tech-nav-card"
+        data-tech-index="1"
+        id="card-1"
+        role="listitem"
+        tabindex="0"
+        aria-label="View Holographic Projection Film details"
+      >
+        <span class="nav-badge-navy">Material Technology</span>
+        <h4>Holographic Projection Film</h4>
+        <p>
+          Advanced nano-particle film technology that creates a projection
+          surface.
+        </p>
+      </div>
+
+      <div
+        class="tech-nav-card"
+        data-tech-index="2"
+        id="card-2"
+        role="listitem"
+        tabindex="0"
+        aria-label="View Interactive Hologram System details"
+      >
+        <span class="nav-badge-navy">Interaction Technology</span>
+        <h4>Interactive Hologram System</h4>
+        <p>
+          Combines holographic display with gesture recognition and touch
+          sensors.
+        </p>
+      </div>
+
+      <div
+        class="tech-nav-card"
+        data-tech-index="3"
+        id="card-3"
+        role="listitem"
+        tabindex="0"
+        aria-label="View 3D Pyramid Projection details"
+      >
+        <span class="nav-badge-navy">Display Technology</span>
+        <h4>3D Pyramid Projection</h4>
+        <p>
+          Four-sided projection system creating 360-degree floating holographic
+          images.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  /**
+   * Holographic Technology Showcase Component
+   * @version 2.0.0
+   * @description Production-ready interactive technology showcase with full accessibility support
+   * @author Glimm
+   */
+  (function () {
+    "use strict";
+
+    // ============================================
+    // CONFIGURATION & CONSTANTS
+    // ============================================
+    const CONFIG = {
+      SECTION_ID: "holo-tech-interactive",
+      DISPLAY_AREA_ID: "tech-display-area",
+      TAB_SELECTOR: ".tech-tab-btn",
+      CARD_SELECTOR: ".tech-nav-card",
+      INIT_TIMEOUT: 200,
+      RETRY_INTERVAL: 100,
+      MAX_RETRIES: 30,
+    };
+
+    // ============================================
+    // DATA MODEL
+    // ============================================
+    const TECH_DATA = [
+      {
+        id: 0,
+        image:
+          "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+        overlayBadge: "Core Technology",
+        title: "Pepper's Ghost Technology",
+        desc: "A classic illusion technique using angled glass and precise lighting to create photorealistic 3D projections.",
+        benefits: [
+          "Photorealistic results",
+          "Large scale capability",
+          "No special eyewear required",
+          "Wide viewing angles",
+        ],
+        specs: {
+          resolution: { label: "Resolution", value: "Up to 4K" },
+          size: { label: "Size", value: "1m to 10m" },
+          viewingAngle: { label: "Viewing Angle", value: "180°" },
+        },
+        tags: ["Entertainment", "Events", "Corporate"],
+        relatedProduct: "XXL Pepper's Ghost",
+        caseStudy: "Case Study #3",
+      },
+      {
+        id: 1,
+        image:
+          "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
+        overlayBadge: "Material Technology",
+        title: "Holographic Projection Film",
+        desc: "Advanced nano-particle film technology that creates a projection surface while maintaining transparency.",
+        benefits: [
+          "98% transparency when off",
+          "Indoor/outdoor use",
+          "Easy installation",
+          "Durable and long-lasting",
+        ],
+        specs: {
+          transparency: { label: "Transparency", value: "98%" },
+          thickness: { label: "Thickness", value: "0.08mm" },
+          durability: { label: "Durability", value: "5+ years" },
+        },
+        tags: ["Retail", "Museums", "Corporate"],
+        relatedProduct: "Holographic Films™",
+        caseStudy: "Case Study #6",
+      },
+      {
+        id: 2,
+        image:
+          "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop",
+        overlayBadge: "Interaction Technology",
+        title: "Interactive Hologram System",
+        desc: "Combines holographic display with gesture recognition and touch sensors for interactive experiences.",
+        benefits: [
+          "Real-time interaction",
+          "Multi-user support",
+          "Gesture recognition",
+          "AI-powered responses",
+        ],
+        specs: {
+          responseTime: { label: "Response Time", value: "<50ms" },
+          gestures: { label: "Gestures", value: "20+ recognized" },
+          accuracy: { label: "Accuracy", value: "99.5%" },
+        },
+        tags: ["Retail", "Education", "Events"],
+        relatedProduct: "Holoflex™",
+        caseStudy: "Case Study #1",
+      },
+      {
+        id: 3,
+        image:
+          "https://images.unsplash.com/photo-1617791160144-15705066386f?q=80&w=1974&auto=format&fit=crop",
+        overlayBadge: "Display Technology",
+        title: "3D Pyramid Projection",
+        desc: "Four-sided projection system creating 360-degree floating holographic images visible from all angles.",
+        benefits: [
+          "360° viewing",
+          "Compact footprint",
+          "Easy setup",
+          "Portable design",
+        ],
+        specs: {
+          viewingAngle: { label: "Viewing Angle", value: "360°" },
+          sizes: { label: "Sizes", value: "30-100cm" },
+          brightness: { label: "Brightness", value: "3000 lumens" },
+        },
+        tags: ["Trade Shows", "Retail", "Product Launches"],
+        relatedProduct: "3D Holographic Pyramids",
+        caseStudy: "Case Study #4",
+      },
+    ];
+
+    // ============================================
+    // STATE MANAGEMENT
+    // ============================================
+    let currentIndex = 0;
+    let elements = {};
+    let eventListeners = [];
+
+    // ============================================
+    // UTILITY FUNCTIONS
+    // ============================================
+
+    /**
+     * Safely escape HTML to prevent XSS
+     */
+    const escapeHtml = (text) => {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    };
+
+    /**
+     * Get scoped selector
+     */
+    const getScopedSelector = (selector) => {
+      return `#${CONFIG.SECTION_ID} ${selector}`;
+    };
+
+    /**
+     * Log errors in development mode
+     */
+    const logError = (context, error) => {
+      if (console && console.error) {
+        console.error(`[HoloTech] Error in ${context}:`, error);
+      }
+    };
+
+    /**
+     * Store event listener for cleanup
+     */
+    const addTrackedListener = (element, event, handler) => {
+      element.addEventListener(event, handler);
+      eventListeners.push({ element, event, handler });
+    };
+
+    // ============================================
+    // RENDERING FUNCTIONS
+    // ============================================
+
+    /**
+     * Generate HTML for technology display
+     */
+    const generateTechHTML = (data) => {
+      try {
+        const specsArray = Object.values(data.specs);
+
+        return `
+          <div class="tech-content-flex fade-in">
+            <div class="tech-image-side">
+              <img src="${escapeHtml(data.image)}" 
+                   alt="${escapeHtml(data.title)}" 
+                   class="main-tech-img"
+                   loading="lazy">
+              <div class="img-overlay-content">
+                <span class="overlay-badge">${escapeHtml(data.overlayBadge)}</span>
+                <h3>${escapeHtml(data.title)}</h3>
+                <p>${escapeHtml(data.desc)}</p>
+              </div>
+            </div>
+            <div class="tech-details-side">
+              <div class="details-block">
+                <h5 class="details-heading">
+                  <i class="far fa-check-circle" aria-hidden="true"></i> 
+                  <span>Key Benefits</span>
+                </h5>
+                <ul class="inno-benefits-list">
+                  ${data.benefits.map((b) => `<li><i class="fas fa-check" aria-hidden="true"></i> <span>${escapeHtml(b)}</span></li>`).join("")}
+                </ul>
+              </div>
+              <div class="specs-container">
+                <h5 class="details-heading">
+                  <i class="fas fa-bolt" aria-hidden="true"></i> 
+                  <span>Technical Specifications</span>
+                </h5>
+                <div class="specs-flex-row">
+                  ${specsArray
+                    .map(
+                      (spec) => `
+                    <div class="spec-item">
+                      <span>${escapeHtml(spec.label)}</span>
+                      <strong>${escapeHtml(spec.value)}</strong>
+                    </div>
+                  `,
+                    )
+                    .join("")}
+                </div>
+              </div>
+              <div class="details-block">
+                <strong>Common Use Cases:</strong>
+                <div class="tags-container">
+                  ${data.tags.map((tag) => `<span class="inno-tag">${escapeHtml(tag)}</span>`).join("")}
+                </div>
+              </div>
+              <div class="inno-actions-row">
+                <div class="related-link-group">
+                  <span>Related Product:</span>
+                  <a href="#" class="related-btn" aria-label="View ${escapeHtml(data.relatedProduct)}">${escapeHtml(data.relatedProduct)}</a>
+                </div>
+                <a href="#" class="btn-navy-solid" aria-label="Read ${escapeHtml(data.caseStudy)}">
+                  ${escapeHtml(data.caseStudy)} <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+              <a href="#" class="btn-navy-full">
+                Learn More About This Technology <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        `;
+      } catch (error) {
+        logError("generateTechHTML", error);
+        return '<div class="tech-error">Unable to load content. Please try again.</div>';
+      }
+    };
+
+    // ============================================
+    // CORE FUNCTIONALITY
+    // ============================================
+
+    /**
+     * Switch to a specific technology
+     */
+    const switchTech = (index) => {
+      try {
+        // Validate index
+        if (index < 0 || index >= TECH_DATA.length) {
+          throw new Error(`Invalid index: ${index}`);
+        }
+
+        const data = TECH_DATA[index];
+        const displayArea = elements.displayArea;
+
+        if (!displayArea) {
+          throw new Error("Display area not found");
+        }
+
+        // Update current index
+        currentIndex = index;
+
+        // Update tabs
+        elements.tabs.forEach((tab, i) => {
+          const isActive = i === index;
+          tab.classList.toggle("active", isActive);
+          tab.setAttribute("aria-selected", isActive);
+          tab.setAttribute("tabindex", isActive ? "0" : "-1");
+        });
+
+        // Update cards
+        elements.cards.forEach((card, i) => {
+          card.classList.toggle("active-card", i === index);
+        });
+
+        // Render content
+        displayArea.innerHTML = generateTechHTML(data);
+
+        // Announce change to screen readers
+        displayArea.setAttribute("aria-label", `Now showing: ${data.title}`);
+      } catch (error) {
+        logError("switchTech", error);
+      }
+    };
+
+    /**
+     * Handle keyboard navigation for tabs
+     */
+    const handleTabKeydown = (event) => {
+      const { key } = event;
+      const currentTab = event.target;
+      const tabIndex = parseInt(currentTab.getAttribute("data-tech-index"));
+
+      let newIndex = tabIndex;
+
+      switch (key) {
+        case "ArrowLeft":
+        case "ArrowUp":
+          event.preventDefault();
+          newIndex = tabIndex > 0 ? tabIndex - 1 : elements.tabs.length - 1;
+          break;
+        case "ArrowRight":
+        case "ArrowDown":
+          event.preventDefault();
+          newIndex = tabIndex < elements.tabs.length - 1 ? tabIndex + 1 : 0;
+          break;
+        case "Home":
+          event.preventDefault();
+          newIndex = 0;
+          break;
+        case "End":
+          event.preventDefault();
+          newIndex = elements.tabs.length - 1;
+          break;
+        case "Enter":
+        case " ":
+          event.preventDefault();
+          switchTech(tabIndex);
+          return;
+        default:
+          return;
+      }
+
+      elements.tabs[newIndex].focus();
+      switchTech(newIndex);
+    };
+
+    /**
+     * Handle keyboard navigation for cards
+     */
+    const handleCardKeydown = (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        const index = parseInt(event.target.getAttribute("data-tech-index"));
+        switchTech(index);
+        event.target.focus();
+      }
+    };
+
+    /**
+     * Setup event listeners
+     */
+    const setupEventListeners = () => {
+      try {
+        // Tab click handlers
+        elements.tabs.forEach((tab, index) => {
+          addTrackedListener(tab, "click", () => switchTech(index));
+          addTrackedListener(tab, "keydown", handleTabKeydown);
+        });
+
+        // Card click and keyboard handlers
+        elements.cards.forEach((card, index) => {
+          addTrackedListener(card, "click", () => switchTech(index));
+          addTrackedListener(card, "keydown", handleCardKeydown);
+        });
+      } catch (error) {
+        logError("setupEventListeners", error);
+      }
+    };
+
+    /**
+     * Cache DOM elements
+     */
+    const cacheElements = () => {
+      elements.section = document.getElementById(CONFIG.SECTION_ID);
+      elements.displayArea = document.getElementById(CONFIG.DISPLAY_AREA_ID);
+      elements.tabs = document.querySelectorAll(
+        getScopedSelector(CONFIG.TAB_SELECTOR),
+      );
+      elements.cards = document.querySelectorAll(
+        getScopedSelector(CONFIG.CARD_SELECTOR),
+      );
+    };
+
+    /**
+     * Validate required elements exist
+     */
+    const validateElements = () => {
+      return (
+        elements.section &&
+        elements.displayArea &&
+        elements.tabs.length > 0 &&
+        elements.cards.length > 0
+      );
+    };
+
+    /**
+     * Initialize the component
+     */
+    const init = (retryCount = 0) => {
+      try {
+        cacheElements();
+
+        if (!validateElements()) {
+          if (retryCount < CONFIG.MAX_RETRIES) {
+            setTimeout(() => init(retryCount + 1), CONFIG.RETRY_INTERVAL);
+            return;
+          }
+          throw new Error("Required elements not found after maximum retries");
+        }
+
+        // Setup event listeners
+        setupEventListeners();
+
+        // Initialize with first technology
+        switchTech(0);
+
+        // Log successful initialization
+        if (console && console.log) {
+          console.log("[HoloTech] Component initialized successfully");
+        }
+      } catch (error) {
+        logError("init", error);
+      }
+    };
+
+    /**
+     * Cleanup function (if component is removed)
+     */
+    const cleanup = () => {
+      try {
+        // Remove all event listeners
+        eventListeners.forEach(({ element, event, handler }) => {
+          element.removeEventListener(event, handler);
+        });
+        eventListeners = [];
+
+        // Clear elements cache
+        elements = {};
+      } catch (error) {
+        logError("cleanup", error);
+      }
+    };
+
+    // ============================================
+    // INITIALIZATION
+    // ============================================
+
+    // Expose cleanup function globally if needed
+    window.holoTechCleanup = cleanup;
+
+    // Initialize when DOM is ready
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () =>
+        setTimeout(init, CONFIG.INIT_TIMEOUT),
+      );
+    } else {
+      // DOM already loaded (WordPress ajax scenarios)
+      setTimeout(init, CONFIG.INIT_TIMEOUT);
+    }
+  })();
+</script>
+
+<style>
+  /* ============================================
+     HOLOGRAPHIC TECHNOLOGY SHOWCASE STYLES
+     Version: 2.0.0 - Production Ready
+     All selectors scoped to prevent conflicts
+     ============================================ */
+
+  /* CSS Variables */
+  #holo-tech-interactive {
+    --glimm-navy: #1a237e;
+    --glimm-blue: #283593;
+    --glimm-grey: #666;
+    --glimm-border: #eaeaea;
+    --glimm-light-bg: #f8fafc;
+    --transition-speed: 0.3s;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 20px;
+  }
+
+  /* Main Container */
+  #holo-tech-interactive {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
+    background: white;
+    padding: 100px 20px;
+    color: #1a1a1a;
+    position: relative;
+  }
+
+  #holo-tech-interactive *,
+  #holo-tech-interactive *::before,
+  #holo-tech-interactive *::after {
+    box-sizing: border-box;
+  }
+
+  #holo-tech-interactive .holo-container {
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+
+  /* Header Section */
+  #holo-tech-interactive .holo-tech-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+  }
+
+  #holo-tech-interactive .glimm-badge-navy {
+    background: rgba(26, 35, 126, 0.08);
+    color: var(--glimm-navy);
+    font-weight: 700;
+    font-size: 11px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  #holo-tech-interactive .holo-tech-title {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0 0 15px;
+    letter-spacing: -1px;
+    line-height: 1.2;
+  }
+
+  #holo-tech-interactive .text-navy {
+    color: var(--glimm-navy);
+  }
+
+  #holo-tech-interactive .holo-tech-subtitle {
+    color: var(--glimm-grey);
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Tab Navigation */
+  #holo-tech-interactive .tech-tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  #holo-tech-interactive .tech-tab-btn {
+    background: white;
+    border: 1px solid var(--glimm-border);
+    padding: 12px 24px;
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all var(--transition-speed);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-family: inherit;
+  }
+
+  #holo-tech-interactive .tech-tab-btn:hover,
+  #holo-tech-interactive .tech-tab-btn:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    outline: 2px solid var(--glimm-navy);
+    outline-offset: 2px;
+  }
+
+  #holo-tech-interactive .tech-tab-btn.active {
+    background-color: var(--glimm-navy);
+    color: white;
+    border-color: var(--glimm-navy);
+    box-shadow: 0 10px 15px -3px rgba(26, 35, 126, 0.2);
+  }
+
+  #holo-tech-interactive .tech-tab-btn:focus {
+    outline: 2px solid var(--glimm-navy);
+    outline-offset: 2px;
+  }
+
+  /* Display Wrapper */
+  #holo-tech-interactive .tech-display-wrapper {
+    background: #fff;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--glimm-border);
+    overflow: hidden;
+    min-height: 580px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  /* Loading State */
+  #holo-tech-interactive .tech-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 580px;
+    gap: 20px;
+  }
+
+  #holo-tech-interactive .loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--glimm-light-bg);
+    border-top-color: var(--glimm-navy);
+    border-radius: 50%;
+    animation: spinner 0.8s linear infinite;
+  }
+
+  @keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  #holo-tech-interactive .tech-loading p {
+    color: var(--glimm-grey);
+    font-size: 16px;
+    margin: 0;
+  }
+
+  /* Error State */
+  #holo-tech-interactive .tech-error {
+    padding: 60px 40px;
+    text-align: center;
+    color: #d32f2f;
+    font-size: 16px;
+  }
+
+  /* Content Layout */
+  #holo-tech-interactive .tech-content-flex {
+    display: flex;
+    height: 100%;
+    min-height: 580px;
+  }
+
+  #holo-tech-interactive .fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0.6;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Image Side */
+  #holo-tech-interactive .tech-image-side {
+    flex: 1;
+    position: relative;
+    min-height: 300px;
+    background: #000;
+  }
+
+  #holo-tech-interactive .main-tech-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+  }
+
+  #holo-tech-interactive .img-overlay-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(
+      to top,
+      rgba(26, 35, 126, 0.95) 15%,
+      transparent 100%
+    );
+    padding: 40px;
+    color: white;
+  }
+
+  #holo-tech-interactive .overlay-badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-bottom: 12px;
+    display: inline-block;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  #holo-tech-interactive .img-overlay-content h3 {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    line-height: 1.2;
+  }
+
+  #holo-tech-interactive .img-overlay-content p {
+    font-size: 15px;
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 90%;
+    margin: 0;
+  }
+
+  /* Details Side */
+  #holo-tech-interactive .tech-details-side {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #holo-tech-interactive .details-heading {
+    font-size: 15px;
+    color: var(--glimm-navy);
+    margin: 0 0 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  #holo-tech-interactive .details-block {
+    margin-bottom: 25px;
+  }
+
+  /* Benefits List */
+  #holo-tech-interactive .inno-benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #holo-tech-interactive .inno-benefits-list li {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #444;
+    align-items: center;
+    font-weight: 500;
+  }
+
+  #holo-tech-interactive .inno-benefits-list li i {
+    color: var(--glimm-navy);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* Specifications */
+  #holo-tech-interactive .specs-container {
+    background: var(--glimm-light-bg);
+    border: 1px solid var(--glimm-border);
+    border-radius: var(--border-radius-md);
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+
+  #holo-tech-interactive .specs-flex-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  #holo-tech-interactive .spec-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  #holo-tech-interactive .spec-item span {
+    font-size: 11px;
+    color: var(--glimm-grey);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+
+  #holo-tech-interactive .spec-item strong {
+    font-size: 16px;
+    color: var(--glimm-navy);
+    font-weight: 800;
+  }
+
+  /* Tags */
+  #holo-tech-interactive .tags-container {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  #holo-tech-interactive .inno-tag {
+    background: rgba(26, 35, 126, 0.05);
+    color: var(--glimm-navy);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  /* Actions Row */
+  #holo-tech-interactive .inno-actions-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 25px;
+  }
+
+  #holo-tech-interactive .related-link-group span {
+    font-size: 12px;
+    color: var(--glimm-grey);
+    display: block;
+    margin-bottom: 2px;
+    font-weight: 600;
+  }
+
+  #holo-tech-interactive .related-btn {
+    color: var(--glimm-navy);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--glimm-navy);
+    padding: 2px 0;
+    font-size: 13px;
+    display: inline-block;
+    transition: var(--transition-speed);
+  }
+
+  #holo-tech-interactive .related-btn:hover,
+  #holo-tech-interactive .related-btn:focus {
+    color: var(--glimm-blue);
+    border-color: var(--glimm-blue);
+    outline: none;
+  }
+
+  /* Buttons */
+  #holo-tech-interactive .btn-navy-solid {
+    background: var(--glimm-navy);
+    color: white !important;
+    text-decoration: none !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    transition: var(--transition-speed);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+  }
+
+  #holo-tech-interactive .btn-navy-solid:hover,
+  #holo-tech-interactive .btn-navy-solid:focus {
+    background: var(--glimm-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 35, 126, 0.3);
+    outline: 2px solid var(--glimm-navy);
+    outline-offset: 2px;
+  }
+
+  #holo-tech-interactive .btn-navy-full {
+    display: block;
+    width: 100%;
+    background: #f1f5f9;
+    color: var(--glimm-navy);
+    text-align: center;
+    padding: 14px;
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition-speed);
+    margin-top: auto;
+    border: 1px solid var(--glimm-border);
+  }
+
+  #holo-tech-interactive .btn-navy-full:hover,
+  #holo-tech-interactive .btn-navy-full:focus {
+    background: var(--glimm-navy);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 35, 126, 0.2);
+    outline: 2px solid var(--glimm-navy);
+    outline-offset: 2px;
+  }
+
+  /* Navigation Grid */
+  #holo-tech-interactive .tech-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  #holo-tech-interactive .tech-nav-card {
+    background: white;
+    border: 1px solid var(--glimm-border);
+    border-radius: var(--border-radius-md);
+    padding: 25px;
+    transition: all var(--transition-speed);
+    cursor: pointer;
+  }
+
+  #holo-tech-interactive .tech-nav-card:hover,
+  #holo-tech-interactive .tech-nav-card:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    outline: 2px solid var(--glimm-navy);
+    outline-offset: 2px;
+  }
+
+  #holo-tech-interactive .tech-nav-card.active-card {
+    border-color: var(--glimm-navy);
+    box-shadow: 0 0 0 2px var(--glimm-navy);
+    background: rgba(26, 35, 126, 0.02);
+  }
+
+  #holo-tech-interactive .nav-badge-navy {
+    font-size: 10px;
+    color: var(--glimm-navy);
+    font-weight: 800;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  #holo-tech-interactive .tech-nav-card h4 {
+    font-size: 16px;
+    margin: 0 0 8px;
+    color: var(--glimm-navy);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  #holo-tech-interactive .tech-nav-card p {
+    font-size: 13px;
+    color: var(--glimm-grey);
+    margin: 0;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    #holo-tech-interactive {
+      padding: 60px 20px;
+    }
+
+    #holo-tech-interactive .holo-tech-title {
+      font-size: 32px;
+    }
+
+    #holo-tech-interactive .tech-content-flex {
+      flex-direction: column;
+    }
+
+    #holo-tech-interactive .tech-image-side {
+      min-height: 350px;
+      flex: none;
+    }
+
+    #holo-tech-interactive .tech-nav-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    #holo-tech-interactive {
+      padding: 40px 15px;
+    }
+
+    #holo-tech-interactive .holo-tech-title {
+      font-size: 28px;
+    }
+
+    #holo-tech-interactive .holo-tech-subtitle {
+      font-size: 15px;
+    }
+
+    #holo-tech-interactive .tech-tabs-container {
+      flex-direction: column;
+    }
+
+    #holo-tech-interactive .tech-tab-btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    #holo-tech-interactive .tech-details-side {
+      padding: 20px;
+    }
+
+    #holo-tech-interactive .specs-flex-row {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    #holo-tech-interactive .tech-nav-grid {
+      grid-template-columns: 1fr;
+    }
+
+    #holo-tech-interactive .inno-actions-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    #holo-tech-interactive .img-overlay-content {
+      padding: 20px;
+    }
+
+    #holo-tech-interactive .img-overlay-content h3 {
+      font-size: 24px;
+    }
+  }
+
+  /* Print Styles */
+  @media print {
+    #holo-tech-interactive {
+      padding: 20px 0;
+    }
+
+    #holo-tech-interactive .tech-tabs-container,
+    #holo-tech-interactive .tech-nav-grid {
+      display: none;
+    }
+  }
+
+  /* High Contrast Mode Support */
+  @media (prefers-contrast: high) {
+    #holo-tech-interactive .tech-tab-btn:focus,
+    #holo-tech-interactive .tech-nav-card:focus {
+      outline: 3px solid currentColor;
+      outline-offset: 3px;
+    }
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    #holo-tech-interactive *,
+    #holo-tech-interactive *::before,
+    #holo-tech-interactive *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
