@@ -1,8 +1,11 @@
-function loadComponent(file, elementId) {
-  fetch(`components/${file}`)
+function loadComponentFrom(basePath, file, elementId) {
+  fetch(`${basePath}/${file}`)
     .then((response) => response.text())
     .then((data) => {
       const container = document.getElementById(elementId);
+      if (!container) {
+        return;
+      }
       container.innerHTML = data;
 
       // Execute scripts
@@ -19,11 +22,14 @@ function loadComponent(file, elementId) {
     });
 }
 
-loadComponent("header.html", "header");
-loadComponent("hero.html", "hero");
-loadComponent("our-products.html", "our-products");
-loadComponent("industries.html", "industries");
-loadComponent("technology.html", "technology");
-loadComponent("success.html", "success-stories");
-loadComponent("cta.html", "cta");
-loadComponent("footer.html", "footer");
+loadComponentFrom("components", "header.html", "header");
+loadComponentFrom("components", "hero.html", "hero");
+loadComponentFrom("components", "our-products.html", "our-products");
+loadComponentFrom("components", "industries.html", "industries");
+loadComponentFrom("components", "technology.html", "technology");
+loadComponentFrom("components", "success.html", "success-stories");
+loadComponentFrom("components", "cta.html", "cta");
+loadComponentFrom("components", "footer.html", "footer");
+
+// Products data
+loadComponentFrom("products", "holoflex.html", "holoflex");
