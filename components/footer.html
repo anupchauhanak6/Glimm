@@ -1,171 +1,315 @@
 <footer class="glimm-footer">
-    <div class="footer-container">
-        
-        <div class="footer-col">
-            <div class="footer-logo">GLIMM<span>SCREENS</span></div>
-            <p>
-                Revolutionizing visual communication with cutting-edge holographic display technology for retail, events, and education.
-            </p>
-        </div>
-
-        <div class="footer-col">
-            <h3>Products</h3>
-            <ul class="footer-links">
-                <li><a href="#">HoloFlex™ Display</a></li>
-                <li><a href="#">3D Pyramids</a></li>
-                <li><a href="#">Virtual Mannequin</a></li>
-                <li><a href="#">Large Format Stages</a></li>
-                <li><a href="#">Interactive Kiosks</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h3>Company</h3>
-            <ul class="footer-links">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Case Studies</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Press & News</a></li>
-                <li><a href="#">Contact Support</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h3>Stay Updated</h3>
-            <p>Subscribe to get the latest news on holographic tech and exclusive offers.</p>
-            <form class="newsletter-form">
-                <input type="email" class="newsletter-input" placeholder="Enter email address">
-                <button type="button" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
-            </form>
-        </div>
+  <div class="footer-container">
+    <div class="footer-col">
+      <div class="footer-logo">GLIMM<span>SCREENS</span></div>
+      <p>
+        Revolutionizing visual communication with cutting-edge holographic
+        display technology for retail, events, and education.
+      </p>
     </div>
 
-    <div class="footer-bottom-wrapper">
-        <div class="footer-bottom">
-            <div>© 2026 Glimm Screens International. All rights reserved.</div>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
+    <div class="footer-col">
+      <h3>Products</h3>
+      <ul class="footer-links">
+        <li><a href="#">HoloFlex™ Display</a></li>
+        <li><a href="#">3D Pyramids</a></li>
+        <li><a href="#">Virtual Mannequin</a></li>
+        <li><a href="#">Large Format Stages</a></li>
+        <li><a href="#">Interactive Kiosks</a></li>
+      </ul>
     </div>
+
+    <div class="footer-col">
+      <h3>Company</h3>
+      <ul class="footer-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Case Studies</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press & News</a></li>
+        <li><a href="#">Contact Support</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Stay Updated</h3>
+      <p>
+        Subscribe to get the latest news on holographic tech and exclusive
+        offers.
+      </p>
+      <form class="newsletter-form">
+        <input
+          type="email"
+          class="newsletter-input"
+          placeholder="Enter email address"
+        />
+        <button type="button" class="newsletter-btn">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom-wrapper">
+    <div class="footer-bottom">
+      <div>© 2026 Glimm Screens International. All rights reserved.</div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <style>
-    /* --- FOOTER STYLES --- */
-    .glimm-footer {
-        background-color: #0d123d; /* Brand Navy */
-        color: #e0e0e0;
-        padding: 80px 20px 30px;
-        font-family: 'Inter', sans-serif;
-    }
+  /* --- FOOTER STYLES --- */
+  .glimm-footer {
+    background-color: #0d123d; /* Brand Navy */
+    color: #e0e0e0;
+    padding: 80px 20px 30px;
+    font-family: "Inter", sans-serif;
+  }
 
+  .footer-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 60px;
+    overflow: hidden;
+  }
+
+  .footer-col h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: 700;
+  }
+
+  .footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #a0a8c0;
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-links li {
+    margin-bottom: 12px;
+  }
+  .footer-links a {
+    color: #a0a8c0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover {
+    color: #2b4dff;
+  } /* Brand Blue */
+
+  .footer-logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+    display: inline-block;
+    letter-spacing: 1px;
+  }
+  .footer-logo span {
+    color: #1a237e;
+  } /* Deep Navy */
+
+  .newsletter-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .newsletter-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    color: white;
+    border-radius: 6px;
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  .newsletter-btn {
+    background: #1a237e;
+    color: #fff;
+    border: 1px solid #2b4dff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-sizing: border-box;
+  }
+  .newsletter-btn:hover {
+    background: #2b4dff;
+  }
+
+  .footer-bottom-wrapper {
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    font-size: 13px;
+    color: #718096;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 20px;
+  }
+  .social-icons a {
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s;
+  }
+  .social-icons a:hover {
+    color: #2b4dff;
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 1200px) {
     .footer-container {
-        max-width: 1250px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
-        gap: 40px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        padding-bottom: 60px;
+      gap: 30px;
     }
+  }
 
+  @media (max-width: 900px) {
+    .footer-container {
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+    .glimm-footer {
+      padding: 60px 20px 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+    .glimm-footer {
+      padding: 50px 20px 20px;
+    }
     .footer-col h3 {
-        color: white;
-        font-size: 18px;
-        margin-bottom: 25px;
-        font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 20px;
     }
-    
     .footer-col p {
-        font-size: 14px;
-        line-height: 1.6;
-        color: #a0a8c0;
-        margin-bottom: 20px;
+      font-size: 13px;
+      margin-bottom: 15px;
     }
-
-    .footer-links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    .footer-links li { margin-bottom: 12px; }
-    .footer-links a {
-        color: #a0a8c0;
-        text-decoration: none;
-        font-size: 14px;
-        transition: color 0.3s;
-    }
-    .footer-links a:hover { color: #2b4dff; } /* Brand Blue */
-
-    .footer-logo {
-        font-size: 26px;
-        font-weight: 800;
-        color: white;
-        margin-bottom: 20px;
-        display: inline-block;
-        letter-spacing: 1px;
-    }
-    .footer-logo span { color: #1a237e; } /* Deep Navy */
-
     .newsletter-form {
-        display: flex;
-        gap: 10px;
-        margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
     .newsletter-input {
-        background: rgba(255,255,255,0.05);
-        border: 1px solid rgba(255,255,255,0.1);
-        padding: 12px;
-        color: white;
-        border-radius: 6px;
-        width: 100%;
-        outline: none;
+      width: 100%;
+      padding: 14px;
+      font-size: 14px;
     }
     .newsletter-btn {
-        background: #1a237e;
-        color: #fff;
-        border: 1px solid #2b4dff;
-        padding: 12px 20px;
-        border-radius: 6px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all 0.3s;
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 14px;
     }
-    .newsletter-btn:hover { background: #2b4dff; }
-
-    .footer-bottom-wrapper {
-        max-width: 1250px;
-        margin: 0 auto;
-    }
-
     .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 30px;
-        font-size: 13px;
-        color: #718096;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+      padding-top: 20px;
     }
-
+    .footer-logo {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
     .social-icons {
-        display: flex;
-        gap: 20px;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .glimm-footer {
+      padding: 40px 15px 15px;
+    }
+    .footer-container {
+      gap: 30px;
+    }
+    .footer-col h3 {
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+    .footer-col p {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .footer-links a {
+      font-size: 13px;
+    }
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    .newsletter-form {
+      gap: 8px;
+    }
+    .newsletter-input {
+      padding: 10px;
+      font-size: 14px;
+    }
+    .newsletter-btn {
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+    .footer-logo {
+      font-size: 20px;
+    }
+    .footer-bottom {
+      font-size: 12px;
+    }
+    .social-icons {
+      gap: 15px;
     }
     .social-icons a {
-        color: white;
-        font-size: 18px;
-        transition: all 0.3s;
+      font-size: 16px;
     }
-    .social-icons a:hover { color: #2b4dff; transform: translateY(-3px); }
+  }
 
-    @media (max-width: 900px) {
-        .footer-container { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 360px) {
+    .glimm-footer {
+      padding: 30px 12px 12px;
     }
-    @media (max-width: 600px) {
-        .footer-container { grid-template-columns: 1fr; }
-        .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+    .footer-col h3 {
+      font-size: 14px;
     }
+    .footer-col p {
+      font-size: 11px;
+    }
+    .footer-logo {
+      font-size: 18px;
+    }
+    .newsletter-input {
+      padding: 8px;
+      font-size: 13px;
+    }
+  }
 </style>

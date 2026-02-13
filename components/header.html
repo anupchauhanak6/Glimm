@@ -106,7 +106,6 @@
     <!-- Mobile Menu Overlay -->
     <div class="holo-mobile-menu">
       <div class="holo-mobile-menu-content">
-
         <nav class="holo-mobile-nav">
           <ul>
             <li class="holo-mobile-dropdown">
@@ -538,6 +537,111 @@
     @media (max-width: 1024px) {
       .holo-hamburger {
         display: flex;
+      }
+      .holo-header-container {
+        padding: 0 15px;
+      }
+      .holo-logo {
+        font-size: 22px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .holo-main-header {
+        padding: 10px 0;
+      }
+      .holo-header-container {
+        padding: 0 12px;
+      }
+      .holo-logo {
+        font-size: 20px;
+      }
+      .holo-hamburger {
+        padding: 6px;
+      }
+      .holo-hamburger span {
+        width: 22px;
+        height: 2.5px;
+      }
+      .holo-mobile-menu {
+        max-width: 85%;
+      }
+      .holo-mobile-nav > ul > li > a {
+        padding: 14px 0;
+        font-size: 15px;
+      }
+      .holo-mobile-submenu li a {
+        padding: 10px 0 10px 18px;
+        font-size: 14px;
+      }
+      .mobile-cta-item {
+        padding: 15px 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .holo-logo {
+        font-size: 18px;
+        letter-spacing: 0.3px;
+      }
+      .holo-header-container {
+        padding: 0 10px;
+      }
+      .holo-mobile-menu {
+        max-width: 100%;
+      }
+      .holo-mobile-menu-content {
+        padding: 15px;
+      }
+      .holo-mobile-nav > ul {
+        margin-top: 55px;
+      }
+      .holo-mobile-nav > ul > li > a {
+        padding: 12px 0;
+        font-size: 14px;
+      }
+      .holo-mobile-submenu li a {
+        padding: 9px 0 9px 16px;
+        font-size: 13px;
+      }
+      .holo-btn-get-started {
+        padding: 10px 20px;
+        font-size: 13px;
+      }
+      .mobile-cta-item {
+        padding: 12px 0;
+      }
+      .holo-hamburger {
+        padding: 5px;
+      }
+      .holo-hamburger span {
+        width: 20px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .holo-logo {
+        font-size: 16px;
+      }
+      .holo-header-container {
+        padding: 0 8px;
+      }
+      .holo-mobile-menu-content {
+        padding: 12px;
+      }
+      .holo-mobile-nav > ul > li > a {
+        font-size: 13px;
+      }
+      .holo-mobile-submenu li a {
+        font-size: 12px;
+        padding: 8px 0 8px 14px;
+      }
+      .holo-btn-get-started {
+        padding: 9px 16px;
+        font-size: 12px;
+      }
+      .holo-hamburger span {
+        width: 18px;
       }
     }
 

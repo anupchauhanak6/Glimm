@@ -1116,6 +1116,20 @@
   }
 
   /* Responsive Design */
+  @media (max-width: 1200px) {
+    #holo-tech-interactive {
+      padding: 80px 30px;
+    }
+
+    #holo-tech-interactive .holo-tech-title {
+      font-size: 36px;
+    }
+
+    #holo-tech-interactive .holo-tech-header {
+      margin-bottom: 40px;
+    }
+  }
+
   @media (max-width: 1024px) {
     #holo-tech-interactive {
       padding: 60px 20px;
@@ -1137,11 +1151,15 @@
     #holo-tech-interactive .tech-nav-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    #holo-tech-interactive .tech-display-wrapper {
+      min-height: auto;
+    }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     #holo-tech-interactive {
-      padding: 40px 15px;
+      padding: 50px 20px;
     }
 
     #holo-tech-interactive .holo-tech-title {
@@ -1153,16 +1171,26 @@
     }
 
     #holo-tech-interactive .tech-tabs-container {
-      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 30px;
     }
 
     #holo-tech-interactive .tech-tab-btn {
-      width: 100%;
-      text-align: center;
+      font-size: 12px;
+      padding: 10px 18px;
+    }
+
+    #holo-tech-interactive .tech-content-flex {
+      flex-direction: column;
+      min-height: auto;
+    }
+
+    #holo-tech-interactive .tech-image-side {
+      min-height: 280px;
     }
 
     #holo-tech-interactive .tech-details-side {
-      padding: 20px;
+      padding: 30px 25px;
     }
 
     #holo-tech-interactive .specs-flex-row {
@@ -1170,23 +1198,157 @@
       gap: 15px;
     }
 
+    #holo-tech-interactive .spec-item span {
+      font-size: 10px;
+    }
+
+    #holo-tech-interactive .spec-item strong {
+      font-size: 14px;
+    }
+
+    #holo-tech-interactive .tech-nav-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    #holo-tech-interactive .inno-actions-row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 15px;
+    }
+
+    #holo-tech-interactive .img-overlay-content {
+      padding: 25px;
+    }
+
+    #holo-tech-interactive .img-overlay-content h3 {
+      font-size: 26px;
+    }
+
+    #holo-tech-interactive .img-overlay-content p {
+      font-size: 14px;
+    }
+
+    #holo-tech-interactive .inno-benefits-list li {
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    #holo-tech-interactive {
+      padding: 40px 15px;
+    }
+
+    #holo-tech-interactive .holo-tech-title {
+      font-size: 24px;
+    }
+
+    #holo-tech-interactive .holo-tech-subtitle {
+      font-size: 14px;
+    }
+
+    #holo-tech-interactive .tech-tabs-container {
+      flex-direction: column;
+      margin-bottom: 25px;
+    }
+
+    #holo-tech-interactive .tech-tab-btn {
+      width: 100%;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    #holo-tech-interactive .tech-details-side {
+      padding: 20px;
+    }
+
+    #holo-tech-interactive .details-heading {
+      font-size: 13px;
+    }
+
+    #holo-tech-interactive .inno-benefits-list li {
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    #holo-tech-interactive .specs-container {
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    #holo-tech-interactive .nav-badge-navy {
+      font-size: 9px;
+    }
+
     #holo-tech-interactive .tech-nav-grid {
       grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    #holo-tech-interactive .tech-nav-card {
+      padding: 20px;
+    }
+
+    #holo-tech-interactive .tech-nav-card h4 {
+      font-size: 15px;
+    }
+
+    #holo-tech-interactive .tech-nav-card p {
+      font-size: 12px;
     }
 
     #holo-tech-interactive .inno-actions-row {
       flex-direction: column;
       align-items: flex-start;
+      gap: 12px;
+    }
+
+    #holo-tech-interactive .btn-navy-solid {
+      font-size: 12px;
+      padding: 9px 16px;
+    }
+
+    #holo-tech-interactive .btn-navy-full {
+      padding: 12px;
+      font-size: 12px;
+      margin-top: 15px;
     }
 
     #holo-tech-interactive .img-overlay-content {
-      padding: 20px;
+      padding: 15px;
     }
 
     #holo-tech-interactive .img-overlay-content h3 {
-      font-size: 24px;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    #holo-tech-interactive .img-overlay-content p {
+      font-size: 12px;
+      max-width: 100%;
+    }
+
+    #holo-tech-interactive .tech-image-side {
+      min-height: 240px;
     }
   }
+
+  @media (max-width: 768px) {
+    #holo-tech-interactive .tech-nav-grid {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #holo-tech-interactive .tech-nav-grid {
+      display: none;
+    }
+  }
+
+  @media (max-width: 360px) {
+    #holo-tech-interactive .tech-nav-grid {
+      display: none;
+    }
 
   /* Print Styles */
   @media print {
