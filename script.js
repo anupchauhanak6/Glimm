@@ -25,4 +25,5 @@ loadComponent("our-products.html", "our-products");
 loadComponent("industries.html", "industries");
 loadComponent("technology.html", "technology");
 loadComponent("success.html", "success-stories");
+loadComponent("cta.html", "cta");
 loadComponent("footer.html", "footer");

@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section id="holo-cta-section">
+      <div class="cta-bg-pattern"></div>
+
+      <div class="holo-container">
+        <div class="cta-icon-box">
+          <i class="fas fa-star"></i>
+        </div>
+
+        <h2 class="cta-title">Ready to Transform Your Business?</h2>
+        <p class="cta-subtitle">
+          Join hundreds of companies already experiencing the power of
+          holographic displays. Get started today and see results within weeks.
+        </p>
+
+        <div class="cta-stats-grid">
+          <div class="cta-stat-card">
+            <h3>500+</h3>
+            <p>Happy Clients</p>
+          </div>
+          <div class="cta-stat-card">
+            <h3>145%</h3>
+            <p>Avg Sales Increase</p>
+          </div>
+          <div class="cta-stat-card">
+            <h3>98%</h3>
+            <p>Satisfaction Rate</p>
+          </div>
+        </div>
+
+        <div class="cta-actions">
+          <a href="#" class="btn-cta-yellow">
+            Get Your Free Consultation <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#" class="btn-cta-outline"> Explore Products </a>
+        </div>
+
+        <div class="cta-trust-text">
+          <span><i class="fas fa-check"></i> No credit card required</span>
+          <span class="dot-sep">•</span>
+          <span><i class="fas fa-check"></i> Free demo available</span>
+          <span class="dot-sep">•</span>
+          <span><i class="fas fa-check"></i> 30-day money-back guarantee</span>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      :root {
+        --cta-blue: #1a237e; /* Brand Navy */
+        --cta-blue-light: #283593; /* Lighter Navy */
+        --cta-yellow: #feca43; /* Brand Yellow */
+        --cta-text: #ffffff;
+      }
+
+      #holo-cta-section {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        background-color: var(--cta-blue);
+        background-image: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+        color: var(--cta-text);
+        padding: 100px 20px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Dot Pattern Background */
+      .cta-bg-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.1) 1px,
+          transparent 1px
+        );
+        background-size: 30px 30px; /* Spacing of dots */
+        opacity: 0.6;
+        pointer-events: none;
+      }
+
+      .holo-container {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Icon Box */
+      .cta-icon-box {
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        font-size: 24px;
+        color: var(--cta-yellow);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 20px rgba(254, 202, 67, 0.2);
+      }
+
+      /* Typography */
+      .cta-title {
+        font-size: 48px;
+        font-weight: 800;
+        margin: 0 0 20px;
+        letter-spacing: -0.8px;
+        line-height: 1.2;
+      }
+      .cta-subtitle {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.7;
+        margin: 0 auto 50px;
+        max-width: 650px;
+        font-weight: 500;
+      }
+
+      /* Stats Grid */
+      .cta-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 50px;
+      }
+
+      .cta-stat-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 25px 15px;
+        transition: transform 0.3s;
+      }
+      .cta-stat-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .cta-stat-card h3 {
+        font-size: 36px;
+        font-weight: 800;
+        margin: 0 0 5px;
+        color: var(--cta-yellow);
+        letter-spacing: -0.5px;
+      }
+      .cta-stat-card p {
+        margin: 0;
+        font-size: 13px;
+        font-weight: 700;
+        opacity: 0.9;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+      }
+
+      /* Buttons */
+      .cta-actions {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 40px;
+        overflow: hidden;
+      }
+
+      .btn-cta-yellow {
+        background: var(--cta-yellow);
+        color: #1a237e;
+        padding: 16px 36px;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition:
+          transform 0.2s,
+          background 0.2s,
+          box-shadow 0.2s;
+        box-shadow: 0 10px 25px rgba(254, 202, 67, 0.2);
+        box-sizing: border-box;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-cta-yellow:hover {
+        background: #f5b800;
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(254, 202, 67, 0.3);
+      }
+
+      .btn-cta-outline {
+        background: transparent;
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 16px 36px;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+        cursor: pointer;
+      }
+      .btn-cta-outline:hover {
+        border-color: white;
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-3px);
+      }
+
+      /* Bottom Trust Text */
+      .cta-trust-text {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.85);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        font-weight: 600;
+      }
+      .cta-trust-text i {
+        margin-right: 5px;
+        color: var(--cta-yellow);
+      }
+      .dot-sep {
+        opacity: 0.4;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        #holo-cta-section {
+          padding: 80px 20px;
+        }
+        .cta-title {
+          font-size: 44px;
+        }
+        .cta-subtitle {
+          font-size: 17px;
+        }
+        .cta-stats-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        #holo-cta-section {
+          padding: 60px 20px;
+        }
+        .cta-icon-box {
+          width: 54px;
+          height: 54px;
+          font-size: 22px;
+          margin-bottom: 25px;
+        }
+        .cta-title {
+          font-size: 36px;
+          margin-bottom: 15px;
+        }
+        .cta-subtitle {
+          font-size: 16px;
+          line-height: 1.6;
+          margin-bottom: 40px;
+        }
+        .cta-stats-grid {
+          grid-template-columns: 1fr;
+          gap: 15px;
+          margin-bottom: 40px;
+        }
+        .cta-stat-card {
+          padding: 20px 15px;
+        }
+        .cta-stat-card h3 {
+          font-size: 28px;
+          margin-bottom: 4px;
+        }
+        .cta-stat-card p {
+          font-size: 12px;
+        }
+        .cta-actions {
+          flex-direction: column;
+          gap: 12px;
+          margin-bottom: 30px;
+        }
+        .btn-cta-yellow,
+        .btn-cta-outline {
+          width: 100%;
+          justify-content: center;
+          padding: 14px 24px;
+        }
+        .cta-trust-text {
+          flex-direction: column;
+          gap: 8px;
+          font-size: 12px;
+        }
+        .dot-sep {
+          display: none;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #holo-cta-section {
+          padding: 40px 15px;
+        }
+        .cta-icon-box {
+          width: 48px;
+          height: 48px;
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+        .cta-title {
+          font-size: 28px;
+          margin-bottom: 12px;
+          letter-spacing: -0.5px;
+        }
+        .cta-subtitle {
+          font-size: 14px;
+          line-height: 1.5;
+          margin-bottom: 30px;
+        }
+        .cta-stats-grid {
+          gap: 12px;
+          margin-bottom: 30px;
+        }
+        .cta-stat-card {
+          padding: 16px 12px;
+        }
+        .cta-stat-card h3 {
+          font-size: 24px;
+        }
+        .cta-stat-card p {
+          font-size: 11px;
+        }
+        .cta-actions {
+          gap: 10px;
+          margin-bottom: 25px;
+        }
+        .btn-cta-yellow,
+        .btn-cta-outline {
+          padding: 12px 20px;
+          font-size: 13px;
+        }
+        .cta-trust-text {
+          gap: 6px;
+          font-size: 11px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        #holo-cta-section {
+          padding: 30px 12px;
+        }
+        .cta-icon-box {
+          width: 44px;
+          height: 44px;
+          font-size: 18px;
+          margin-bottom: 18px;
+        }
+        .cta-title {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+        .cta-subtitle {
+          font-size: 13px;
+          margin-bottom: 25px;
+        }
+        .cta-stat-card h3 {
+          font-size: 20px;
+        }
+        .cta-stat-card p {
+          font-size: 10px;
+        }
+        .btn-cta-yellow,
+        .btn-cta-outline {
+          padding: 11px 18px;
+          font-size: 12px;
+          gap: 8px;
+        }
+      }
+    </style>
+  </body>
+</html>
