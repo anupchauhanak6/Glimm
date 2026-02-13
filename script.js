@@ -33,3 +33,4 @@ loadComponentFrom("components", "footer.html", "footer");
 
 // Products data
 loadComponentFrom("products", "holoflex.html", "holoflex");
+loadComponentFrom("products", "features.html", "features");
