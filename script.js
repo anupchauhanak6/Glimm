@@ -24,4 +24,5 @@ loadComponent("hero.html", "hero");
 loadComponent("our-products.html", "our-products");
 loadComponent("industries.html", "industries");
 loadComponent("technology.html", "technology");
+loadComponent("success.html", "success-stories");
 loadComponent("footer.html", "footer");
