@@ -1,197 +1,390 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-
-<div class="holo-breadcrumb-bar">
-    <div class="holo-container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="holo-breadcrumb-bar">
+      <div class="holo-container">
         <a href="#" class="bc-link">Home</a>
         <span class="bc-sep">/</span>
         <a href="#" class="bc-link">Products</a>
         <span class="bc-sep">/</span>
         <span class="bc-current">Holoflex™</span>
+      </div>
     </div>
-</div>
 
-<section id="holo-product-detail">
-    <div class="holo-container">
-        
+    <section id="holo-product-detail">
+      <div class="holo-container">
         <div class="pd-back-row">
-            <a href="#" class="back-link"><i class="fas fa-arrow-left"></i> Back to Products</a>
+          <a href="#" class="back-link"
+            ><i class="fas fa-arrow-left"></i> Back to Products</a
+          >
         </div>
 
         <div class="pd-grid-layout">
-            
-            <div class="pd-media-col">
-                <div class="pd-media-card">
-                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop" alt="Holoflex Display">
-                    
-                    <span class="pd-badge-blue">Interactive Display</span>
-                    
-                    <div class="pd-play-wrapper">
-                        <button class="pd-play-btn"><i class="fas fa-play"></i></button>
-                    </div>
-                </div>
+          <div class="pd-media-col">
+            <div class="pd-media-card">
+              <img
+                src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop"
+                alt="Holoflex Display"
+              />
+
+              <span class="pd-badge-blue">Interactive Display</span>
+
+              <div class="pd-play-wrapper">
+                <button class="pd-play-btn"><i class="fas fa-play"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="pd-info-col">
+            <h1 class="pd-title">Holoflex™</h1>
+            <h2 class="pd-subtitle">Touch the Future</h2>
+
+            <p class="pd-description">
+              Revolutionary interactive holographic display system that responds
+              to gestures and touch, creating immersive 3D experiences. Perfect
+              for retail engagement and exhibitions.
+            </p>
+
+            <div class="pd-quote-box">
+              <span class="quote-label">Starting at</span>
+              <div class="quote-row">
+                <span class="quote-main-text">Request Quote</span>
+                <i class="fas fa-dollar-sign quote-icon"></i>
+              </div>
             </div>
 
-            <div class="pd-info-col">
-                <h1 class="pd-title">Holoflex™</h1>
-                <h2 class="pd-subtitle">Touch the Future</h2>
-                
-                <p class="pd-description">
-                    Revolutionary interactive holographic display system that responds to gestures and touch, creating immersive 3D experiences. Perfect for retail engagement and exhibitions.
-                </p>
-
-                <div class="pd-quote-box">
-                    <span class="quote-label">Starting at</span>
-                    <div class="quote-row">
-                        <span class="quote-main-text">Request Quote</span>
-                        <i class="fas fa-dollar-sign quote-icon"></i>
-                    </div>
-                </div>
-
-                <div class="pd-buttons-row">
-                    <a href="#" class="btn-pd-solid">Request Quote</a>
-                    <a href="#" class="btn-pd-outline">Watch Demo</a>
-                </div>
+            <div class="pd-buttons-row">
+              <a href="#" class="btn-pd-solid">Request Quote</a>
+              <a href="#" class="btn-pd-outline">Watch Demo</a>
             </div>
-
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<style>
-    :root {
-        --h-blue: #2b4dff;
-        --h-dark: #111827;
-        --h-grey: #6b7280;
-        --h-light-grey: #f3f4f6;
-        --h-border: #e5e7eb;
-    }
+    <style>
+      * {
+          box-sizing: border-box;
+      }
 
-    body { margin: 0; font-family: 'Inter', sans-serif; background-color: #ffffff; }
-    
-    .holo-container { max-width: 1150px; margin: 0 auto; padding: 0 20px; }
+      html {
+          overflow-x: hidden;
+          width: 100%;
+      }
 
-    /* --- 1. BREADCRUMB STYLES --- */
-    .holo-breadcrumb-bar {
-        background: white;
-        padding: 20px 0;
-        border-bottom: 1px solid #f0f0f0;
-        margin-bottom: 40px;
-    }
-    
-    .bc-link { text-decoration: none; color: var(--h-grey); font-size: 14px; font-weight: 500; transition: color 0.2s; }
-    .bc-link:hover { color: var(--h-blue); }
-    .bc-sep { margin: 0 10px; color: #d1d5db; font-size: 12px; }
-    .bc-current { color: var(--h-dark); font-weight: 700; font-size: 14px; }
+      :root {
+          --h-blue: #1a237e;
+          --h-blue-light: #283593;
+          --h-dark: #111827;
+          --h-grey: #6b7280;
+          --h-light-grey: #f3f4f6;
+          --h-border: #e5e7eb;
+      }
 
-    /* --- 2. PRODUCT DETAIL STYLES --- */
-    #holo-product-detail { padding-bottom: 80px; }
+      body {
+          margin: 0;
+          padding: 0;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          background-color: #ffffff;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          overflow-x: hidden;
+          width: 100%;
+      }
 
-    /* Back Link */
-    .pd-back-row { margin-bottom: 25px; }
-    .back-link { 
-        text-decoration: none; color: var(--h-blue); font-weight: 500; font-size: 14px; 
-        display: inline-flex; align-items: center; gap: 8px; 
-    }
-    .back-link:hover { text-decoration: underline; }
+      .holo-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+          width: 100%;
+      }
 
-    /* Grid Layout */
-    .pd-grid-layout {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr; /* Image takes slightly more space */
-        gap: 60px;
-        align-items: center;
-    }
+      /* --- 1. BREADCRUMB STYLES --- */
+      .holo-breadcrumb-bar {
+          background: white;
+          padding: 24px 0;
+          border-bottom: 1px solid var(--h-border);
+          margin-bottom: 50px;
+          width: 100%;
+          overflow-x: hidden;
+      }
 
-    /* Left: Media Card */
-    .pd-media-card {
-        position: relative;
-        border-radius: 20px;
-        overflow: hidden;
-        aspect-ratio: 4/3; /* Keeps the rectangle shape */
-        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        background: #f0f0f0;
-    }
+      .bc-link {
+          text-decoration: none;
+          color: var(--h-grey);
+          font-size: 14px;
+          font-weight: 500;
+          transition: color 0.25s;
+          letter-spacing: -0.01em;
+      }
+      .bc-link:hover { color: var(--h-blue); }
+      .bc-sep { margin: 0 12px; color: #d1d5db; font-size: 12px; }
+      .bc-current { color: var(--h-dark); font-weight: 700; font-size: 14px; letter-spacing: -0.01em; }
 
-    .pd-media-card img { width: 100%; height: 100%; object-fit: cover; }
+      /* --- 2. PRODUCT DETAIL STYLES --- */
+      #holo-product-detail {
+          padding-bottom: 100px;
+          width: 100%;
+          overflow-x: hidden;
+      }
 
-    .pd-badge-blue {
-        position: absolute; top: 25px; left: 25px;
-        background: var(--h-blue); color: white;
-        font-size: 12px; font-weight: 600;
-        padding: 6px 14px; border-radius: 30px;
-        z-index: 2;
-    }
+      /* Back Link */
+      .pd-back-row { margin-bottom: 30px; }
+      .back-link {
+          text-decoration: none;
+          color: var(--h-blue);
+          font-weight: 600;
+          font-size: 15px;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          transition: all 0.25s;
+          letter-spacing: -0.01em;
+      }
+      .back-link:hover {
+          color: var(--h-blue-light);
+          gap: 12px;
+      }
 
-    /* Play Button (Bottom Left) */
-    .pd-play-wrapper {
-        position: absolute; bottom: 30px; left: 30px;
-        z-index: 2;
-    }
-    .pd-play-btn {
-        width: 60px; height: 60px;
-        background: white; border: none; border-radius: 50%;
-        color: var(--h-blue); font-size: 20px;
-        display: flex; align-items: center; justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        transition: transform 0.3s;
-    }
-    .pd-play-btn:hover { transform: scale(1.1); }
-    .pd-play-btn i { margin-left: 4px; }
+      /* Grid Layout */
+      .pd-grid-layout {
+          display: grid;
+          grid-template-columns: 1.3fr 1fr;
+          gap: 70px;
+          align-items: center;
+      }
 
-    /* Right: Info */
-    .pd-title { font-size: 42px; font-weight: 800; color: var(--h-dark); margin: 0 0 5px 0; }
-    .pd-subtitle { font-size: 18px; font-weight: 600; color: var(--h-blue); margin: 0 0 20px 0; }
-    
-    .pd-description { font-size: 16px; line-height: 1.6; color: var(--h-grey); margin-bottom: 40px; }
+      /* Left: Media Card */
+      .pd-media-card {
+          position: relative;
+          border-radius: 24px;
+          overflow: hidden;
+          aspect-ratio: 4/3;
+          box-shadow: 0 24px 48px rgba(0,0,0,0.12);
+          background: #f0f0f0;
+          border: 1px solid var(--h-border);
+          max-width: 100%;
+      }
 
-    /* Quote Box */
-    .pd-quote-box {
-        border: 1px solid var(--h-border);
-        border-radius: 12px;
-        padding: 20px 25px;
-        background: white;
-        margin-bottom: 30px;
-    }
-    .quote-label { display: block; font-size: 13px; color: var(--h-grey); margin-bottom: 5px; }
-    
-    .quote-row { display: flex; justify-content: space-between; align-items: center; }
-    .quote-main-text { font-size: 22px; font-weight: 700; color: var(--h-dark); }
-    .quote-icon { font-size: 24px; color: var(--h-blue); opacity: 0.8; }
+      .pd-media-card img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+      }
 
-    /* Buttons */
-    .pd-buttons-row { display: flex; gap: 15px; }
+      .pd-badge-blue {
+          position: absolute;
+          top: 28px;
+          left: 28px;
+          background: var(--h-blue);
+          color: white;
+          font-size: 12px;
+          font-weight: 700;
+          padding: 8px 18px;
+          border-radius: 30px;
+          z-index: 2;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+      }
 
-    .btn-pd-solid {
-        background: var(--h-blue); color: white;
-        padding: 14px 28px; border-radius: 8px;
-        font-weight: 600; text-decoration: none;
-        transition: background 0.3s;
-    }
-    .btn-pd-solid:hover { background: #1a3ae0; }
+      /* Play Button (Bottom Left) */
+      .pd-play-wrapper {
+          position: absolute;
+          bottom: 32px;
+          left: 32px;
+          z-index: 2;
+      }
+      .pd-play-btn {
+          width: 70px;
+          height: 70px;
+          background: white;
+          border: none;
+          border-radius: 50%;
+          color: var(--h-blue);
+          font-size: 22px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+          transition: all 0.3s ease;
+      }
+      .pd-play-btn:hover {
+          transform: scale(1.15);
+          box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+          background: var(--h-blue);
+          color: white;
+      }
+      .pd-play-btn i { margin-left: 4px; }
 
-    .btn-pd-outline {
-        background: white; color: var(--h-blue);
-        border: 1px solid var(--h-border);
-        padding: 14px 28px; border-radius: 8px;
-        font-weight: 600; text-decoration: none;
-        transition: all 0.3s;
-    }
-    .btn-pd-outline:hover { border-color: var(--h-blue); background: #f8faff; }
+      /* Right: Info */
+      .pd-title {
+          font-size: 48px;
+          font-weight: 800;
+          color: var(--h-dark);
+          margin: 0 0 8px 0;
+          letter-spacing: -0.03em;
+          line-height: 1.1;
+      }
+      .pd-subtitle {
+          font-size: 20px;
+          font-weight: 700;
+          color: var(--h-blue);
+          margin: 0 0 24px 0;
+          letter-spacing: -0.01em;
+      }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-        .pd-grid-layout { grid-template-columns: 1fr; gap: 40px; }
-        .pd-media-card { aspect-ratio: 16/9; }
-    }
-</style>
-</body>
+      .pd-description {
+          font-size: 17px;
+          line-height: 1.75;
+          color: var(--h-grey);
+          margin-bottom: 45px;
+          letter-spacing: -0.01em;
+      }
+
+      /* Quote Box */
+      .pd-quote-box {
+          border: 2px solid var(--h-border);
+          border-radius: 16px;
+          padding: 24px 30px;
+          background: #fafbfc;
+          margin-bottom: 35px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+      .quote-label {
+          display: block;
+          font-size: 13px;
+          color: var(--h-grey);
+          margin-bottom: 8px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+      }
+
+      .quote-row { display: flex; justify-content: space-between; align-items: center; }
+      .quote-main-text {
+          font-size: 24px;
+          font-weight: 800;
+          color: var(--h-dark);
+          letter-spacing: -0.02em;
+      }
+      .quote-icon {
+          font-size: 28px;
+          color: var(--h-blue);
+          opacity: 0.9;
+      }
+
+      /* Buttons */
+      .pd-buttons-row { display: flex; gap: 16px; flex-wrap: wrap; }
+
+      .btn-pd-solid {
+          background: var(--h-blue);
+          color: white;
+          padding: 16px 32px;
+          border-radius: 12px;
+          font-weight: 600;
+          font-size: 15px;
+          text-decoration: none;
+          transition: all 0.25s ease;
+          letter-spacing: -0.01em;
+          box-shadow: 0 4px 12px rgba(26, 35, 126, 0.15);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+      }
+      .btn-pd-solid:hover {
+          background: var(--h-blue-light);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(26, 35, 126, 0.25);
+      }
+
+      .btn-pd-outline {
+          background: white;
+          color: var(--h-blue);
+          border: 2px solid var(--h-border);
+          padding: 16px 32px;
+          border-radius: 12px;
+          font-weight: 600;
+          font-size: 15px;
+          text-decoration: none;
+          transition: all 0.25s ease;
+          letter-spacing: -0.01em;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+      }
+      .btn-pd-outline:hover {
+          border-color: var(--h-blue);
+          background: #eff6ff;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(26, 35, 126, 0.1);
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+          .pd-grid-layout { grid-template-columns: 1fr; gap: 50px; }
+          .pd-media-card { aspect-ratio: 16/9; }
+          .pd-title { font-size: 38px; }
+          .pd-subtitle { font-size: 18px; }
+      }
+
+      @media (max-width: 768px) {
+          .holo-container { padding: 0 16px; max-width: 100%; }
+          .holo-breadcrumb-bar { padding: 18px 0; margin-bottom: 35px; }
+          .pd-back-row { margin-bottom: 25px; }
+          .pd-grid-layout { gap: 40px; }
+          .pd-title { font-size: 34px; }
+          .pd-subtitle { font-size: 17px; }
+          .pd-description { font-size: 16px; }
+          .pd-play-btn { width: 60px; height: 60px; font-size: 18px; }
+          .pd-play-wrapper { bottom: 24px; left: 24px; }
+          .pd-badge-blue { top: 20px; left: 20px; font-size: 11px; padding: 6px 14px; }
+      }
+
+      @media (max-width: 600px) {
+          #holo-product-detail { padding-bottom: 60px; }
+          .pd-grid-layout { gap: 35px; }
+          .pd-title { font-size: 30px; }
+          .pd-subtitle { font-size: 16px; }
+          .pd-description { font-size: 15px; margin-bottom: 35px; }
+          .pd-quote-box { padding: 20px 24px; margin-bottom: 30px; }
+          .quote-main-text { font-size: 20px; }
+          .quote-icon { font-size: 24px; }
+          .pd-buttons-row { flex-direction: column; gap: 12px; }
+          .btn-pd-solid, .btn-pd-outline { width: 100%; padding: 15px 28px; }
+      }
+
+      @media (max-width: 480px) {
+          .holo-container { padding: 0 12px; max-width: 100%; }
+          #holo-product-detail { padding-bottom: 50px; }
+          .pd-title { font-size: 26px; }
+          .pd-subtitle { font-size: 15px; }
+          .pd-description { font-size: 14px; line-height: 1.65; }
+          .pd-play-btn { width: 50px; height: 50px; font-size: 16px; }
+          .pd-play-wrapper { bottom: 20px; left: 20px; }
+          .back-link { font-size: 14px; }
+      
+          .pd-subtitle { font-size: 15px; }
+          .pd-description { font-size: 14px; line-height: 1.65; }
+          .pd-play-btn { width: 50px; height: 50px; font-size: 16px; }
+          .pd-play-wrapper { bottom: 20px; left: 20px; }
+          .back-link { font-size: 14px; }
+      }
+    </style>
+  </body>
 </html>
