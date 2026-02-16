@@ -23,14 +23,4 @@ function loadComponentFrom(basePath, file, elementId) {
 }
 
 loadComponentFrom("components", "header.html", "header");
-loadComponentFrom("components", "hero.html", "hero");
-loadComponentFrom("components", "our-products.html", "our-products");
-loadComponentFrom("components", "industries.html", "industries");
-loadComponentFrom("components", "technology.html", "technology");
-loadComponentFrom("components", "success.html", "success-stories");
-loadComponentFrom("components", "cta.html", "cta");
 loadComponentFrom("components", "footer.html", "footer");
-
-// Products data
-loadComponentFrom("products", "holoflex.html", "holoflex");
-loadComponentFrom("products", "features.html", "features");
