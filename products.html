@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products | GLIMM</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <div id="all-products"></div>
+
+    <div id="footer"></div>
+
+    <script src="script.js"></script>
+    <script>
+      loadComponentFrom(
+        "components/products",
+        "all-products.html",
+        "all-products",
+      );
+    </script>
+  </body>
+</html>
