@@ -1,0 +1,568 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section id="holo-product-tabs">
+      <div class="holo-container">
+        <div class="pt-nav-wrapper">
+          <button
+            class="pt-tab-btn active"
+            onclick="openTab(event, 'tab-overview')"
+          >
+            Overview
+          </button>
+          <button class="pt-tab-btn" onclick="openTab(event, 'tab-features')">
+            Features
+          </button>
+          <button class="pt-tab-btn" onclick="openTab(event, 'tab-specs')">
+            Specs
+          </button>
+        </div>
+        <div class="pt-divider"></div>
+
+        <div id="tab-overview" class="pt-content active">
+          <div class="overview-grid">
+            <div class="ov-left">
+              <h2 class="pt-heading">Hologram Display Systems</h2>
+              <p class="pt-desc">
+                Complete modular holographic display solutions. Includes
+                projection systems, content management software, and
+                professional installation support for retail environments.
+              </p>
+              <h3 class="pt-subheading">Ideal Use Cases</h3>
+              <ul class="ov-use-cases">
+                <li>
+                  <i class="fas fa-check-circle"></i> Multi-location retail
+                  chains implementing consistent experiences
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Shopping malls and
+                  commercial centers with premium anchor stores
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Corporate showrooms and
+                  exhibition spaces
+                </li>
+              </ul>
+            </div>
+            <div class="ov-right">
+              <div class="ov-blue-card">
+                <h3>Why Choose Hologram Display Systems?</h3>
+                <ul>
+                  <li>
+                    <i class="fas fa-check"></i> Retail Ready - Complete turnkey
+                    solutions
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Modular - Build to exact
+                    specifications
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Scalable - Expand as needs grow
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Support - Professional 24/7
+                    assistance
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Easy content management system
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Installation support included
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-features" class="pt-content">
+          <h2 class="pt-heading">Key Features</h2>
+          <div class="features-grid">
+            <div class="feat-card">
+              <div class="feat-icon"><i class="fas fa-cube"></i></div>
+              <div>
+                <h4>Modular Components</h4>
+                <p>
+                  Flexible modular design allows customization to fit any retail
+                  space or exhibition requirement
+                </p>
+              </div>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon"><i class="fas fa-cog"></i></div>
+              <div>
+                <h4>Content Management</h4>
+                <p>
+                  Easy-to-use software for scheduling and updating holographic
+                  content remotely
+                </p>
+              </div>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon"><i class="fas fa-expand"></i></div>
+              <div>
+                <h4>25-100 inch sizes</h4>
+                <p>
+                  Multiple display sizes available to match your venue
+                  requirements perfectly
+                </p>
+              </div>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon"><i class="fas fa-user-headset"></i></div>
+              <div>
+                <h4>24/7 Support</h4>
+                <p>
+                  Round-the-clock professional support ensures your displays run
+                  smoothly
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-specs" class="pt-content">
+          <h2 class="pt-heading">Technical Specifications</h2>
+          <div class="specs-table-wrapper">
+            <table class="specs-table">
+              <tr>
+                <td>Display Types</td>
+                <td>25", 50", 75", 100"</td>
+              </tr>
+              <tr>
+                <td>Technology</td>
+                <td>LED Hologram Matrix</td>
+              </tr>
+              <tr>
+                <td>Resolution</td>
+                <td>1080p - 4K</td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td class="text-blue">From $5,200</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("pt-content");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+          tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("pt-tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        setTimeout(function () {
+          document.getElementById(tabName).classList.add("active");
+        }, 10);
+        if (evt) evt.currentTarget.className += " active";
+      }
+      document.addEventListener("DOMContentLoaded", () =>
+        openTab(null, "tab-overview"),
+      );
+    </script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        overflow-x: hidden;
+        width: 100%;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        width: 100%;
+      }
+      :root {
+        --pt-blue: #1a237e;
+        --pt-blue-light: #283593;
+        --pt-dark: #111827;
+        --pt-grey: #6b7280;
+        --pt-light-grey: #9ca3af;
+        --pt-bg: #ffffff;
+        --pt-border: #e5e7eb;
+        --pt-bg-light: #f9fafb;
+      }
+      #holo-product-tabs {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        background: white;
+        padding: 60px 20px 120px;
+        color: var(--pt-dark);
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        width: 100%;
+        overflow-x: hidden;
+      }
+      .holo-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 20px;
+      }
+      .pt-nav-wrapper {
+        display: flex;
+        gap: 40px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+      }
+      .pt-nav-wrapper::-webkit-scrollbar {
+        display: none;
+      }
+      .pt-tab-btn {
+        background: none;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--pt-grey);
+        padding: 14px 0 18px;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        white-space: nowrap;
+        transition: all 0.25s ease;
+        letter-spacing: -0.01em;
+      }
+      .pt-tab-btn:hover {
+        color: var(--pt-blue);
+      }
+      .pt-tab-btn.active {
+        color: var(--pt-blue);
+        border-bottom: 3px solid var(--pt-blue);
+      }
+      .pt-divider {
+        height: 1px;
+        background: var(--pt-border);
+        margin-bottom: 60px;
+        margin-top: -1px;
+      }
+      .pt-content {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.4s ease-in;
+      }
+      .pt-content.active {
+        display: block;
+        opacity: 1;
+      }
+      .pt-heading {
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 28px;
+        color: var(--pt-dark);
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+      }
+      .pt-desc {
+        font-size: 18px;
+        color: var(--pt-grey);
+        margin-bottom: 40px;
+        max-width: 720px;
+        line-height: 1.75;
+        letter-spacing: -0.01em;
+      }
+      .pt-subheading {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 35px 0 18px;
+        color: var(--pt-dark);
+        letter-spacing: -0.02em;
+      }
+      .overview-grid {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr;
+        gap: 60px;
+        width: 100%;
+        max-width: 100%;
+      }
+      .ov-use-cases {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 30px 0;
+      }
+      .ov-use-cases li {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 14px;
+        font-size: 16px;
+        color: var(--pt-grey);
+        line-height: 1.6;
+        align-items: flex-start;
+      }
+      .ov-use-cases i {
+        color: var(--pt-blue);
+        font-size: 16px;
+        margin-top: 3px;
+        flex-shrink: 0;
+      }
+      .ov-blue-card {
+        background: linear-gradient(
+          135deg,
+          var(--pt-blue) 0%,
+          var(--pt-blue-light) 100%
+        );
+        color: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 12px 36px rgba(26, 35, 126, 0.2);
+      }
+      .ov-blue-card h3 {
+        font-size: 22px;
+        margin: 0 0 24px 0;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      .ov-blue-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .ov-blue-card li {
+        display: flex;
+        gap: 14px;
+        margin-bottom: 16px;
+        font-size: 16px;
+        line-height: 1.6;
+        align-items: flex-start;
+      }
+      .ov-blue-card li:last-child {
+        margin-bottom: 0;
+      }
+      .ov-blue-card li i {
+        margin-top: 3px;
+        font-size: 15px;
+        flex-shrink: 0;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+        width: 100%;
+        max-width: 100%;
+      }
+      .feat-card {
+        border: 1px solid var(--pt-border);
+        border-radius: 18px;
+        padding: 32px;
+        display: flex;
+        gap: 24px;
+        background: white;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+      }
+      .feat-card:hover {
+        box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12);
+        transform: translateY(-6px);
+        border-color: var(--pt-blue);
+      }
+      .feat-icon {
+        width: 52px;
+        height: 52px;
+        background: var(--pt-blue);
+        color: white;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 22px;
+        box-shadow: 0 4px 12px rgba(26, 35, 126, 0.2);
+      }
+      .feat-card h4 {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 10px 0;
+        color: var(--pt-dark);
+        letter-spacing: -0.02em;
+      }
+      .feat-card p {
+        font-size: 15px;
+        color: var(--pt-grey);
+        margin: 0;
+        line-height: 1.65;
+      }
+      .specs-table-wrapper {
+        border: 1px solid var(--pt-border);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+      }
+      .specs-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .specs-table tr:last-child td {
+        border-bottom: none;
+      }
+      .specs-table td {
+        padding: 22px 32px;
+        border-bottom: 1px solid var(--pt-border);
+        font-size: 16px;
+      }
+      .specs-table td:first-child {
+        background: var(--pt-bg-light);
+        font-weight: 600;
+        width: 35%;
+        color: var(--pt-dark);
+        letter-spacing: -0.01em;
+      }
+      .specs-table td:last-child {
+        color: var(--pt-grey);
+        letter-spacing: -0.01em;
+      }
+      .text-blue {
+        color: var(--pt-blue);
+        font-weight: 700;
+      }
+      @media (max-width: 1024px) {
+        .overview-grid {
+          gap: 40px;
+        }
+        .features-grid {
+          gap: 20px;
+        }
+      }
+      @media (max-width: 768px) {
+        #holo-product-tabs {
+          padding: 30px 0 60px;
+        }
+        .holo-container {
+          padding: 0 16px;
+          max-width: 100%;
+        }
+        .pt-heading {
+          font-size: 28px;
+          margin-bottom: 24px;
+        }
+        .pt-desc {
+          font-size: 16px;
+        }
+        .pt-nav-wrapper {
+          gap: 20px;
+        }
+        .pt-tab-btn {
+          font-size: 14px;
+          padding: 12px 0 14px;
+        }
+        .pt-divider {
+          margin-bottom: 40px;
+        }
+        .overview-grid {
+          grid-template-columns: 1fr;
+          gap: 35px;
+        }
+        .ov-blue-card {
+          padding: 32px;
+        }
+        .features-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .feat-card {
+          padding: 24px;
+          gap: 20px;
+        }
+        .feat-icon {
+          width: 48px;
+          height: 48px;
+          font-size: 20px;
+        }
+        .specs-table td {
+          padding: 18px 24px;
+          font-size: 15px;
+        }
+      }
+      @media (max-width: 480px) {
+        #holo-product-tabs {
+          padding: 20px 0 50px;
+        }
+        .holo-container {
+          padding: 0 12px;
+          max-width: 100%;
+        }
+        .pt-heading {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+        .pt-desc {
+          font-size: 15px;
+          line-height: 1.65;
+        }
+        .pt-subheading {
+          font-size: 18px;
+          margin: 28px 0 14px;
+        }
+        .pt-nav-wrapper {
+          gap: 18px;
+        }
+        .pt-tab-btn {
+          font-size: 13px;
+          padding: 10px 0 12px;
+        }
+        .pt-divider {
+          margin-bottom: 30px;
+        }
+        .ov-blue-card {
+          padding: 28px;
+          border-radius: 16px;
+        }
+        .ov-blue-card h3 {
+          font-size: 20px;
+        }
+        .ov-blue-card li {
+          font-size: 15px;
+          margin-bottom: 14px;
+        }
+        .feat-card {
+          padding: 20px;
+          gap: 16px;
+          border-radius: 14px;
+        }
+        .feat-icon {
+          width: 44px;
+          height: 44px;
+          font-size: 18px;
+        }
+        .feat-card h4 {
+          font-size: 16px;
+        }
+        .feat-card p {
+          font-size: 14px;
+        }
+        .specs-table td {
+          padding: 16px 20px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </body>
+</html>
