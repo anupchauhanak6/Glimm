@@ -74,7 +74,7 @@
               <div class="ov-dim-box">
                 <i class="fas fa-ruler-combined"></i> 180cm x 90cm x 40cm
               </div>
-              <div class="ov-dim-box" style="margin-top: 12px">
+              <div class="ov-dim-box spaced">
                 <i class="fas fa-weight-hanging"></i> 45kg (99 lbs)
               </div>
             </div>
@@ -254,12 +254,7 @@
           <h2 class="pt-heading">Technology Behind Holoflex™</h2>
 
           <div class="tech-design-card">
-            <div
-              class="tech-header-img"
-              style="
-                background-image: url(&quot;https://images.unsplash.com/photo-1614726365723-49cfae96a6f6?q=80&w=2070&auto=format&fit=crop&quot;);
-              "
-            >
+            <div class="tech-header-img tech-bg-1">
               <div class="tech-overlay-gradient">
                 <span class="tech-badge-glass">Interaction Technology</span>
                 <h3 class="tech-title-large">Interactive Hologram System</h3>
@@ -529,6 +524,9 @@
         color: var(--pt-dark);
         letter-spacing: -0.02em;
       }
+      .ov-dim-box.spaced {
+        margin-top: 12px;
+      }
 
       /* --- TECHNOLOGY TAB --- */
       .tech-design-card {
@@ -545,6 +543,9 @@
         background-size: cover;
         background-position: center;
         position: relative;
+      }
+      .tech-bg-1 {
+        background-image: url("https://images.unsplash.com/photo-1614726365723-49cfae96a6f6?q=80&w=2070&auto=format&fit=crop");
       }
       .tech-overlay-gradient {
         position: absolute;
