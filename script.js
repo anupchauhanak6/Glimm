@@ -1,11 +1,11 @@
 function loadComponentFrom(basePath, file, elementId) {
+  const container = document.getElementById(elementId);
+  if (!container) {
+    return;
+  }
   fetch(`${basePath}/${file}`)
     .then((response) => response.text())
     .then((data) => {
-      const container = document.getElementById(elementId);
-      if (!container) {
-        return;
-      }
       container.innerHTML = data;
 
       // Execute scripts
@@ -22,5 +22,18 @@ function loadComponentFrom(basePath, file, elementId) {
     });
 }
 
-loadComponentFrom("components", "header.html", "header");
-loadComponentFrom("components", "footer.html", "footer");
+const glimmBase = window.GlimmBase || "";
+const componentsBase = `${glimmBase}components`;
+const homeBase = `${componentsBase}/home`;
+const productsBase = `${componentsBase}/products`;
+
+loadComponentFrom(componentsBase, "header.html", "header");
+loadComponentFrom(componentsBase, "footer.html", "footer");
+loadComponentFrom(homeBase, "hero.html", "hero");
+loadComponentFrom(homeBase, "our-products.html", "our-products");
+loadComponentFrom(homeBase, "industries.html", "industries");
+loadComponentFrom(homeBase, "technology.html", "technology");
+loadComponentFrom(homeBase, "success.html", "success-stories");
+loadComponentFrom(homeBase, "cta.html", "cta");
+loadComponentFrom(productsBase, "holoflex.html", "holoflex");
+loadComponentFrom(productsBase, "features.html", "features");
