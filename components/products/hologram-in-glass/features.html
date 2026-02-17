@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section id="holo-product-tabs">
+      <div class="holo-container">
+        <div class="pt-nav-wrapper">
+          <button
+            class="pt-tab-btn active"
+            onclick="openTab(event, 'tab-overview')"
+          >
+            Overview</button
+          ><button class="pt-tab-btn" onclick="openTab(event, 'tab-features')">
+            Features</button
+          ><button class="pt-tab-btn" onclick="openTab(event, 'tab-specs')">
+            Specs</button
+          ><button
+            class="pt-tab-btn"
+            onclick="openTab(event, 'tab-technology')"
+          >
+            Tech</button
+          ><button
+            class="pt-tab-btn"
+            onclick="openTab(event, 'tab-casestudies')"
+          >
+            Cases
+          </button>
+        </div>
+        <div id="tab-overview" class="pt-content active">
+          <h2 class="pt-heading">Hologram in Glass</h2>
+          <p class="pt-desc">
+            Innovative glass-integrated holographic display technology. Projects
+            3D content directly onto or within glass panes, transforming
+            architectural glass into interactive digital surfaces without
+            obstructing background visibility.
+          </p>
+          <h3 class="pt-subheading">Applications</h3>
+          <div class="ov-apps-row">
+            <div class="ov-app-chip">
+              <i class="fas fa-check-circle"></i> Retail Windows
+            </div>
+            <div class="ov-app-chip">
+              <i class="fas fa-check-circle"></i> Office Spaces
+            </div>
+            <div class="ov-app-chip">
+              <i class="fas fa-check-circle"></i> Building Facades
+            </div>
+            <div class="ov-app-chip">
+              <i class="fas fa-check-circle"></i> Storefronts
+            </div>
+          </div>
+        </div>
+        <div id="tab-features" class="pt-content">
+          <h2 class="pt-heading">Features</h2>
+          <div class="features-grid">
+            <div class="feat-card">
+              <i class="fas fa-square"></i> Glass Surface Integration
+            </div>
+            <div class="feat-card">
+              <i class="fas fa-eye"></i> Background Visible
+            </div>
+            <div class="feat-card">
+              <i class="fas fa-sun"></i> Daylight Performance
+            </div>
+            <div class="feat-card">
+              <i class="fas fa-plug"></i> Easy Integration
+            </div>
+          </div>
+        </div>
+        <div id="tab-specs" class="pt-content">
+          <h2 class="pt-heading">Specifications</h2>
+          <table class="specs-table">
+            <tr>
+              <td>Display Type</td>
+              <td>Glass-Integrated Hologram</td>
+            </tr>
+            <tr>
+              <td>Glass Compatibility</td>
+              <td>Most architectural glass</td>
+            </tr>
+            <tr>
+              <td>Brightness</td>
+              <td>3000+ Lumens</td>
+            </tr>
+            <tr>
+              <td>Resolution</td>
+              <td>1080p 60fps</td>
+            </tr>
+            <tr>
+              <td>Installation</td>
+              <td>Custom per application</td>
+            </tr>
+            <tr>
+              <td>Price</td>
+              <td class="text-blue">From $3,200</td>
+            </tr>
+          </table>
+        </div>
+        <div id="tab-technology" class="pt-content">
+          <p class="pt-desc">
+            Proprietary optical coating and projection system enables 3D
+            holographic display on existing glass surfaces. Transparent overlay
+            technology maintains visibility of background content while
+            displaying vivid 3D holograms.
+          </p>
+        </div>
+        <div id="tab-casestudies" class="pt-content">
+          <p class="pt-desc">
+            Deployed in 100+ retail environments and office buildings worldwide,
+            enhancing customer experience and brand visibility.
+          </p>
+        </div>
+      </div>
+    </section>
+    <script>
+      function openTab(evt, tabName) {
+        document
+          .querySelectorAll(".pt-content")
+          .forEach((el) => (el.style.display = "none"));
+        document
+          .querySelectorAll(".pt-tab-btn")
+          .forEach((el) => el.classList.remove("active"));
+        document.getElementById(tabName).style.display = "block";
+        if (evt) evt.currentTarget.classList.add("active");
+      }
+      openTab(null, "tab-overview");
+    </script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background: white;
+      }
+      :root {
+        --pt-blue: #1a237e;
+        --pt-dark: #111827;
+        --pt-grey: #6b7280;
+        --pt-border: #e5e7eb;
+      }
+      #holo-product-tabs {
+        padding: 60px 20px;
+      }
+      .holo-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .pt-nav-wrapper {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid var(--pt-border);
+      }
+      .pt-tab-btn {
+        background: none;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--pt-grey);
+        padding: 14px 0;
+        cursor: pointer;
+      }
+      .pt-tab-btn.active {
+        color: var(--pt-blue);
+        border-bottom: 3px solid var(--pt-blue);
+      }
+      .pt-content {
+        display: none;
+      }
+      .pt-content.active {
+        display: block;
+      }
+      .pt-heading {
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 28px;
+      }
+      .pt-desc {
+        font-size: 18px;
+        color: var(--pt-grey);
+        margin-bottom: 40px;
+        line-height: 1.75;
+      }
+      .ov-apps-row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .ov-app-chip {
+        background: #eff6ff;
+        color: var(--pt-blue);
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 15px;
+        border: 1px solid #dbeafe;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+        margin: 30px 0;
+      }
+      .feat-card {
+        border: 1px solid var(--pt-border);
+        border-radius: 12px;
+        padding: 24px;
+        background: #f9fafb;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .feat-card i {
+        font-size: 24px;
+        color: var(--pt-blue);
+      }
+      .specs-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+      }
+      .specs-table td {
+        padding: 18px 24px;
+        border-bottom: 1px solid var(--pt-border);
+      }
+      .specs-table td:first-child {
+        background: #f9fafb;
+        font-weight: 600;
+        width: 30%;
+      }
+      .text-blue {
+        color: var(--pt-blue);
+        font-weight: 700;
+      }
+    </style>
+  </body>
+</html>
