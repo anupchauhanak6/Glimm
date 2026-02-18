@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section id="holo-product-tabs">
+      <div class="holo-container">
+        <div class="pt-nav-wrapper">
+          <button
+            class="pt-tab-btn active"
+            onclick="openTab(event, 'tab-overview')"
+          >
+            Overview</button
+          ><button class="pt-tab-btn" onclick="openTab(event, 'tab-features')">
+            Features</button
+          ><button class="pt-tab-btn" onclick="openTab(event, 'tab-specs')">
+            Specs</button
+          ><button
+            class="pt-tab-btn"
+            onclick="openTab(event, 'tab-technology')"
+          >
+            Tech</button
+          ><button
+            class="pt-tab-btn"
+            onclick="openTab(event, 'tab-casestudies')"
+          >
+            Cases
+          </button>
+        </div>
+        <div class="pt-divider"></div>
+        <div id="tab-overview" class="pt-content active">
+          <h2 class="pt-heading">Hologram Pyramid</h2>
+          <p class="pt-desc">
+            Iconic 360-degree holographic pyramid display. Perfect pyramid
+            angles ensure crystal-clear holograms visible from all viewing
+            positions simultaneously. Ideal for museum centerpieces, retail
+            showcases, and exhibition centerpieces.
+          </p>
+          <h3 class="pt-subheading">Ideal Use Cases</h3>
+          <ul class="pt-list">
+            <li>Museum installations for artifact and artwork visualization</li>
+            <li>Retail product launches and premium brand centerpieces</li>
+            <li>Gallery and exhibition spaces for interactive displays</li>
+          </ul>
+          <h3 class="pt-subheading">Applications</h3>
+          <div class="ov-apps-row">
+            <div class="ov-app-chip">
+              <i class="fas fa-check-circle"></i> Museums
+            </div>
+            <div class="ov-app-chip">
+              <i class="fas fa-check-circle"></i> Retail
+            </div>
+            <div class="ov-app-chip">
+              <i class="fas fa-check-circle"></i> Exhibitions
+            </div>
+            <div class="ov-app-chip">
+              <i class="fas fa-check-circle"></i> Galleries
+            </div>
+          </div>
+        </div>
+        <div id="tab-features" class="pt-content">
+          <h2 class="pt-heading">Key Features</h2>
+          <div class="features-grid">
+            <div class="feat-card">
+              <div class="feat-icon"><i class="fas fa-cube"></i></div>
+              <div>
+                <h4>Perfect Pyramid Geometry</h4>
+                <p>Precise 45° angling for flawless holographic display</p>
+              </div>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon"><i class="fas fa-eye"></i></div>
+              <div>
+                <h4>360° Visibility</h4>
+                <p>View holograms from any angle around the pyramid</p>
+              </div>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon"><i class="fas fa-expand"></i></div>
+              <div>
+                <h4>Multiple Sizes</h4>
+                <p>Available in 40cm, 60cm, and 100cm configurations</p>
+              </div>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon"><i class="fas fa-plug"></i></div>
+              <div>
+                <h4>Plug & Play</h4>
+                <p>Simple USB connection for immediate operation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="tab-specs" class="pt-content">
+          <h2 class="pt-heading">Specifications</h2>
+          <div class="specs-table-wrapper">
+            <table class="specs-table">
+              <tr>
+                <td>Product Type</td>
+                <td>360° Hologram Pyramid</td>
+              </tr>
+              <tr>
+                <td>Available Sizes</td>
+                <td>40cm, 60cm, 100cm</td>
+              </tr>
+              <tr>
+                <td>Material</td>
+                <td>Optical Grade Acrylic</td>
+              </tr>
+              <tr>
+                <td>Viewing Angles</td>
+                <td>360 degrees</td>
+              </tr>
+              <tr>
+                <td>Resolution</td>
+                <td>1080p</td>
+              </tr>
+              <tr>
+                <td>Brightness</td>
+                <td>1800–2500 nits</td>
+              </tr>
+              <tr>
+                <td>Projector Count</td>
+                <td>4 synchronized projectors</td>
+              </tr>
+              <tr>
+                <td>Power Consumption</td>
+                <td>1200–1600W</td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td class="text-blue">From $2,800</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div id="tab-technology" class="pt-content">
+          <h2 class="pt-heading">Pyramid Technology</h2>
+          <p class="pt-desc">
+            Precision-engineered pyramid with four angled mirrors/clear
+            surfaces. When illuminated by a projector below, creates perfect 3D
+            floating images visible to 360-degree audience.
+          </p>
+        </div>
+        <div id="tab-casestudies" class="pt-content">
+          <h2 class="pt-heading">Case Studies</h2>
+          <div class="cs-tab-grid">
+            <div class="cs-tab-card">
+              <div class="cs-tab-img">
+                <img
+                  src="https://images.unsplash.com/photo-1578301978162-7aae4d755744?q=80&w=2070&auto=format&fit=crop"
+                />
+              </div>
+              <div class="cs-tab-body">
+                <h4>Museum Exhibition</h4>
+                <p>Applied at leading natural history museum</p>
+              </div>
+            </div>
+            <div class="cs-tab-card">
+              <div class="cs-tab-img">
+                <img
+                  src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070&auto=format&fit=crop"
+                />
+              </div>
+              <div class="cs-tab-body">
+                <h4>Retail Showcase</h4>
+                <p>Premium product display flagship store</p>
+              </div>
+            </div>
+            <div class="cs-tab-card">
+              <div class="cs-tab-img">
+                <img
+                  src="https://images.unsplash.com/photo-1511379938547-c1f69b13d835?q=80&w=2070&auto=format&fit=crop"
+                />
+              </div>
+              <div class="cs-tab-body">
+                <h4>Art Exhibition</h4>
+                <p>Contemporary art gallery centerpiece</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      function openTab(evt, tabName) {
+        document.querySelectorAll(".pt-content").forEach((el) => {
+          el.style.display = "none";
+          el.classList.remove("active");
+        });
+        document
+          .querySelectorAll(".pt-tab-btn")
+          .forEach((el) => el.classList.remove("active"));
+        document.getElementById(tabName).style.display = "block";
+        document.getElementById(tabName).classList.add("active");
+        if (evt) evt.currentTarget.classList.add("active");
+      }
+      openTab(null, "tab-overview");
+    </script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        overflow-x: hidden;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background: white;
+      }
+      :root {
+        --pt-blue: #1a237e;
+        --pt-dark: #111827;
+        --pt-grey: #6b7280;
+        --pt-border: #e5e7eb;
+        --pt-bg-light: #f9fafb;
+      }
+      #holo-product-tabs {
+        padding: 60px 20px 120px;
+      }
+      .holo-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .pt-nav-wrapper {
+        display: flex;
+        gap: 40px;
+        border-bottom: 1px solid var(--pt-border);
+        margin-bottom: 60px;
+      }
+      .pt-tab-btn {
+        background: none;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--pt-grey);
+        padding: 14px 0;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+      }
+      .pt-tab-btn.active {
+        color: var(--pt-blue);
+        border-bottom: 3px solid var(--pt-blue);
+      }
+      .pt-divider {
+        display: none;
+      }
+      .pt-content {
+        display: none;
+      }
+      .pt-content.active {
+        display: block;
+      }
+      .pt-heading {
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 28px;
+      }
+      .pt-desc {
+        font-size: 18px;
+        color: var(--pt-grey);
+        margin-bottom: 40px;
+      }
+      .pt-subheading {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 35px 0 18px;
+      }
+      .ov-apps-row {
+        .pt-list {
+          margin: 18px 0 0 18px;
+          padding-left: 20px;
+          color: var(--pt-grey);
+          line-height: 1.7;
+          border-left: 3px solid var(--pt-blue);
+        }
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .ov-app-chip {
+        background: #eff6ff;
+        color: var(--pt-blue);
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 15px;
+        display: flex;
+        gap: 10px;
+        border: 1px solid #dbeafe;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+        margin: 30px 0;
+      }
+      .feat-card {
+        border: 1px solid var(--pt-border);
+        border-radius: 18px;
+        padding: 32px;
+        display: flex;
+        gap: 24px;
+      }
+      .feat-icon {
+        width: 52px;
+        height: 52px;
+        background: var(--pt-blue);
+        color: white;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 22px;
+      }
+      .feat-card h4 {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 10px 0;
+      }
+      .feat-card p {
+        font-size: 15px;
+        color: var(--pt-grey);
+        margin: 0;
+      }
+      .specs-table-wrapper {
+        border: 1px solid var(--pt-border);
+        border-radius: 18px;
+        overflow: hidden;
+      }
+      .specs-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .specs-table td {
+        padding: 22px 32px;
+        border-bottom: 1px solid var(--pt-border);
+      }
+      .specs-table td:first-child {
+        background: var(--pt-bg-light);
+        font-weight: 600;
+      }
+      .text-blue {
+        color: var(--pt-blue);
+        font-weight: 700;
+      }
+      .cs-tab-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        margin: 30px 0;
+      }
+      .cs-tab-card {
+        border: 1px solid var(--pt-border);
+        border-radius: 18px;
+        overflow: hidden;
+      }
+      .cs-tab-img {
+        height: 220px;
+        overflow: hidden;
+      }
+      .cs-tab-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .cs-tab-body {
+        padding: 28px;
+      }
+      .cs-tab-body h4 {
+        font-size: 19px;
+        font-weight: 700;
+        margin: 0 0 12px 0;
+      }
+      .cs-tab-body p {
+        font-size: 15px;
+        color: var(--pt-grey);
+        margin: 0;
+      }
+      @media (max-width: 768px) {
+        .features-grid,
+        .cs-tab-grid {
+          grid-template-columns: 1fr;
+        }
+        .holo-container {
+          padding: 0 16px;
+        }
+      }
+    </style>
+  </body>
+</html>
