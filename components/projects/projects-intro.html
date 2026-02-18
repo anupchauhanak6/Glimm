@@ -12,14 +12,17 @@
     <!-- Projects Intro Section -->
     <section class="projects-intro">
       <div class="projects-intro__container">
+        <span class="projects-intro__badge">Our Projects</span>
+        <h2 class="projects-intro__heading">
+          Showcasing <span class="accent-blue">Innovation</span> Through
+          Holographic Excellence
+        </h2>
         <p class="projects-intro__text">
           Our portfolio showcases cutting-edge holographic technology deployed
           across diverse industries worldwide. From immersive retail experiences
           to stunning event installations, each project demonstrates our
           commitment to innovation, quality, and transformative visual
-          communication. Explore how we've helped brands captivate audiences and
-          create unforgettable experiences through the power of holographic
-          display technology.
+          communication.
         </p>
       </div>
     </section>
@@ -36,9 +39,12 @@
       /* ===========================================           PROJECTS INTRO SECTION - CSS VARIABLES
            =========================================== */
       :root {
+        --intro-blue: #2b4dff;
+        --intro-navy: #1a237e;
         --intro-text-dark: #334155;
         --intro-text-medium: #64748b;
-        --intro-bg: #ffffff;
+        --intro-bg: #f8fafc;
+        --intro-white: #ffffff;
       }
 
       /* ===========================================
@@ -47,47 +53,53 @@
       .projects-intro {
         width: 100%;
         max-width: 100vw;
-        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-        padding: 100px 40px;
+        background: var(--intro-bg);
+        padding: 100px 20px;
         font-family: "Inter", sans-serif;
-        position: relative;
         overflow-x: hidden;
-      }
-
-      .projects-intro::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 4px;
-        background: linear-gradient(
-          90deg,
-          transparent 0%,
-          var(--intro-text-dark) 50%,
-          transparent 100%
-        );
-        opacity: 0.2;
+        text-align: center;
       }
 
       .projects-intro__container {
-        max-width: 950px;
+        max-width: 900px;
         margin: 0 auto;
-        text-align: center;
-        position: relative;
       }
 
       /* ===========================================
-           INTRO TEXT STYLING
+           TYPOGRAPHY
            =========================================== */
+      .projects-intro__badge {
+        display: inline-block;
+        background: rgba(26, 35, 126, 0.08);
+        color: var(--intro-navy);
+        font-weight: 700;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        padding: 8px 20px;
+        border-radius: 50px;
+        margin-bottom: 20px;
+      }
+
+      .projects-intro__heading {
+        font-size: 42px;
+        font-weight: 800;
+        line-height: 1.25;
+        color: var(--intro-navy);
+        margin: 0 0 20px 0;
+        letter-spacing: -0.02em;
+      }
+
+      .accent-blue {
+        color: var(--intro-blue);
+      }
+
       .projects-intro__text {
-        font-size: 21px;
+        font-size: 18px;
         font-weight: 400;
-        line-height: 1.9;
+        line-height: 1.6;
         color: var(--intro-text-medium);
         margin: 0;
-        letter-spacing: 0.3px;
       }
 
       /* ===========================================
@@ -99,14 +111,11 @@
         .projects-intro {
           padding: 80px 30px;
         }
-
-        .projects-intro__container {
-          max-width: 800px;
+        .projects-intro__heading {
+          font-size: 36px;
         }
-
         .projects-intro__text {
-          font-size: 19px;
-          line-height: 1.75;
+          font-size: 17px;
         }
       }
 
@@ -115,14 +124,11 @@
         .projects-intro {
           padding: 70px 24px;
         }
-
-        .projects-intro__container {
-          max-width: 700px;
+        .projects-intro__heading {
+          font-size: 32px;
         }
-
         .projects-intro__text {
-          font-size: 18px;
-          line-height: 1.7;
+          font-size: 16px;
         }
       }
 
@@ -131,14 +137,11 @@
         .projects-intro {
           padding: 55px 20px;
         }
-
-        .projects-intro__container {
-          max-width: 100%;
+        .projects-intro__heading {
+          font-size: 28px;
         }
-
         .projects-intro__text {
-          font-size: 16px;
-          line-height: 1.7;
+          font-size: 15px;
         }
       }
 
@@ -147,10 +150,11 @@
         .projects-intro {
           padding: 45px 16px;
         }
-
+        .projects-intro__heading {
+          font-size: 24px;
+        }
         .projects-intro__text {
-          font-size: 15px;
-          line-height: 1.65;
+          font-size: 14px;
         }
       }
     </style>
