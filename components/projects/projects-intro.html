@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Projects Intro Section -->
+    <section class="projects-intro">
+      <div class="projects-intro__container">
+        <p class="projects-intro__text">
+          Our portfolio showcases cutting-edge holographic technology deployed
+          across diverse industries worldwide. From immersive retail experiences
+          to stunning event installations, each project demonstrates our
+          commitment to innovation, quality, and transformative visual
+          communication. Explore how we've helped brands captivate audiences and
+          create unforgettable experiences through the power of holographic
+          display technology.
+        </p>
+      </div>
+    </section>
+
+    <style>
+      /* ===========================================           UNIVERSAL BOX SIZING
+           =========================================== */
+      .projects-intro *,
+      .projects-intro *::before,
+      .projects-intro *::after {
+        box-sizing: border-box;
+      }
+
+      /* ===========================================           PROJECTS INTRO SECTION - CSS VARIABLES
+           =========================================== */
+      :root {
+        --intro-text-dark: #334155;
+        --intro-text-medium: #64748b;
+        --intro-bg: #ffffff;
+      }
+
+      /* ===========================================
+           INTRO SECTION BASE LAYOUT
+           =========================================== */
+      .projects-intro {
+        width: 100%;
+        max-width: 100vw;
+        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        padding: 100px 40px;
+        font-family: "Inter", sans-serif;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      .projects-intro::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          var(--intro-text-dark) 50%,
+          transparent 100%
+        );
+        opacity: 0.2;
+      }
+
+      .projects-intro__container {
+        max-width: 950px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+      }
+
+      /* ===========================================
+           INTRO TEXT STYLING
+           =========================================== */
+      .projects-intro__text {
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 1.9;
+        color: var(--intro-text-medium);
+        margin: 0;
+        letter-spacing: 0.3px;
+      }
+
+      /* ===========================================
+           RESPONSIVE DESIGN
+           =========================================== */
+
+      /* Tablet Large */
+      @media (max-width: 900px) {
+        .projects-intro {
+          padding: 80px 30px;
+        }
+
+        .projects-intro__container {
+          max-width: 800px;
+        }
+
+        .projects-intro__text {
+          font-size: 19px;
+          line-height: 1.75;
+        }
+      }
+
+      /* Tablet */
+      @media (max-width: 768px) {
+        .projects-intro {
+          padding: 70px 24px;
+        }
+
+        .projects-intro__container {
+          max-width: 700px;
+        }
+
+        .projects-intro__text {
+          font-size: 18px;
+          line-height: 1.7;
+        }
+      }
+
+      /* Mobile Large */
+      @media (max-width: 600px) {
+        .projects-intro {
+          padding: 55px 20px;
+        }
+
+        .projects-intro__container {
+          max-width: 100%;
+        }
+
+        .projects-intro__text {
+          font-size: 16px;
+          line-height: 1.7;
+        }
+      }
+
+      /* Mobile Small */
+      @media (max-width: 400px) {
+        .projects-intro {
+          padding: 45px 16px;
+        }
+
+        .projects-intro__text {
+          font-size: 15px;
+          line-height: 1.65;
+        }
+      }
+    </style>
+  </body>
+</html>
