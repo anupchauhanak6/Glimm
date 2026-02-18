@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Markets CTA Section -->
+    <section class="markets-cta">
+      <div class="markets-cta__pattern"></div>
+
+      <div class="markets-cta__container">
+        <div class="markets-cta__icon-box">
+          <i class="fas fa-rocket"></i>
+        </div>
+
+        <h2 class="markets-cta__title">Bring Holograms to Your Industry</h2>
+        <p class="markets-cta__subtitle">
+          Ready to transform how your business engages with customers? Our
+          holographic solutions are customized for your specific industry needs.
+          Let's create something extraordinary together.
+        </p>
+
+        <div class="markets-cta__actions">
+          <a href="#contact" class="markets-cta__btn-primary">
+            Contact Us <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#demo" class="markets-cta__btn-secondary">
+            Request a Demo
+          </a>
+        </div>
+
+        <div class="markets-cta__trust">
+          <span
+            ><i class="fas fa-check-circle"></i> Free consultation
+            available</span
+          >
+          <span class="markets-cta__divider">•</span>
+          <span
+            ><i class="fas fa-check-circle"></i> Custom industry solutions</span
+          >
+          <span class="markets-cta__divider">•</span>
+          <span><i class="fas fa-check-circle"></i> Expert support team</span>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* ===========================================
+           UNIVERSAL BOX SIZING
+           =========================================== */
+      .markets-cta *,
+      .markets-cta *::before,
+      .markets-cta *::after {
+        box-sizing: border-box;
+      }
+
+      /* ===========================================
+           MARKETS CTA SECTION - CSS VARIABLES
+           =========================================== */
+      :root {
+        --cta-blue: #1a237e;
+        --cta-blue-light: #283593;
+        --cta-yellow: #feca43;
+        --cta-white: #ffffff;
+      }
+
+      /* ===========================================
+           CTA SECTION BASE LAYOUT
+           =========================================== */
+      .markets-cta {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+        color: var(--cta-white);
+        padding: 100px 20px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        width: 100%;
+        max-width: 100vw;
+      }
+
+      /* Dot Pattern Background */
+      .markets-cta__pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.1) 1px,
+          transparent 1px
+        );
+        background-size: 30px 30px;
+        opacity: 0.6;
+        pointer-events: none;
+      }
+
+      /* Container */
+      .markets-cta__container {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Icon Box */
+      .markets-cta__icon-box {
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        font-size: 24px;
+        color: var(--cta-yellow);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 20px rgba(254, 202, 67, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .markets-cta__icon-box:hover {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 0 30px rgba(254, 202, 67, 0.4);
+      }
+
+      /* Typography */
+      .markets-cta__title {
+        font-size: 48px;
+        font-weight: 800;
+        margin: 0 0 20px;
+        letter-spacing: -0.8px;
+        line-height: 1.2;
+      }
+
+      .markets-cta__subtitle {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.7;
+        margin: 0 auto 40px;
+        max-width: 650px;
+        font-weight: 500;
+      }
+
+      /* Action Buttons */
+      .markets-cta__actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+      }
+
+      /* Primary Button */
+      .markets-cta__btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 36px;
+        background: var(--cta-yellow);
+        color: var(--cta-blue);
+        font-weight: 700;
+        font-size: 16px;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 8px 20px rgba(254, 202, 67, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .markets-cta__btn-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .markets-cta__btn-primary:hover {
+        background: #ffdc6a;
+        transform: translateY(-3px);
+        box-shadow: 0 12px 28px rgba(254, 202, 67, 0.4);
+      }
+
+      .markets-cta__btn-primary:hover::before {
+        left: 100%;
+      }
+
+      .markets-cta__btn-primary i {
+        font-size: 14px;
+        transition: transform 0.3s ease;
+      }
+
+      .markets-cta__btn-primary:hover i {
+        transform: translateX(4px);
+      }
+
+      /* Secondary Button */
+      .markets-cta__btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        padding: 16px 36px;
+        background: transparent;
+        color: var(--cta-white);
+        font-weight: 600;
+        font-size: 16px;
+        text-decoration: none;
+        border-radius: 50px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .markets-cta__btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: translateY(-3px);
+      }
+
+      /* Trust Indicators */
+      .markets-cta__trust {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 500;
+      }
+
+      .markets-cta__trust span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .markets-cta__trust i {
+        color: #4ade80;
+        font-size: 13px;
+      }
+
+      .markets-cta__divider {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 18px;
+      }
+
+      /* ===========================================
+           RESPONSIVE BREAKPOINTS
+           =========================================== */
+
+      /* Large Desktop: 1400px+ */
+      @media (min-width: 1400px) {
+        .markets-cta {
+          padding: 120px 20px;
+        }
+        .markets-cta__title {
+          font-size: 52px;
+        }
+        .markets-cta__subtitle {
+          font-size: 19px;
+        }
+      }
+
+      /* Desktop: 1200px - 1399px */
+      @media (max-width: 1399px) {
+        .markets-cta__title {
+          font-size: 46px;
+        }
+      }
+
+      /* Tablet Large: 900px - 1199px */
+      @media (max-width: 1199px) {
+        .markets-cta {
+          padding: 90px 30px;
+        }
+        .markets-cta__title {
+          font-size: 42px;
+        }
+        .markets-cta__subtitle {
+          font-size: 17px;
+        }
+      }
+
+      /* Tablet: 768px - 899px */
+      @media (max-width: 899px) {
+        .markets-cta {
+          padding: 80px 24px;
+        }
+        .markets-cta__title {
+          font-size: 38px;
+          letter-spacing: -0.6px;
+        }
+        .markets-cta__subtitle {
+          font-size: 16px;
+          margin-bottom: 36px;
+        }
+        .markets-cta__actions {
+          gap: 14px;
+        }
+        .markets-cta__btn-primary,
+        .markets-cta__btn-secondary {
+          padding: 14px 30px;
+          font-size: 15px;
+        }
+      }
+
+      /* Mobile Large: 600px - 767px */
+      @media (max-width: 767px) {
+        .markets-cta {
+          padding: 70px 20px;
+        }
+        .markets-cta__icon-box {
+          width: 55px;
+          height: 55px;
+          font-size: 22px;
+          margin-bottom: 24px;
+        }
+        .markets-cta__title {
+          font-size: 32px;
+          margin-bottom: 18px;
+        }
+        .markets-cta__subtitle {
+          font-size: 15px;
+          margin-bottom: 32px;
+        }
+        .markets-cta__actions {
+          flex-direction: column;
+          gap: 12px;
+          width: 100%;
+        }
+        .markets-cta__btn-primary,
+        .markets-cta__btn-secondary {
+          width: 100%;
+          max-width: 320px;
+          justify-content: center;
+        }
+        .markets-cta__trust {
+          flex-direction: column;
+          gap: 12px;
+        }
+        .markets-cta__divider {
+          display: none;
+        }
+      }
+
+      /* Mobile: 480px - 599px */
+      @media (max-width: 599px) {
+        .markets-cta {
+          padding: 60px 20px;
+        }
+        .markets-cta__title {
+          font-size: 28px;
+          letter-spacing: -0.4px;
+        }
+        .markets-cta__subtitle {
+          font-size: 14px;
+          line-height: 1.6;
+        }
+        .markets-cta__btn-primary,
+        .markets-cta__btn-secondary {
+          padding: 13px 28px;
+          font-size: 14px;
+        }
+        .markets-cta__trust {
+          font-size: 13px;
+        }
+      }
+
+      /* Mobile Small: 360px - 479px */
+      @media (max-width: 479px) {
+        .markets-cta__icon-box {
+          width: 50px;
+          height: 50px;
+          font-size: 20px;
+        }
+        .markets-cta__title {
+          font-size: 26px;
+        }
+        .markets-cta__btn-primary,
+        .markets-cta__btn-secondary {
+          padding: 12px 24px;
+          font-size: 13px;
+        }
+      }
+
+      /* Mobile XS: < 360px */
+      @media (max-width: 359px) {
+        .markets-cta {
+          padding: 50px 16px;
+        }
+        .markets-cta__title {
+          font-size: 24px;
+        }
+        .markets-cta__subtitle {
+          font-size: 13px;
+        }
+        .markets-cta__trust {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </body>
+</html>
