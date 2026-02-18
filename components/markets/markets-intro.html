@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Markets Intro Section -->
+    <section class="markets-intro">
+      <div class="markets-intro__container">
+        <span class="markets-intro__badge">Markets We Serve</span>
+        <h2 class="markets-intro__heading">
+          Transforming <span class="accent-blue">Industries</span> with
+          Holographic Technology
+        </h2>
+        <p class="markets-intro__text">
+          Explore our complete range of holographic solutions tailored for
+          retail, healthcare, education, corporate, events, museums, real
+          estate, shopping malls, and advertising sectors.
+        </p>
+      </div>
+    </section>
+
+    <style>
+      /* ===========================================
+           UNIVERSAL BOX SIZING
+           =========================================== */
+      .markets-intro *,
+      .markets-intro *::before,
+      .markets-intro *::after {
+        box-sizing: border-box;
+      }
+
+      /* ===========================================
+           MARKETS INTRO SECTION - CSS VARIABLES
+           =========================================== */
+      :root {
+        --intro-blue: #2b4dff;
+        --intro-navy: #1a237e;
+        --intro-text: #334155;
+        --intro-text-light: #64748b;
+        --intro-bg: #f8fafc;
+        --intro-white: #ffffff;
+      }
+
+      /* ===========================================
+           INTRO SECTION BASE LAYOUT
+           =========================================== */
+      .markets-intro {
+        width: 100%;
+        max-width: 100vw;
+        background: var(--intro-bg);
+        padding: 100px 20px;
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+        text-align: center;
+      }
+
+      .markets-intro__container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+      .markets-intro__badge {
+        display: inline-block;
+        background: rgba(26, 35, 126, 0.08);
+        color: var(--intro-navy);
+        font-weight: 700;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        padding: 8px 20px;
+        border-radius: 50px;
+        margin-bottom: 20px;
+      }
+
+      .markets-intro__heading {
+        font-size: 42px;
+        font-weight: 800;
+        line-height: 1.25;
+        color: var(--intro-navy);
+        margin: 0 0 20px 0;
+        letter-spacing: -0.02em;
+      }
+
+      .accent-blue {
+        color: var(--intro-blue);
+      }
+
+      .markets-intro__text {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.7;
+        color: var(--intro-text-light);
+        margin: 0;
+      }
+
+      /* ===========================================
+           RESPONSIVE BREAKPOINTS
+           =========================================== */
+
+      /* Tablet Large */
+      @media (max-width: 900px) {
+        .markets-intro {
+          padding: 80px 30px;
+        }
+        .markets-intro__heading {
+          font-size: 36px;
+        }
+        .markets-intro__text {
+          font-size: 19px;
+        }
+      }
+
+      /* Tablet */
+      @media (max-width: 768px) {
+        .markets-intro {
+          padding: 70px 24px;
+        }
+        .markets-intro__heading {
+          font-size: 32px;
+        }
+        .markets-intro__text {
+          font-size: 18px;
+        }
+      }
+
+      /* Mobile */
+      @media (max-width: 600px) {
+        .markets-intro {
+          padding: 55px 20px;
+        }
+        .markets-intro__heading {
+          font-size: 28px;
+        }
+        .markets-intro__text {
+          font-size: 16px;
+        }
+      }
+
+      /* Mobile Small */
+      @media (max-width: 400px) {
+        .markets-intro {
+          padding: 45px 16px;
+        }
+        .markets-intro__heading {
+          font-size: 24px;
+        }
+        .markets-intro__text {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </body>
+</html>
