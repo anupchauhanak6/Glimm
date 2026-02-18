@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section id="holo-product-tabs">
+      <div class="holo-container">
+        <div class="pt-nav-wrapper">
+          <button
+            class="pt-tab-btn active"
+            onclick="openTab(event, 'tab-overview')"
+          >
+            Overview</button
+          ><button class="pt-tab-btn" onclick="openTab(event, 'tab-features')">
+            Features</button
+          ><button class="pt-tab-btn" onclick="openTab(event, 'tab-specs')">
+            Specs</button
+          ><button
+            class="pt-tab-btn"
+            onclick="openTab(event, 'tab-technology')"
+          >
+            Tech</button
+          ><button
+            class="pt-tab-btn"
+            onclick="openTab(event, 'tab-casestudies')"
+          >
+            Cases
+          </button>
+        </div>
+        <div class="pt-divider"></div>
+        <div id="tab-overview" class="pt-content active">
+          <h2 class="pt-heading">Large Hologram Display Systems</h2>
+          <p class="pt-desc">
+            Enterprise-grade holographic projection for stadium, festival, and
+            outdoor venues. Multi-projector synchronization supports seamless
+            ultra-wide displays up to 50 meters in width.
+          </p>
+          <h3 class="pt-subheading">Markets</h3>
+          <div class="ov-apps-row">
+            <div class="ov-app-chip">
+              <i class="fas fa-check-circle"></i> Stadiums
+            </div>
+            <div class="ov-app-chip">
+              <i class="fas fa-check-circle"></i> Festivals
+            </div>
+            <div class="ov-app-chip">
+              <i class="fas fa-check-circle"></i> Concerts
+            </div>
+            <div class="ov-app-chip">
+              <i class="fas fa-check-circle"></i> Sports Events
+            </div>
+          </div>
+        </div>
+        <div id="tab-features" class="pt-content">
+          <h2 class="pt-heading">Features</h2>
+          <div class="features-grid">
+            <div class="feat-card">
+              <i class="fas fa-sitemap"></i> Multi-Projector Array Support
+            </div>
+            <div class="feat-card">
+              <i class="fas fa-expand"></i> Seamless Edge Blending
+            </div>
+            <div class="feat-card">
+              <i class="fas fa-wrench"></i> Professional Installation
+            </div>
+            <div class="feat-card">
+              <i class="fas fa-cog"></i> Real-Time Synchronization
+            </div>
+          </div>
+        </div>
+        <div id="tab-specs" class="pt-content">
+          <h2 class="pt-heading">Specifications</h2>
+          <table class="specs-table">
+            <tr>
+              <td>Category</td>
+              <td>Large Venue Projection</td>
+            </tr>
+            <tr>
+              <td>Max Width</td>
+              <td>Up to 50m+</td>
+            </tr>
+            <tr>
+              <td>Resolution</td>
+              <td>4K Multi-Array</td>
+            </tr>
+            <tr>
+              <td>Brightness</td>
+              <td>80,000+ Lumens</td>
+            </tr>
+            <tr>
+              <td>Price</td>
+              <td class="text-blue">From $25,000</td>
+            </tr>
+          </table>
+        </div>
+        <div id="tab-technology" class="pt-content">
+          <h2 class="pt-heading">Technology</h2>
+          <p class="pt-desc">
+            Advanced multi-projector management system with automatic
+            calibration and real-time edge blending algorithms. Supports both
+            front-projection and rear-projection configurations.
+          </p>
+        </div>
+        <div id="tab-casestudies" class="pt-content">
+          <h2 class="pt-heading">Deployments</h2>
+          <p class="pt-desc">
+            Successfully deployed at 50+ international stadiums, music
+            festivals, and sporting events globally.
+          </p>
+        </div>
+      </div>
+    </section>
+    <script>
+      function openTab(evt, tabName) {
+        document
+          .querySelectorAll(".pt-content")
+          .forEach((el) => (el.style.display = "none"));
+        document
+          .querySelectorAll(".pt-tab-btn")
+          .forEach((el) => el.classList.remove("active"));
+        document.getElementById(tabName).style.display = "block";
+        if (evt) evt.currentTarget.classList.add("active");
+      }
+      openTab(null, "tab-overview");
+    </script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background: white;
+      }
+      :root {
+        --pt-blue: #1a237e;
+        --pt-dark: #111827;
+        --pt-grey: #6b7280;
+        --pt-border: #e5e7eb;
+      }
+      #holo-product-tabs {
+        padding: 60px 20px;
+      }
+      .holo-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .pt-nav-wrapper {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid var(--pt-border);
+      }
+      .pt-tab-btn {
+        background: none;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--pt-grey);
+        padding: 14px 0;
+        cursor: pointer;
+      }
+      .pt-tab-btn.active {
+        color: var(--pt-blue);
+        border-bottom: 3px solid var(--pt-blue);
+      }
+      .pt-divider {
+        display: none;
+      }
+      .pt-content {
+        display: none;
+      }
+      .pt-content.active {
+        display: block;
+      }
+      .pt-heading {
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 28px;
+      }
+      .pt-desc {
+        font-size: 18px;
+        color: var(--pt-grey);
+        margin-bottom: 40px;
+        line-height: 1.75;
+      }
+      .pt-subheading {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 35px 0 18px;
+      }
+      .ov-apps-row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
+      .ov-app-chip {
+        background: #eff6ff;
+        color: var(--pt-blue);
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 15px;
+        border: 1px solid #dbeafe;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+        margin: 30px 0;
+      }
+      .feat-card {
+        border: 1px solid var(--pt-border);
+        border-radius: 12px;
+        padding: 24px;
+        background: #f9fafb;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        font-weight: 600;
+      }
+      .feat-card i {
+        font-size: 24px;
+        color: var(--pt-blue);
+        flex-shrink: 0;
+      }
+      .specs-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+      }
+      .specs-table td {
+        padding: 18px 24px;
+        border-bottom: 1px solid var(--pt-border);
+      }
+      .specs-table td:first-child {
+        background: #f9fafb;
+        font-weight: 600;
+        width: 30%;
+      }
+      .text-blue {
+        color: var(--pt-blue);
+        font-weight: 700;
+      }
+      table {
+        width: 100%;
+      }
+    </style>
+  </body>
+</html>
