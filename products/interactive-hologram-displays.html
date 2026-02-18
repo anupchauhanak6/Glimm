@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Hologram Displays | GLIMM</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <div id="product-detail"></div>
+    <div id="product-features"></div>
+
+    <div id="footer"></div>
+
+    <script>
+      window.GlimmBase = "../";
+    </script>
+    <script src="../script.js"></script>
+    <script>
+      loadComponentFrom(
+        "../components/products/interactive-hologram-displays",
+        "detail.html",
+        "product-detail",
+      );
+      loadComponentFrom(
+        "../components/products/interactive-hologram-displays",
+        "features.html",
+        "product-features",
+      );
+    </script>
+  </body>
+</html>
