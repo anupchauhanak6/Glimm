@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Markets Grid Section -->
+    <section class="markets-grid">
+      <div class="markets-grid__container">
+        <div class="markets-grid__wrapper" id="marketsGridWrapper">
+          <!-- Market cards will be dynamically generated from marketsData array -->
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* ===========================================
+           UNIVERSAL BOX SIZING
+           =========================================== */
+      .markets-grid *,
+      .markets-grid *::before,
+      .markets-grid *::after {
+        box-sizing: border-box;
+      }
+
+      /* ===========================================
+           MARKETS GRID SECTION - CSS VARIABLES
+           =========================================== */
+      :root {
+        --grid-bg: #ffffff;
+        --grid-blue: #1a237e;
+        --grid-gold: #d4af37;
+        --grid-text: #334155;
+        --grid-text-light: #64748b;
+        --grid-white: #ffffff;
+      }
+
+      /* ===========================================
+           GRID SECTION BASE LAYOUT
+           =========================================== */
+      .markets-grid {
+        width: 100%;
+        max-width: 100vw;
+        background: linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #fafbfc 50%,
+          #ffffff 100%
+        );
+        padding: 80px 0 120px 0;
+        font-family: "Inter", sans-serif;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      .markets-grid::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(26, 35, 126, 0.02) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(212, 175, 55, 0.02) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+
+      .markets-grid__container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 40px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .markets-grid__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        width: 100%;
+      }
+
+      /* ===========================================
+           MARKET CARD STYLING
+           =========================================== */
+      .market-card {
+        background: var(--grid-white);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow:
+          0 4px 6px rgba(0, 0, 0, 0.05),
+          0 1px 3px rgba(0, 0, 0, 0.03);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .market-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        padding: 2px;
+        background: linear-gradient(
+          135deg,
+          rgba(26, 35, 126, 0.15),
+          rgba(212, 175, 55, 0.15)
+        );
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .market-card:hover {
+        transform: translateY(-8px);
+        box-shadow:
+          0 20px 40px rgba(26, 35, 126, 0.12),
+          0 8px 16px rgba(0, 0, 0, 0.08);
+      }
+
+      .market-card:hover::after {
+        opacity: 1;
+      }
+
+      /* Video Media Container */
+      .market-card__media {
+        position: relative;
+        width: 100%;
+        height: 280px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      }
+
+      .market-card__video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .market-card:hover .market-card__video {
+        transform: scale(1.08);
+      }
+
+      /* Industry Badge */
+      .market-card__badge {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: rgba(26, 35, 126, 0.9);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        color: var(--grid-white);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        z-index: 2;
+      }
+
+      /* Card Content */
+      .market-card__content {
+        padding: 28px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .market-card__title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.3;
+        margin: 0 0 14px 0;
+        color: var(--grid-text);
+        transition: color 0.3s ease;
+      }
+
+      .market-card:hover .market-card__title {
+        color: var(--grid-blue);
+      }
+
+      .market-card__problem {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0 0 10px 0;
+        color: var(--grid-text);
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .market-card__problem i {
+        color: #ef4444;
+        font-size: 14px;
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+
+      .market-card__solution {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.6;
+        margin: 0 0 24px 0;
+        color: var(--grid-text-light);
+        flex: 1;
+      }
+
+      /* Explore Button */
+      .market-card__btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--grid-white);
+        background: linear-gradient(135deg, var(--grid-blue) 0%, #2d3e9f 100%);
+        border: none;
+        border-radius: 8px;
+        padding: 12px 24px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .market-card__btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .market-card:hover .market-card__btn {
+        background: linear-gradient(135deg, #151d66 0%, var(--grid-blue) 100%);
+        box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .market-card:hover .market-card__btn::before {
+        left: 100%;
+      }
+
+      .market-card__btn i {
+        font-size: 12px;
+        transition: transform 0.3s ease;
+      }
+
+      .market-card:hover .market-card__btn i {
+        transform: translateX(3px);
+      }
+
+      /* ===========================================
+           RESPONSIVE BREAKPOINTS
+           =========================================== */
+
+      /* Large Desktop: 1400px+ */
+      @media (min-width: 1400px) {
+        .markets-grid {
+          padding: 100px 0 140px 0;
+        }
+        .markets-grid__wrapper {
+          gap: 36px;
+        }
+        .market-card__media {
+          height: 300px;
+        }
+      }
+
+      /* Desktop: 1200px - 1399px */
+      @media (max-width: 1399px) {
+        .markets-grid__wrapper {
+          gap: 28px;
+        }
+        .market-card__media {
+          height: 270px;
+        }
+      }
+
+      /* Tablet Large: 900px - 1199px */
+      @media (max-width: 1199px) {
+        .markets-grid {
+          padding: 70px 0 100px 0;
+        }
+        .markets-grid__container {
+          padding: 0 30px;
+        }
+        .markets-grid__wrapper {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 26px;
+        }
+        .market-card__media {
+          height: 260px;
+        }
+        .market-card__content {
+          padding: 24px;
+        }
+      }
+
+      /* Tablet: 768px - 899px */
+      @media (max-width: 899px) {
+        .markets-grid {
+          padding: 60px 0 90px 0;
+        }
+        .markets-grid__wrapper {
+          gap: 24px;
+        }
+        .market-card__media {
+          height: 240px;
+        }
+        .market-card__title {
+          font-size: 22px;
+          margin-bottom: 12px;
+        }
+        .market-card__content {
+          padding: 22px;
+        }
+      }
+
+      /* Mobile Large: 600px - 767px */
+      @media (max-width: 767px) {
+        .markets-grid {
+          padding: 50px 0 80px 0;
+        }
+        .markets-grid__container {
+          padding: 0 24px;
+        }
+        .markets-grid__wrapper {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .market-card__media {
+          height: 260px;
+        }
+        .market-card__title {
+          font-size: 21px;
+        }
+      }
+
+      /* Mobile: 480px - 599px */
+      @media (max-width: 599px) {
+        .markets-grid {
+          padding: 45px 0 70px 0;
+        }
+        .markets-grid__container {
+          padding: 0 20px;
+        }
+        .markets-grid__wrapper {
+          gap: 20px;
+        }
+        .market-card__media {
+          height: 240px;
+        }
+        .market-card__content {
+          padding: 20px;
+        }
+        .market-card__title {
+          font-size: 20px;
+        }
+        .market-card__problem,
+        .market-card__solution {
+          font-size: 13px;
+        }
+      }
+
+      /* Mobile Small: 360px - 479px */
+      @media (max-width: 479px) {
+        .market-card__media {
+          height: 220px;
+        }
+        .market-card__content {
+          padding: 18px;
+        }
+        .market-card__title {
+          font-size: 19px;
+        }
+        .market-card__btn {
+          padding: 11px 20px;
+          font-size: 13px;
+        }
+      }
+
+      /* Mobile XS: < 360px */
+      @media (max-width: 359px) {
+        .markets-grid {
+          padding: 40px 0 60px 0;
+        }
+        .markets-grid__container {
+          padding: 0 16px;
+        }
+        .market-card__media {
+          height: 200px;
+        }
+        .market-card__content {
+          padding: 16px;
+        }
+        .market-card__title {
+          font-size: 18px;
+        }
+        .market-card__problem,
+        .market-card__solution {
+          font-size: 12px;
+        }
+      }
+    </style>
+
+    <script>
+      // ===========================================
+      // MARKETS DATA - JSON Structure
+      // ===========================================
+      const marketsData = [
+        {
+          id: 1,
+          name: "Retail",
+          industry: "Retail",
+          problem: "Low customer engagement in physical stores",
+          solution:
+            "Interactive 3D holographic product displays that allow customers to explore products from every angle, increasing engagement by 145% and driving impulse purchases.",
+          videoMp4: "../assets/videos/project-retail-1.mp4",
+          videoWebm: "../assets/videos/project-retail-1.webm",
+          poster: "../assets/videos/project-1-poster.jpg",
+          link: "#retail-solutions",
+        },
+        {
+          id: 2,
+          name: "Shopping Mall",
+          industry: "Retail",
+          problem: "Difficulty attracting visitors to specific stores",
+          solution:
+            "Eye-catching holographic directories and promotional displays positioned at key mall intersections, guiding foot traffic and showcasing store offerings with stunning visual impact.",
+          videoMp4: "../assets/videos/project-retail-2.mp4",
+          videoWebm: "../assets/videos/project-retail-2.webm",
+          poster: "../assets/videos/project-2-poster.jpg",
+          link: "#shopping-mall",
+        },
+        {
+          id: 3,
+          name: "Events & Exhibitions",
+          industry: "Events",
+          problem: "Static booth presentations fail to capture attention",
+          solution:
+            "Large-scale holographic presentations and 360° product showcases that stop visitors in their tracks, creating memorable brand experiences at trade shows and exhibitions.",
+          videoMp4: "../assets/videos/project-event-1.mp4",
+          videoWebm: "../assets/videos/project-event-1.webm",
+          poster: "../assets/videos/project-3-poster.jpg",
+          link: "#events-solutions",
+        },
+        {
+          id: 4,
+          name: "Corporate",
+          industry: "Business",
+          problem: "Remote collaboration lacks personal presence",
+          solution:
+            "Holographic video conferencing and virtual boardroom presentations that bring remote teams together with lifelike presence, transforming global collaboration and executive communications.",
+          videoMp4: "../assets/videos/project-corporate-1.mp4",
+          videoWebm: "../assets/videos/project-corporate-1.webm",
+          poster: "../assets/videos/project-4-poster.jpg",
+          link: "#corporate-solutions",
+        },
+        {
+          id: 5,
+          name: "Education",
+          industry: "Education",
+          problem: "Complex concepts difficult to visualize and understand",
+          solution:
+            "3D holographic models of anatomical systems, molecular structures, and historical artifacts that students can examine from every angle, increasing comprehension and retention by 78%.",
+          videoMp4: "../assets/videos/project-education-1.mp4",
+          videoWebm: "../assets/videos/project-education-1.webm",
+          poster: "../assets/videos/project-5-poster.jpg",
+          link: "#education-solutions",
+        },
+        {
+          id: 6,
+          name: "Healthcare",
+          industry: "Healthcare",
+          problem: "Limitations in medical visualization and planning",
+          solution:
+            "Advanced holographic imaging for surgical planning, patient education, and medical training. Surgeons can examine 3D scans in mid-air, improving diagnostic accuracy and treatment outcomes.",
+          videoMp4: "../assets/videos/project-healthcare-1.mp4",
+          videoWebm: "../assets/videos/project-healthcare-1.webm",
+          poster: "../assets/videos/project-6-poster.jpg",
+          link: "#healthcare-solutions",
+        },
+        {
+          id: 7,
+          name: "Real Estate",
+          industry: "Property",
+          problem: "Buyers struggle to visualize unbuilt properties",
+          solution:
+            "Holographic property walkthroughs and architectural visualizations that let potential buyers explore every room, customize finishes, and experience their future home before construction begins.",
+          videoMp4: "../assets/videos/project-realestate-1.mp4",
+          videoWebm: "../assets/videos/project-realestate-1.webm",
+          poster: "../assets/videos/project-7-poster.jpg",
+          link: "#realestate-solutions",
+        },
+        {
+          id: 8,
+          name: "Museums",
+          industry: "Culture",
+          problem: "Artifacts require protection while limiting access",
+          solution:
+            "Holographic recreations of priceless artifacts, historical figures, and extinct species that visitors can explore up close without risk to originals, creating unforgettable educational experiences.",
+          videoMp4: "../assets/videos/project-museum-1.mp4",
+          videoWebm: "../assets/videos/project-museum-1.webm",
+          poster: "../assets/videos/project-8-poster.jpg",
+          link: "#museums-solutions",
+        },
+        {
+          id: 9,
+          name: "Advertising",
+          industry: "Marketing",
+          problem: "Traditional ads fail to break through the noise",
+          solution:
+            "Jaw-dropping holographic advertisements in high-traffic locations that stop people mid-stride. 3D floating images and interactive brand experiences that achieve 320% higher engagement than traditional displays.",
+          videoMp4: "../assets/videos/project-advertising-1.mp4",
+          videoWebm: "../assets/videos/project-advertising-1.webm",
+          poster: "../assets/videos/project-9-poster.jpg",
+          link: "#advertising-solutions",
+        },
+      ];
+
+      // ===========================================
+      // CREATE MARKET CARD HTML
+      // ===========================================
+      function createMarketCard(market) {
+        return `
+          <div class="market-card" data-market-id="${market.id}">
+            <div class="market-card__media">
+              <video 
+                class="market-card__video" 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                poster="${market.poster}"
+              >
+                <source src="${market.videoMp4}" type="video/mp4" />
+                <source src="${market.videoWebm}" type="video/webm" />
+              </video>
+              <div class="market-card__badge">${market.industry}</div>
+            </div>
+            <div class="market-card__content">
+              <h3 class="market-card__title">${market.name}</h3>
+              <p class="market-card__problem">
+                <i class="fas fa-exclamation-circle"></i>
+                <span>${market.problem}</span>
+              </p>
+              <p class="market-card__solution">${market.solution}</p>
+              <a href="${market.link}" class="market-card__btn">
+                Explore Solutions <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        `;
+      }
+
+      // ===========================================
+      // RENDER ALL MARKET CARDS
+      // ===========================================
+      function renderMarkets() {
+        const gridWrapper = document.getElementById("marketsGridWrapper");
+        if (!gridWrapper) return;
+
+        const cardsHTML = marketsData.map(createMarketCard).join("");
+        gridWrapper.innerHTML = cardsHTML;
+
+        // Initialize Intersection Observer for video performance
+        initVideoObserver();
+      }
+
+      // ===========================================
+      // VIDEO PERFORMANCE OPTIMIZATION
+      // ===========================================
+      function initVideoObserver() {
+        const videoElements = document.querySelectorAll(".market-card__video");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const video = entry.target;
+              if (entry.isIntersecting) {
+                // Play video when in viewport
+                if (video.paused) {
+                  video.play().catch(() => {
+                    // Handle autoplay restrictions
+                  });
+                }
+              } else {
+                // Pause video when out of viewport
+                if (!video.paused) {
+                  video.pause();
+                }
+              }
+            });
+          },
+          {
+            threshold: 0.25,
+            rootMargin: "50px",
+          },
+        );
+
+        videoElements.forEach((video) => observer.observe(video));
+      }
+
+      // ===========================================
+      // INITIALIZE ON DOM READY
+      // ===========================================
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", renderMarkets);
+      } else {
+        renderMarkets();
+      }
+    </script>
+  </body>
+</html>
