@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Projects Grid Section -->
+    <section class="projects-grid">
+      <div class="projects-grid__container">
+        <div class="projects-grid__wrapper" id="projectsGridWrapper">
+          <!-- Project cards will be dynamically generated from projectsData array -->
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* ===========================================
+           UNIVERSAL BOX SIZING
+           =========================================== */
+      .projects-grid *,
+      .projects-grid *::before,
+      .projects-grid *::after {
+        box-sizing: border-box;
+      }
+
+      /* ===========================================
+           PROJECTS GRID SECTION - CSS VARIABLES
+           =========================================== */
+      :root {
+        --grid-bg: #ffffff;
+        --grid-blue: #1a237e;
+        --grid-gold: #d4af37;
+        --grid-text: #334155;
+        --grid-text-light: #64748b;
+        --grid-white: #ffffff;
+        --grid-overlay: linear-gradient(
+          180deg,
+          rgba(10, 14, 39, 0) 0%,
+          rgba(10, 14, 39, 0.6) 40%,
+          rgba(10, 14, 39, 0.95) 100%
+        );
+      }
+
+      /* ===========================================
+           GRID SECTION BASE LAYOUT
+           =========================================== */
+      .projects-grid {
+        width: 100%;
+        max-width: 100vw;
+        background: linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #fafbfc 50%,
+          #ffffff 100%
+        );
+        padding: 80px 0 120px 0;
+        font-family: "Inter", sans-serif;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      .projects-grid::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(26, 35, 126, 0.02) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(212, 175, 55, 0.02) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+
+      .projects-grid__container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 40px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .projects-grid__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        width: 100%;
+      }
+
+      /* ===========================================
+           PROJECT CARD STYLING
+           =========================================== */
+      .project-card {
+        position: relative;
+        background-color: #0a0e27;
+        border-radius: 18px;
+        overflow: hidden;
+        transition:
+          transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow:
+          0 4px 20px rgba(0, 0, 0, 0.12),
+          0 0 0 1px rgba(255, 255, 255, 0.05);
+        width: 100%;
+      }
+
+      .project-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(26, 35, 126, 0.05) 0%,
+          transparent 50%
+        );
+        opacity: 0;
+        transition: opacity 0.45s ease;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px) scale(1.01);
+        box-shadow:
+          0 16px 40px rgba(26, 35, 126, 0.2),
+          0 0 0 1px rgba(26, 35, 126, 0.2);
+      }
+
+      .project-card:hover::after {
+        opacity: 1;
+      }
+
+      /* Video Media Container */
+      .project-card__media {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+      }
+
+      .project-card__video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        filter: brightness(0.95);
+      }
+
+      .project-card:hover .project-card__video {
+        transform: scale(1.1);
+        filter: brightness(1);
+      }
+
+      /* Glassmorphism Overlay */
+      .project-card__overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--grid-overlay);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 30px 26px;
+        transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 2;
+      }
+
+      .project-card:hover .project-card__overlay {
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding-bottom: 34px;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 14, 39, 0) 0%,
+          rgba(10, 14, 39, 0.65) 35%,
+          rgba(10, 14, 39, 0.97) 100%
+        );
+      }
+
+      /* Card Content */
+      .project-card__content {
+        color: var(--grid-white);
+      }
+
+      .project-card__title {
+        font-size: 23px;
+        font-weight: 700;
+        line-height: 1.3;
+        margin: 0 0 12px 0;
+        color: var(--grid-white);
+        transition: color 0.3s ease;
+      }
+
+      .project-card:hover .project-card__title {
+        color: rgba(26, 35, 126);
+      }
+
+      .project-card__location,
+      .project-card__service {
+        font-size: 13px;
+        font-weight: 500;
+        margin: 0 0 7px 0;
+        color: rgba(255, 255, 255, 0.85);
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .project-card__location i,
+      .project-card__service i {
+        color: #5b6fd8;
+        font-size: 13px;
+      }
+
+      .project-card__description {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.6;
+        margin: 14px 0 18px 0;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* View Case Study Button */
+      .project-card__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--grid-white);
+        background: linear-gradient(135deg, var(--grid-blue) 0%, #2d3e9f 100%);
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 14px rgba(26, 35, 126, 0.35);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-card__btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .project-card__btn:hover::before {
+        left: 100%;
+      }
+
+      .project-card__btn:hover {
+        background: linear-gradient(135deg, #151d66 0%, var(--grid-blue) 100%);
+        box-shadow: 0 6px 24px rgba(26, 35, 126, 0.45);
+        transform: translateX(4px);
+      }
+
+      .project-card__btn i {
+        font-size: 12px;
+        transition: transform 0.3s ease;
+      }
+
+      .project-card__btn:hover i {
+        transform: translateX(3px);
+      }
+
+      /* ===========================================
+           FILTER ANIMATION
+           =========================================== */
+      .project-card.hidden {
+        display: none;
+      }
+
+      .project-card.fade-out {
+        animation: fadeOut 0.3s ease-out forwards;
+      }
+
+      .project-card.fade-in {
+        animation: fadeIn 0.4s ease-out forwards;
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+          transform: scale(1);
+        }
+        to {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* ===========================================
+           RESPONSIVE DESIGN
+           =========================================== */
+
+      /* Large Desktop */
+      @media (max-width: 1400px) {
+        .projects-grid__container {
+          max-width: 1200px;
+        }
+
+        .projects-grid__wrapper {
+          gap: 26px;
+        }
+
+        .project-card__media {
+          height: 400px;
+        }
+
+        .project-card__title {
+          font-size: 21px;
+        }
+      }
+
+      /* Desktop */
+      @media (max-width: 1200px) {
+        .projects-grid {
+          padding: 70px 0 100px 0;
+        }
+
+        .projects-grid__container {
+          max-width: 1100px;
+          padding: 0 30px;
+        }
+
+        .projects-grid__wrapper {
+          gap: 24px;
+        }
+
+        .project-card__media {
+          height: 380px;
+        }
+
+        .project-card__overlay {
+          padding: 24px 20px;
+        }
+
+        .project-card__title {
+          font-size: 20px;
+        }
+      }
+
+      /* Tablet Large - 2 Columns */
+      @media (max-width: 900px) {
+        .projects-grid {
+          padding: 60px 0 80px 0;
+        }
+
+        .projects-grid__container {
+          padding: 0 24px;
+        }
+
+        .projects-grid__wrapper {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+
+        .project-card__media {
+          height: 360px;
+        }
+
+        .project-card__overlay {
+          padding: 26px 22px;
+        }
+
+        .project-card__title {
+          font-size: 21px;
+          margin-bottom: 10px;
+        }
+
+        .project-card__location,
+        .project-card__service {
+          font-size: 13px;
+        }
+
+        .project-card__description {
+          font-size: 14px;
+          line-height: 1.55;
+        }
+
+        .project-card__btn {
+          font-size: 13px;
+          padding: 11px 22px;
+        }
+      }
+
+      /* Tablet - 2 Columns */
+      @media (max-width: 768px) {
+        .projects-grid {
+          padding: 50px 0 70px 0;
+        }
+
+        .projects-grid__container {
+          padding: 0 20px;
+        }
+
+        .projects-grid__wrapper {
+          gap: 18px;
+        }
+
+        .project-card__media {
+          height: 340px;
+        }
+
+        .project-card__overlay {
+          padding: 24px 20px;
+        }
+
+        .project-card__title {
+          font-size: 20px;
+        }
+
+        .project-card__description {
+          font-size: 13px;
+        }
+      }
+
+      /* Mobile Large - 1 Column */
+      @media (max-width: 600px) {
+        .projects-grid {
+          padding: 40px 0 60px 0;
+        }
+
+        .projects-grid__container {
+          padding: 0 16px;
+        }
+
+        .projects-grid__wrapper {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .project-card {
+          border-radius: 16px;
+        }
+
+        .project-card__media {
+          height: 380px;
+        }
+
+        .project-card__overlay {
+          padding: 26px 22px;
+        }
+
+        .project-card__title {
+          font-size: 24px;
+          margin-bottom: 12px;
+          line-height: 1.25;
+        }
+
+        .project-card__location,
+        .project-card__service {
+          font-size: 13px;
+          margin-bottom: 8px;
+        }
+
+        .project-card__description {
+          font-size: 14px;
+          line-height: 1.6;
+          margin: 14px 0 18px 0;
+        }
+
+        .project-card__btn {
+          font-size: 14px;
+          padding: 12px 24px;
+          min-height: 44px;
+        }
+      }
+
+      /* Mobile Small */
+      @media (max-width: 400px) {
+        .projects-grid {
+          padding: 35px 0 50px 0;
+        }
+
+        .projects-grid__container {
+          padding: 0 14px;
+        }
+
+        .projects-grid__wrapper {
+          gap: 18px;
+        }
+
+        .project-card {
+          border-radius: 14px;
+        }
+
+        .project-card__media {
+          height: 320px;
+        }
+
+        .project-card__overlay {
+          padding: 22px 18px;
+        }
+
+        .project-card__title {
+          font-size: 22px;
+          margin-bottom: 10px;
+        }
+
+        .project-card__location,
+        .project-card__service {
+          font-size: 12px;
+          margin-bottom: 6px;
+        }
+
+        .project-card__location i,
+        .project-card__service i {
+          font-size: 12px;
+        }
+
+        .project-card__description {
+          font-size: 13px;
+          line-height: 1.55;
+          margin: 12px 0 16px 0;
+        }
+
+        .project-card__btn {
+          font-size: 13px;
+          padding: 11px 20px;
+          min-height: 44px;
+        }
+
+        .project-card:hover {
+          transform: translateY(-6px);
+        }
+      }
+    </style>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // ========================================
+        // PROJECTS DATA - JSON Array
+        // Add/Edit/Remove projects easily here
+        // ========================================
+        const projectsData = [
+          {
+            id: 1,
+            title: "Luxury Fashion Boutique",
+            location: "Dubai Mall, UAE",
+            category: "retail",
+            service: "3D Hologram Display",
+            description:
+              "Interactive holographic showcase featuring rotating product displays and virtual try-on experiences.",
+            videoMp4: "assets/videos/project-retail-1.mp4",
+            videoWebm: "assets/videos/project-retail-1.webm",
+            poster: "assets/videos/project-1-poster.jpg",
+            caseStudyLink: "#",
+          },
+          {
+            id: 2,
+            title: "Tech Conference 2025",
+            location: "Mumbai, India",
+            category: "events",
+            service: "Holographic Stage Projection",
+            description:
+              "Large-scale holographic presentation system for keynote speakers and product launches.",
+            videoMp4: "assets/videos/project-events-1.mp4",
+            videoWebm: "assets/videos/project-events-1.webm",
+            poster: "assets/videos/project-2-poster.jpg",
+            caseStudyLink: "#",
+          },
+          {
+            id: 3,
+            title: "Corporate Reception Display",
+            location: "Singapore",
+            category: "corporate",
+            service: "Transparent Hologram Screen",
+            description:
+              "Premium reception area installation with brand messaging and interactive information displays.",
+            videoMp4: "assets/videos/project-corporate-1.mp4",
+            videoWebm: "assets/videos/project-corporate-1.webm",
+            poster: "assets/videos/project-3-poster.jpg",
+            caseStudyLink: "#",
+          },
+          {
+            id: 4,
+            title: "Auto Expo 2025",
+            location: "Frankfurt, Germany",
+            category: "exhibition",
+            service: "360° Hologram Fan",
+            description:
+              "Stunning 360-degree vehicle visualization with interactive feature highlights and specifications.",
+            videoMp4: "assets/videos/project-exhibition-1.mp4",
+            videoWebm: "assets/videos/project-exhibition-1.webm",
+            poster: "assets/videos/project-4-poster.jpg",
+            caseStudyLink: "#",
+          },
+          {
+            id: 5,
+            title: "Central Atrium Experience",
+            location: "Delhi, India",
+            category: "mall",
+            service: "Large Format Hologram",
+            description:
+              "Eye-catching mall atrium installation featuring promotional content and seasonal campaigns.",
+            videoMp4: "assets/videos/project-mall-1.mp4",
+            videoWebm: "assets/videos/project-mall-1.webm",
+            poster: "assets/videos/project-5-poster.jpg",
+            caseStudyLink: "#",
+          },
+          {
+            id: 6,
+            title: "Electronics Showroom",
+            location: "Tokyo, Japan",
+            category: "retail",
+            service: "Interactive Hologram Display",
+            description:
+              "Multi-touch holographic system for product exploration and technical specifications display.",
+            videoMp4: "assets/videos/project-retail-2.mp4",
+            videoWebm: "assets/videos/project-retail-2.webm",
+            poster: "assets/videos/project-6-poster.jpg",
+            caseStudyLink: "#",
+          },
+          {
+            id: 7,
+            title: "Music Festival Stage",
+            location: "London, UK",
+            category: "events",
+            service: "Holographic Video Wall",
+            description:
+              "Massive holographic backdrop creating immersive visual experiences for live performances.",
+            videoMp4: "assets/videos/project-events-2.mp4",
+            videoWebm: "assets/videos/project-events-2.webm",
+            poster: "assets/videos/project-7-poster.jpg",
+            caseStudyLink: "#",
+          },
+          {
+            id: 8,
+            title: "Executive Boardroom",
+            location: "New York, USA",
+            category: "corporate",
+            service: "Holographic Conferencing",
+            description:
+              "State-of-the-art holographic telepresence system for remote executive meetings.",
+            videoMp4: "assets/videos/project-corporate-2.mp4",
+            videoWebm: "assets/videos/project-corporate-2.webm",
+            poster: "assets/videos/project-8-poster.jpg",
+            caseStudyLink: "#",
+          },
+          {
+            id: 9,
+            title: "Museum Digital Gallery",
+            location: "Paris, France",
+            category: "exhibition",
+            service: "Holographic Art Display",
+            description:
+              "Interactive museum installation bringing historical artifacts to life through holography.",
+            videoMp4: "assets/videos/project-exhibition-2.mp4",
+            videoWebm: "assets/videos/project-exhibition-2.webm",
+            poster: "assets/videos/project-9-poster.jpg",
+            caseStudyLink: "#",
+          },
+        ];
+
+        // ========================================
+        // GENERATE PROJECT CARD HTML
+        // ========================================
+        function createProjectCard(project) {
+          return `
+            <article class="project-card" data-category="${project.category}">
+              <div class="project-card__media">
+                <video class="project-card__video" autoplay muted loop playsinline poster="${project.poster}">
+                  <source src="${project.videoMp4}" type="video/mp4" />
+                  <source src="${project.videoWebm}" type="video/webm" />
+                </video>
+                <div class="project-card__overlay">
+                  <div class="project-card__content">
+                    <h3 class="project-card__title">${project.title}</h3>
+                    <p class="project-card__location">
+                      <i class="fas fa-map-marker-alt"></i> ${project.location}
+                    </p>
+                    <p class="project-card__service">
+                      <i class="fas fa-cube"></i> ${project.service}
+                    </p>
+                    <p class="project-card__description">${project.description}</p>
+                    <a href="${project.caseStudyLink}" class="project-card__btn">
+                      View Case Study <i class="fas fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          `;
+        }
+
+        // ========================================
+        // RENDER ALL PROJECTS
+        // ========================================
+        function renderProjects() {
+          const gridWrapper = document.getElementById("projectsGridWrapper");
+          if (!gridWrapper) return;
+
+          // Generate HTML for all projects
+          const projectsHTML = projectsData.map(createProjectCard).join("");
+          gridWrapper.innerHTML = projectsHTML;
+        }
+
+        // ========================================
+        // INITIALIZE PROJECTS GRID
+        // ========================================
+        function initProjectsGrid() {
+          // Render projects first
+          renderProjects();
+
+          const gridWrapper = document.getElementById("projectsGridWrapper");
+          const getProjectCards = () =>
+            document.querySelectorAll(".project-card");
+
+          if (!gridWrapper) return;
+
+          // Listen for filter events from filter section
+          document.addEventListener("projectsFilter", function (event) {
+            const selectedCategory = event.detail.category;
+            const projectCards = getProjectCards();
+
+            projectCards.forEach((card) => {
+              const cardCategory = card.getAttribute("data-category");
+
+              if (
+                selectedCategory === "all" ||
+                cardCategory === selectedCategory
+              ) {
+                // Show card with animation
+                card.classList.remove("hidden", "fade-out");
+                card.classList.add("fade-in");
+              } else {
+                // Hide card with animation
+                card.classList.remove("fade-in");
+                card.classList.add("fade-out");
+
+                // Hide completely after animation
+                setTimeout(() => {
+                  if (card.classList.contains("fade-out")) {
+                    card.classList.add("hidden");
+                  }
+                }, 300);
+              }
+            });
+          });
+
+          // Optimize video playback for performance
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                const video = entry.target.querySelector(
+                  ".project-card__video",
+                );
+                if (video) {
+                  if (entry.isIntersecting) {
+                    video.play().catch(() => {
+                      // Autoplay prevented, user interaction needed
+                    });
+                  } else {
+                    video.pause();
+                  }
+                }
+              });
+            },
+            {
+              rootMargin: "50px",
+            },
+          );
+
+          // Observe all project cards for video optimization
+          const projectCards = getProjectCards();
+          projectCards.forEach((card) => {
+            observer.observe(card);
+          });
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initProjectsGrid);
+        } else {
+          initProjectsGrid();
+        }
+      })();
+    </script>
+  </body>
+</html>
