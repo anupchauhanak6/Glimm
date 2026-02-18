@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markets We Serve - Hologram Solutions</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      html,
+      body {
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
+
+      #markets-hero {
+        margin-top: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Component -->
+    <div id="header"></div>
+
+    <!-- Markets Hero Section -->
+    <div id="markets-hero"></div>
+
+    <!-- Markets Intro Section -->
+    <div id="markets-intro"></div>
+
+    <!-- Markets Grid Section -->
+    <div id="markets-grid"></div>
+
+    <!-- Markets CTA Section -->
+    <div id="markets-cta"></div>
+
+    <!-- Footer Component -->
+    <div id="footer"></div>
+
+    <!-- Component Loader Script -->
+    <script src="../script.js"></script>
+
+    <!-- Load Markets Components -->
+    <script>
+      // Load shared header and footer
+      loadComponentFrom("components", "header.html", "header");
+      loadComponentFrom("components", "footer.html", "footer");
+
+      // Load markets-specific components
+      loadComponentFrom(
+        "components/markets",
+        "markets-hero.html",
+        "markets-hero",
+      );
+      loadComponentFrom(
+        "components/markets",
+        "markets-intro.html",
+        "markets-intro",
+      );
+      loadComponentFrom(
+        "components/markets",
+        "markets-grid.html",
+        "markets-grid",
+      );
+      loadComponentFrom(
+        "components/markets",
+        "markets-cta.html",
+        "markets-cta",
+      );
+    </script>
+  </body>
+</html>
