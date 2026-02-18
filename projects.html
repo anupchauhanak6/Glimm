@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Projects - GLIMM Hologram Technology</title>
+    <meta
+      name="description"
+      content="Explore our portfolio of innovative hologram installations across retail, events, corporate, exhibitions, and malls worldwide."
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        width: 100%;
+        min-width: 320px;
+      }
+
+      #header,
+      #projects-hero,
+      #projects-intro,
+      #projects-filter,
+      #projects-grid,
+      #projects-cta,
+      #footer {
+        width: 100%;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Component -->
+    <div id="header"></div>
+
+    <!-- Hero Section -->
+    <div id="projects-hero"></div>
+
+    <!-- Intro Section -->
+    <div id="projects-intro"></div>
+
+    <!-- Filter Section -->
+    <div id="projects-filter"></div>
+
+    <!-- Projects Grid -->
+    <div id="projects-grid"></div>
+
+    <!-- CTA Section -->
+    <div id="projects-cta"></div>
+
+    <!-- Footer Component -->
+    <div id="footer"></div>
+
+    <!-- Load Main Script for Header/Footer -->
+    <script src="script.js"></script>
+
+    <!-- Projects Page Specific Script -->
+    <script>
+      // Load projects-specific components
+      const projectsBase = `${window.GlimmBase || ""}components/projects`;
+
+      loadComponentFrom(projectsBase, "projects-hero.html", "projects-hero");
+      loadComponentFrom(projectsBase, "projects-intro.html", "projects-intro");
+      loadComponentFrom(
+        projectsBase,
+        "projects-filter.html",
+        "projects-filter",
+      );
+      loadComponentFrom(projectsBase, "projects-grid.html", "projects-grid");
+      loadComponentFrom(projectsBase, "projects-cta.html", "projects-cta");
+    </script>
+  </body>
+</html>
