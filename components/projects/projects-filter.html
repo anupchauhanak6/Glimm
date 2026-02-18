@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Projects Filter Section -->
+    <section class="projects-filter">
+      <div class="projects-filter__container">
+        <h2 class="projects-filter__heading">Explore by Category</h2>
+        <div class="projects-filter__buttons">
+          <button class="filter-btn filter-btn--active" data-filter="all">
+            All
+          </button>
+          <button class="filter-btn" data-filter="retail">Retail</button>
+          <button class="filter-btn" data-filter="events">Events</button>
+          <button class="filter-btn" data-filter="corporate">Corporate</button>
+          <button class="filter-btn" data-filter="exhibition">
+            Exhibition
+          </button>
+          <button class="filter-btn" data-filter="mall">Mall</button>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* ===========================================           UNIVERSAL BOX SIZING
+           =========================================== */
+      .projects-filter *,
+      .projects-filter *::before,
+      .projects-filter *::after {
+        box-sizing: border-box;
+      }
+
+      /* ===========================================           PROJECTS FILTER SECTION - CSS VARIABLES
+           =========================================== */
+      :root {
+        --filter-blue: #1a237e;
+        --filter-gold: #d4af37;
+        --filter-bg: #f8fafc;
+        --filter-border: #e2e8f0;
+        --filter-text: #334155;
+        --filter-text-light: #64748b;
+        --filter-white: #ffffff;
+      }
+
+      /* ===========================================
+           FILTER SECTION BASE LAYOUT
+           =========================================== */
+      .projects-filter {
+        width: 100%;
+        max-width: 100vw;
+        background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        padding: 70px 40px 80px;
+        font-family: "Inter", sans-serif;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      .projects-filter::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          #e2e8f0 50%,
+          transparent 100%
+        );
+      }
+
+      .projects-filter__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .projects-filter__heading {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--filter-text);
+        margin: 0 0 32px 0;
+        letter-spacing: -0.5px;
+      }
+
+      .projects-filter__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      /* ===========================================
+           FILTER BUTTON STYLING
+           =========================================== */
+      .filter-btn {
+        /* Base Styles */
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 15px 36px;
+        border-radius: 50px;
+        border: 2px solid var(--filter-border);
+        background-color: var(--filter-white);
+        color: var(--filter-text);
+        cursor: pointer;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+
+        /* Shadow */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+        /* Interaction States */
+        outline: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .filter-btn::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(26, 35, 126, 0.1);
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.6s,
+          height 0.6s;
+      }
+
+      .filter-btn:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      /* Hover State */
+      .filter-btn:hover {
+        background-color: var(--filter-blue);
+        color: var(--filter-white);
+        border-color: var(--filter-blue);
+        box-shadow: 0 4px 12px rgba(26, 35, 126, 0.2);
+        transform: translateY(-2px);
+      }
+
+      /* Active State */
+      .filter-btn--active {
+        background: linear-gradient(
+          135deg,
+          var(--filter-blue) 0%,
+          #2d3e9f 100%
+        );
+        color: var(--filter-white);
+        border-color: var(--filter-blue);
+        box-shadow: 0 4px 16px rgba(26, 35, 126, 0.3);
+      }
+
+      .filter-btn--active:hover {
+        background: linear-gradient(
+          135deg,
+          #151d66 0%,
+          var(--filter-blue) 100%
+        );
+        transform: translateY(-1px);
+      }
+
+      /* Focus State (Accessibility) */
+      .filter-btn:focus-visible {
+        outline: 3px solid rgba(26, 35, 126, 0.3);
+        outline-offset: 3px;
+      }
+
+      /* Active (Click) State */
+      .filter-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(26, 35, 126, 0.2);
+      }
+
+      /* ===========================================
+           RESPONSIVE DESIGN
+           =========================================== */
+
+      /* Tablet Large */
+      @media (max-width: 900px) {
+        .projects-filter {
+          padding: 50px 30px;
+        }
+
+        .projects-filter__heading {
+          font-size: 28px;
+        }
+
+        .projects-filter__buttons {
+          gap: 12px;
+        }
+
+        .filter-btn {
+          font-size: 14px;
+          padding: 12px 28px;
+        }
+      }
+
+      /* Tablet */
+      @media (max-width: 768px) {
+        .projects-filter {
+          padding: 45px 24px;
+        }
+
+        .projects-filter__heading {
+          font-size: 26px;
+          margin-bottom: 28px;
+        }
+
+        .projects-filter__buttons {
+          gap: 10px;
+        }
+
+        .filter-btn {
+          font-size: 13px;
+          padding: 11px 24px;
+        }
+      }
+
+      /* Mobile Large */
+      @media (max-width: 600px) {
+        .projects-filter {
+          padding: 40px 20px;
+        }
+
+        .projects-filter__heading {
+          font-size: 24px;
+          margin-bottom: 24px;
+        }
+
+        .projects-filter__buttons {
+          gap: 8px;
+        }
+
+        .filter-btn {
+          font-size: 12px;
+          padding: 10px 20px;
+          min-height: 44px;
+        }
+      }
+
+      /* Mobile Small */
+      @media (max-width: 400px) {
+        .projects-filter {
+          padding: 35px 16px;
+        }
+
+        .projects-filter__heading {
+          font-size: 22px;
+          margin-bottom: 20px;
+        }
+
+        .projects-filter__buttons {
+          gap: 8px;
+        }
+
+        .filter-btn {
+          font-size: 11px;
+          padding: 9px 16px;
+          min-height: 44px;
+          white-space: nowrap;
+        }
+      }
+    </style>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // Initialize filter functionality when DOM is ready
+        function initProjectsFilter() {
+          const filterButtons = document.querySelectorAll(".filter-btn");
+
+          if (filterButtons.length === 0) return;
+
+          // Add click event to each filter button
+          filterButtons.forEach((button) => {
+            button.addEventListener("click", function () {
+              const filterValue = this.getAttribute("data-filter");
+
+              // Update active state
+              filterButtons.forEach((btn) => {
+                btn.classList.remove("filter-btn--active");
+              });
+              this.classList.add("filter-btn--active");
+
+              // Trigger filter event for projects grid
+              const filterEvent = new CustomEvent("projectsFilter", {
+                detail: { category: filterValue },
+              });
+              document.dispatchEvent(filterEvent);
+            });
+          });
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initProjectsFilter);
+        } else {
+          initProjectsFilter();
+        }
+      })();
+    </script>
+  </body>
+</html>
