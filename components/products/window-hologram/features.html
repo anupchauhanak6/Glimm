@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section id="holo-product-tabs">
+      <div class="holo-container">
+        <div class="pt-nav-wrapper">
+          <button
+            class="pt-tab-btn active"
+            onclick="openTab(event, 'tab-overview')"
+          >
+            Overview
+          </button>
+          <button class="pt-tab-btn" onclick="openTab(event, 'tab-features')">
+            Features
+          </button>
+          <button class="pt-tab-btn" onclick="openTab(event, 'tab-specs')">
+            Specs
+          </button>
+          <button class="pt-tab-btn" onclick="openTab(event, 'tab-technology')">
+            Technology
+          </button>
+          <button
+            class="pt-tab-btn"
+            onclick="openTab(event, 'tab-casestudies')"
+          >
+            Case Studies
+          </button>
+        </div>
+        <div class="pt-divider"></div>
+
+        <div id="tab-overview" class="pt-content active">
+          <div class="overview-grid">
+            <div class="ov-left">
+              <h2 class="pt-heading">Window Hologram Overview</h2>
+              <p class="pt-desc">
+                Revolutionary window-projected hologram technology transforms
+                retail storefronts into immersive 3D experience centers.
+                Customers see transparent floating holograms while maintaining
+                clear visibility of the store interior.
+              </p>
+              <h3 class="pt-subheading">Ideal Use Cases</h3>
+              <ul class="ov-use-cases">
+                <li>
+                  <i class="fas fa-check-circle"></i> Premium fashion and luxury
+                  boutique storefronts
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Electronics and tech
+                  retail flagship locations
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Shopping mall anchor
+                  stores seeking differentiation
+                </li>
+              </ul>
+            </div>
+            <div class="ov-right">
+              <div class="ov-blue-card">
+                <h3>Why Choose Window Holograms?</h3>
+                <ul>
+                  <li>
+                    <i class="fas fa-check"></i> Retail Windows - Transform
+                    storefronts
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Storefronts - Attract foot
+                    traffic
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Shopping Malls - Stand out from
+                    competition
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Showrooms - Create immersive
+                    brand experiences
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Seamless glass integration
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Maintains interior visibility
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-features" class="pt-content">
+          <h2 class="pt-heading">Key Features</h2>
+          <div class="features-grid">
+            <div class="feat-card">
+              <div class="feat-icon">
+                <i class="fas fa-window-maximize"></i>
+              </div>
+              <div>
+                <h4>Seamless Glass Integration</h4>
+                <p>
+                  Works with standard retail glass without special materials or
+                  modifications required
+                </p>
+              </div>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon"><i class="fas fa-eye"></i></div>
+              <div>
+                <h4>Interior Visibility</h4>
+                <p>
+                  Maintains 75-85% transparency allowing customers to see
+                  through to store interior
+                </p>
+              </div>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon"><i class="fas fa-sun"></i></div>
+              <div>
+                <h4>Daylight Viewing</h4>
+                <p>
+                  High-brightness 3000-4500 nits ensures visibility even in
+                  direct sunlight
+                </p>
+              </div>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon"><i class="fas fa-users"></i></div>
+              <div>
+                <h4>Crowd Attraction</h4>
+                <p>
+                  Eye-catching holograms naturally draw pedestrian attention and
+                  foot traffic
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-specs" class="pt-content">
+          <h2 class="pt-heading">Technical Specifications</h2>
+          <div class="specs-table-wrapper">
+            <table class="specs-table">
+              <tr>
+                <td>Type</td>
+                <td>Window Projection</td>
+              </tr>
+              <tr>
+                <td>Glass Compatibility</td>
+                <td>Standard retail glass</td>
+              </tr>
+              <tr>
+                <td>Brightness</td>
+                <td>3000–4500 nits</td>
+              </tr>
+              <tr>
+                <td>Glass Transmission</td>
+                <td>75–85%</td>
+              </tr>
+              <tr>
+                <td>Viewing Angle</td>
+                <td>180–270°</td>
+              </tr>
+              <tr>
+                <td>Installation</td>
+                <td>2-3 days</td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td class="text-blue">From $4,500</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div id="tab-technology" class="pt-content">
+          <h2 class="pt-heading">Technology Behind Window Holograms</h2>
+          <div class="tech-design-card">
+            <div class="tech-header-img tech-bg-1">
+              <div class="tech-overlay-gradient">
+                <span class="tech-badge-glass">Projection Technology</span>
+                <h3 class="tech-title-large">Advanced Optical Projection</h3>
+              </div>
+            </div>
+            <div class="tech-body-content">
+              <p class="tech-main-desc">
+                Advanced optical projection aligned with glass pane. Smart angle
+                adjustment ensures 3D visibility from street-level viewing
+                angles while maintaining interior transparency.
+              </p>
+              <h4 class="tech-sub-title">Key Benefits:</h4>
+              <ul class="tech-benefits-list">
+                <li><i class="fas fa-check"></i> Seamless glass integration</li>
+                <li>
+                  <i class="fas fa-check"></i> Interior transparency maintained
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Daylight visible projection
+                </li>
+                <li><i class="fas fa-check"></i> Wide viewing angles</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-casestudies" class="pt-content">
+          <h2 class="pt-heading">Success Stories</h2>
+          <div class="cs-tab-grid">
+            <div class="cs-tab-card">
+              <div class="cs-tab-img">
+                <img
+                  src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop"
+                />
+                <span class="cs-badge">Retail</span>
+                <div class="cs-overlay-text">
+                  +40%<br /><small>Foot Traffic</small>
+                </div>
+              </div>
+              <div class="cs-tab-body">
+                <h4>Retail Deployment Success</h4>
+                <p class="cs-excerpt">
+                  Installed in 50+ retail locations. Average 40% increase in
+                  foot traffic and customer engagement at deployment sites.
+                </p>
+                <a href="#" class="btn-cs-full">Read Full Case Study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("pt-content");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+          tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("pt-tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        setTimeout(function () {
+          document.getElementById(tabName).classList.add("active");
+        }, 10);
+        if (evt) evt.currentTarget.className += " active";
+      }
+      document.addEventListener("DOMContentLoaded", () =>
+        openTab(null, "tab-overview"),
+      );
+    </script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background: white;
+      }
+      #tabs {
+        padding: 60px 20px;
+      }
+      .cnt {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .nav {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 0;
+      }
+      .btn {
+        background: 0;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: #6b7280;
+        padding: 14px 0 18px;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+      }
+      .btn:hover {
+        color: #1a237e;
+      }
+      .btn.active {
+        color: #1a237e;
+        border-bottom: 3px solid #1a237e;
+      }
+      .tab {
+        display: none;
+      }
+      .tab.active {
+        display: block;
+      }
+      h2 {
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: #111827;
+      }
+      p {
+        font-size: 16px;
+        color: #6b7280;
+        line-height: 1.75;
+        margin-bottom: 30px;
+      }
+      .chips {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 30px 0;
+      }
+      .chips span {
+        background: #eff6ff;
+        color: #1a237e;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        border: 1px solid #dbeafe;
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 30px 0;
+      }
+      .card {
+        border: 1px solid #e5e7eb;
+        padding: 20px;
+        border-radius: 12px;
+        background: #f9fafb;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        font-weight: 600;
+      }
+      .card i {
+        color: #1a237e;
+        font-size: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+      }
+      table td {
+        padding: 16px 20px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      table td:first-child {
+        background: #f9fafb;
+        font-weight: 600;
+        width: 30%;
+      }
+      .h3-subheading {
+        font-weight: 700;
+        color: #111827;
+        margin: 20px 0 10px;
+      }
+      .use-cases-list {
+        margin: 0;
+        padding-left: 18px;
+        color: #6b7280;
+        line-height: 1.7;
+        font-size: 15px;
+      }
+      .price-cell {
+        color: #1a237e;
+        font-weight: 700;
+      }
+    </style>
+  </body>
+</html>
