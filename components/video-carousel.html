@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immersive Retail Video Slider</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-bg: #ffffff;
+            --purple-btn: #6c5ce7;
+            --shadow-strong: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* --- Main Container --- */
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1400px;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- Carousel Logic --- */
+        .carousel-container {
+            width: 100%;
+            height: 500px;
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            width: 600px;
+            height: 400px;
+            background: #000;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-strong);
+            opacity: 0.5;
+            z-index: 1;
+            /* Tablet Frame Look */
+            border: 8px solid #1a1a1a; 
+        }
+
+        .slide video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Active Slide (Center) */
+        .slide.active {
+            transform: translateX(0) scale(1.1);
+            opacity: 1;
+            z-index: 10;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            border-color: #000;
+        }
+
+        /* Previous Slide (Left) */
+        .slide.prev {
+            transform: translateX(-110%) scale(0.85);
+            opacity: 0.6;
+            z-index: 5;
+            cursor: pointer;
+        }
+
+        /* Next Slide (Right) */
+        .slide.next {
+            transform: translateX(110%) scale(0.85);
+            opacity: 0.6;
+            z-index: 5;
+            cursor: pointer;
+        }
+
+        /* Hidden slides logic for cleaner rotation */
+        .slide.hide-left {
+            transform: translateX(-200%) scale(0.5);
+            opacity: 0;
+        }
+        .slide.hide-right {
+            transform: translateX(200%) scale(0.5);
+            opacity: 0;
+        }
+
+        /* --- Pagination / Slider Bar --- */
+        .controls-container {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Container for dynamic dots */
+        #dots-container {
+            display: flex;
+            gap: 15px;
+            background: rgba(0,0,0,0.05); /* Subtle background for pill shape if needed, or remove */
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .dot.active {
+            background-color: #6c5ce7;
+            transform: scale(1.3);
+            width: 25px; /* Pill shape for active dot */
+            border-radius: 10px;
+        }
+
+        /* Expand icon on video */
+        .expand-icon {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: white;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            cursor: pointer; /* Changed to pointer */
+            pointer-events: auto; /* Enable clicking */
+            z-index: 20;
+        }
+
+        .expand-icon:hover {
+            background: rgba(0,0,0,0.8);
+            transform: scale(1.1);
+        }
+
+        .slide.active .expand-icon {
+            opacity: 1;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="slider-wrapper">
+        
+        <!-- Carousel -->
+        <div class="carousel-container" id="carousel">
+            <!-- Slide 0 -->
+            <div class="slide active" data-index="0">
+                <video src="https://videos.pexels.com/video-files/3196236/3196236-uhd_2560_1440_25fps.mp4" autoplay muted loop playsinline></video>
+                <div class="expand-icon" title="Full Screen"><i class="fas fa-expand-alt"></i></div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="slide next" data-index="1">
+                <video src="https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4" muted loop playsinline></video>
+                <div class="expand-icon" title="Full Screen"><i class="fas fa-expand-alt"></i></div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide hide-right" data-index="2">
+                <video src="https://videos.pexels.com/video-files/853835/853835-hd_1920_1080_25fps.mp4" muted loop playsinline></video>
+                <div class="expand-icon" title="Full Screen"><i class="fas fa-expand-alt"></i></div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide prev" data-index="3">
+                <video src="https://videos.pexels.com/video-files/2882787/2882787-uhd_2560_1440_24fps.mp4" muted loop playsinline></video>
+                <div class="expand-icon" title="Full Screen"><i class="fas fa-expand-alt"></i></div>
+            </div>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="controls-container">
+            <!-- Dots will be generated here automatically -->
+            <div id="dots-container"></div>
+            <!-- REMOVED THE PROGRESS BAR FROM HERE -->
+        </div>
+
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const dotsContainer = document.getElementById('dots-container');
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+        let autoplayInterval;
+
+        // --- Generate Dots Automatically ---
+        function createDots() {
+            dotsContainer.innerHTML = ''; // Clear existing
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+        }
+        createDots(); // Call immediately
+        
+        // Select newly created dots
+        const dots = document.querySelectorAll('.dot');
+
+        // --- Fullscreen Logic ---
+        document.querySelectorAll('.expand-icon').forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                e.stopPropagation(); // Stop click from triggering slide navigation
+                const video = icon.parentElement.querySelector('video');
+                if (video) {
+                    if (video.requestFullscreen) {
+                        video.requestFullscreen();
+                    } else if (video.webkitRequestFullscreen) { /* Safari */
+                        video.webkitRequestFullscreen();
+                    } else if (video.msRequestFullscreen) { /* IE11 */
+                        video.msRequestFullscreen();
+                    }
+                }
+            });
+        });
+
+        // Update UI based on current slide
+        function updateClasses() {
+            slides.forEach((slide, index) => {
+                slide.className = 'slide';
+                const video = slide.querySelector('video');
+                
+                let diff = (index - currentIndex + totalSlides) % totalSlides;
+                
+                if (diff === 0) {
+                    slide.classList.add('active');
+                    if(video) video.play();
+                } else if (diff === 1) {
+                    slide.classList.add('next');
+                    if(video) video.pause();
+                } else if (diff === totalSlides - 1) {
+                    slide.classList.add('prev');
+                    if(video) video.pause();
+                } else {
+                    slide.classList.add(diff < totalSlides / 2 ? 'hide-right' : 'hide-left');
+                    if(video) video.pause();
+                }
+            });
+
+            // Update Dots
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentIndex);
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateClasses();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateClasses();
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateClasses();
+            resetAutoplay();
+        }
+
+        slides.forEach((slide, index) => {
+            slide.addEventListener('click', (e) => {
+                // Prevent navigation if clicking on controls inside slide
+                if(e.target.closest('.expand-icon')) return;
+
+                if (slide.classList.contains('prev')) {
+                    prevSlide();
+                    resetAutoplay();
+                } else if (slide.classList.contains('next')) {
+                    nextSlide();
+                    resetAutoplay();
+                }
+            });
+        });
+
+        function startAutoplay() {
+            autoplayInterval = setInterval(nextSlide, 5000); 
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplayInterval);
+            startAutoplay();
+        }
+
+        // Initialize
+        updateClasses();
+        startAutoplay();
+
+    </script>
+</body>
+</html>
