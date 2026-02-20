@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installation Stats</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section class="installation-stats">
+      <div class="installation-stats__container">
+        <div class="installation-stats__card" data-target="500" data-suffix="+">
+          <div>
+            <div class="installation-stats__number">0+</div>
+            <div class="installation-stats__label">Total Installations</div>
+          </div>
+        </div>
+
+        <div class="installation-stats__card" data-target="25" data-suffix="+">
+          <div>
+            <div class="installation-stats__number">0+</div>
+            <div class="installation-stats__label">Countries Covered</div>
+          </div>
+        </div>
+
+        <div class="installation-stats__card" data-target="98" data-suffix="+">
+          <div>
+            <div class="installation-stats__number">0+</div>
+            <div class="installation-stats__label">Enterprise Clients</div>
+          </div>
+        </div>
+
+        <div class="installation-stats__card" data-target="12" data-suffix="+">
+          <div>
+            <div class="installation-stats__number">0+</div>
+            <div class="installation-stats__label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .installation-stats,
+      .installation-stats * {
+        box-sizing: border-box;
+      }
+
+      .installation-stats {
+        padding: 24px 20px 40px;
+        font-family: "Inter", sans-serif;
+        background: #f6f8ff;
+      }
+
+      .installation-stats__container {
+        max-width: 1220px;
+        margin: 0 auto;
+        background: linear-gradient(90deg, #1f2b89 0%, #344ce6 100%);
+        border-radius: 36px;
+        padding: 22px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+      }
+
+      .installation-stats__card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0;
+        padding: 18px;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+      }
+
+      .installation-stats__card:last-child {
+        border-right: none;
+      }
+
+      .installation-stats__icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffd45c;
+        font-size: 34px;
+        flex-shrink: 0;
+      }
+
+      .installation-stats__number {
+        color: #fff6cf;
+        font-size: 64px;
+        line-height: 0.95;
+        font-weight: 800;
+        letter-spacing: 0.3px;
+        margin-bottom: 6px;
+      }
+
+      .installation-stats__label {
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 17px;
+        line-height: 1.25;
+        font-weight: 600;
+        max-width: 240px;
+      }
+
+      @media (max-width: 1200px) {
+        .installation-stats__container {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
+
+        .installation-stats__card {
+          border-right: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .installation-stats__card:nth-last-child(-n + 2) {
+          border-bottom: none;
+        }
+
+        .installation-stats__number {
+          font-size: 52px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .installation-stats__container {
+          border-radius: 24px;
+          grid-template-columns: 1fr;
+          padding: 16px;
+        }
+
+        .installation-stats__card {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+          padding: 14px 10px;
+        }
+
+        .installation-stats__card:last-child {
+          border-bottom: none;
+        }
+
+        .installation-stats__icon {
+          width: 56px;
+          height: 56px;
+          font-size: 28px;
+        }
+
+        .installation-stats__number {
+          font-size: 44px;
+        }
+
+        .installation-stats__label {
+          font-size: 15px;
+        }
+      }
+    </style>
+
+    <script>
+      (function () {
+        const section = document.querySelector(".installation-stats");
+        if (!section) return;
+
+        const cards = section.querySelectorAll(".installation-stats__card");
+        let started = false;
+
+        function animateCount(el, target, suffix) {
+          const duration = 1400;
+          const start = performance.now();
+
+          function tick(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = Math.round(target * eased);
+            el.textContent = `${value}${suffix}`;
+            if (progress < 1) requestAnimationFrame(tick);
+          }
+
+          requestAnimationFrame(tick);
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting || started) return;
+              started = true;
+
+              cards.forEach((card) => {
+                const target = Number(card.getAttribute("data-target") || 0);
+                const suffix = card.getAttribute("data-suffix") || "";
+                const numberEl = card.querySelector(
+                  ".installation-stats__number",
+                );
+                if (numberEl) animateCount(numberEl, target, suffix);
+              });
+            });
+          },
+          { threshold: 0.35 },
+        );
+
+        observer.observe(section);
+      })();
+    </script>
+  </body>
+</html>
