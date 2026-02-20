@@ -58,7 +58,7 @@
           <li><a href="../markets.html">Markets</a></li>
           <li><a href="#">Content</a></li>
           <li><a href="../projects.html">Projects</a></li>
-          <li><a href="#">Installations</a></li>
+          <li><a href="../installations.html">Installations</a></li>
         </ul>
       </nav>
 
@@ -319,6 +319,8 @@
         0 15px 35px rgba(0, 0, 0, 0.1),
         0 5px 15px rgba(0, 0, 0, 0.05);
       border-radius: 12px;
+      overflow: hidden;
+      position: relative;
       padding: 12px 0 !important;
       border: 1px solid #f1f5f9;
       display: flex !important;
@@ -329,8 +331,13 @@
     .products-mega-menu {
       position: fixed;
       left: 50%;
-      top: 54px;
+      top: 68px;
       transform: translateX(-50%) translateY(10px);
+      max-width: calc(100vw - 40px);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 20px;
     }
 
     .holo-dropdown:hover .products-mega-menu {
@@ -339,19 +346,21 @@
 
     .products-grid {
       display: grid !important;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0 !important;
-      min-width: 950px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 6px 8px !important;
+      width: auto;
       max-width: 1150px;
-      padding: 24px !important;
+      padding: 18px !important;
+      margin: 0 auto;
     }
 
     .products-column {
       display: flex;
       flex-direction: column;
       gap: 0;
-      padding: 0 18px;
+      padding: 0 12px;
       border-right: 1px solid #f1f5f9;
+      min-width: 0;
     }
 
     .products-column:last-child {
@@ -367,7 +376,9 @@
       display: block !important;
       transition: all 0.2s ease;
       border-radius: 7px;
-      white-space: nowrap;
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .products-column a:hover {
