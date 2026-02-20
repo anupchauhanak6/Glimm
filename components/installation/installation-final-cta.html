@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installation CTA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section class="installation-final-cta">
+      <div class="installation-final-cta__container">
+        <h2>Ready to Plan Your Installation?</h2>
+        <p>
+          Talk to our specialists for site feasibility, deployment timeline, and
+          pricing.
+        </p>
+
+        <div class="installation-final-cta__actions">
+          <a href="#contact" class="cta-btn cta-btn--primary"
+            >Plan Your Installation</a
+          >
+          <a href="#survey" class="cta-btn cta-btn--secondary"
+            >Request Site Survey</a
+          >
+          <a href="#expert" class="cta-btn cta-btn--secondary"
+            >Talk to Expert</a
+          >
+          <a href="#quote" class="cta-btn cta-btn--secondary">Get Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .installation-final-cta,
+      .installation-final-cta * {
+        box-sizing: border-box;
+      }
+
+      .installation-final-cta {
+        font-family: "Inter", sans-serif;
+        padding: 90px 20px;
+        background: linear-gradient(135deg, #1a237e 0%, #2b4dff 100%);
+        color: #ffffff;
+      }
+
+      .installation-final-cta__container {
+        max-width: 980px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .installation-final-cta h2 {
+        margin: 0 0 10px;
+        font-size: 36px;
+      }
+
+      .installation-final-cta p {
+        margin: 0 auto 24px;
+        max-width: 720px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 16px;
+      }
+
+      .installation-final-cta__actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        text-decoration: none;
+        padding: 12px 18px;
+        font-size: 14px;
+        font-weight: 700;
+        min-width: 200px;
+      }
+
+      .cta-btn--primary {
+        background: #feca43;
+        color: #111827;
+      }
+
+      .cta-btn--secondary {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+      }
+
+      @media (max-width: 560px) {
+        .installation-final-cta h2 {
+          font-size: 30px;
+        }
+
+        .cta-btn {
+          width: 100%;
+          min-width: 0;
+        }
+      }
+    </style>
+  </body>
+</html>
