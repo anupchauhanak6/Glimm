@@ -101,10 +101,10 @@
               class="featured-stat-card fade-in-up"
               style="animation-delay: 0.6s"
             >
-              <h3>98%</h3>
+              <h3 class="client-satisfaction-value" data-target="98">0%</h3>
               <p>Client Satisfaction Rate</p>
               <div class="progress-bar-bg">
-                <div class="progress-fill"></div>
+                <div class="progress-fill" data-target-width="98"></div>
               </div>
             </div>
           </div>
@@ -121,6 +121,15 @@
         --white: #ffffff;
         --glass-bg: rgba(255, 255, 255, 0.03);
         --glass-border: rgba(255, 255, 255, 0.1);
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
       }
 
       /* --- BASE LAYOUT --- */
@@ -397,11 +406,11 @@
         box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
       }
       .progress-fill {
-        width: 98%;
+        width: 0;
         height: 100%;
         background: linear-gradient(to right, var(--glimm-blue), #2b4dff);
         border-radius: 10px;
-        transition: width 0.6s ease;
+        transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
       }
 
       /* --- ANIMATION ENGINE --- */
@@ -466,20 +475,47 @@
 
       @media (max-width: 768px) {
         .glimm-hero-professional {
-          min-height: auto;
-          padding: 60px 0 80px 0;
+          min-height: 100vh;
+          height: 100vh;
+          max-height: 100vh;
+          min-height: 100svh;
+          height: 100svh;
+          max-height: 100svh;
+          min-height: 100dvh;
+          height: 100dvh;
+          max-height: 100dvh;
+          padding: 0;
+          background: var(--glimm-navy);
+          overflow: hidden;
+          align-items: stretch;
         }
+
+        .hero-visual-layer,
+        .hero-media-bg,
+        .hero-overlay-gradient {
+          display: none;
+        }
+
         .hero-container {
-          padding: 40px 20px 50px 20px;
-          gap: 30px;
+          height: 100%;
+          padding: 12px 14px;
+          gap: 12px;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        .hero-stats-side {
+          margin-top: 0;
         }
         .hero-main-title {
           font-size: 2rem;
-          margin-bottom: 20px;
+          margin-bottom: 12px;
         }
         .hero-paragraph {
           font-size: 1rem;
-          margin-bottom: 30px;
+          margin-bottom: 14px;
+        }
+        .glimm-pill-badge {
+          margin-bottom: 12px;
         }
         .glimm-pill-badge {
           font-size: 12px;
@@ -488,7 +524,7 @@
         .hero-action-group {
           flex-direction: column;
           gap: 12px;
-          margin-bottom: 30px;
+          margin-bottom: 12px;
         }
         .btn-glimm-primary,
         .btn-glimm-secondary {
@@ -499,7 +535,10 @@
         }
         .hero-trust-indicators {
           flex-direction: column;
-          gap: 15px;
+          gap: 10px;
+        }
+        .stats-float-container {
+          gap: 12px;
         }
         .stat-info h3 {
           font-size: 24px;
@@ -510,8 +549,8 @@
         .featured-stat-card {
           width: 100%;
           max-width: none;
-          padding: 25px;
-          margin-bottom: 20px;
+          padding: 20px;
+          margin-bottom: 0;
         }
         .featured-stat-card h3 {
           font-size: 32px;
@@ -524,11 +563,23 @@
 
       @media (max-width: 480px) {
         .glimm-hero-professional {
-          padding: 50px 0 70px 0;
+          min-height: 100vh;
+          height: 100vh;
+          max-height: 100vh;
+          min-height: 100svh;
+          height: 100svh;
+          max-height: 100svh;
+          min-height: 100dvh;
+          height: 100dvh;
+          max-height: 100dvh;
+          padding: 0;
         }
         .hero-container {
-          padding: 30px 16px 40px 16px;
-          gap: 25px;
+          height: 100%;
+          padding: 16px 12px;
+          gap: 16px;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
         }
         .hero-main-title {
           font-size: 1.5rem;
@@ -556,14 +607,14 @@
           gap: 5px;
         }
         .stats-float-container {
-          flex-direction: column;
-          flex-wrap: nowrap;
-          gap: 20px;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 12px;
         }
         .glass-stat-card {
           width: 100%;
           padding: 16px;
-          gap: 15px;
+          gap: 10px;
         }
         .stat-icon-wrapper {
           width: 40px;
@@ -577,6 +628,7 @@
           font-size: 11px;
         }
         .featured-stat-card {
+          grid-column: 1 / -1;
           padding: 20px;
           margin-bottom: 15px;
         }
@@ -592,5 +644,41 @@
         }
       }
     </style>
+    <script>
+      (function () {
+        const valueEl = document.querySelector(".client-satisfaction-value");
+        const progressEl = document.querySelector(".progress-fill");
+        if (!valueEl || !progressEl) return;
+
+        const target = Number(valueEl.getAttribute("data-target") || "98");
+        const targetWidth = Number(
+          progressEl.getAttribute("data-target-width") || "98",
+        );
+        const duration = 3600;
+        const start = performance.now();
+
+        progressEl.style.width = "0%";
+
+        function tick(now) {
+          const elapsed = now - start;
+          const t = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - t, 3);
+          const current = Math.round(target * eased);
+
+          valueEl.textContent = `${current}%`;
+
+          if (t < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            valueEl.textContent = `${target}%`;
+          }
+        }
+
+        requestAnimationFrame(() => {
+          progressEl.style.width = `${targetWidth}%`;
+          requestAnimationFrame(tick);
+        });
+      })();
+    </script>
   </body>
 </html>
